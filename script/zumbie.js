@@ -134,12 +134,12 @@ let zumbieDistanceX = zumbiePosX - playerPosX;
 let zumbieDistanceY = zumbiePosY - playerPosY;
 
 // while (!zumbieIsDead) {
-    var intervalZumbieWalk = setInterval(zumbieWalk, 900);
+    var intervalZumbieWalkDefault = setInterval(zumbieWalkDefault, 3000);
 // }
     
  
 
-    function zumbieWalk() {
+    function zumbieWalkDefault() {
         let minZumbie = 1;
         let maxZumbie = 8;
         let randwalkZumbie = Math.floor(Math.random() * (maxZumbie - minZumbie) + minZumbie);
@@ -150,6 +150,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;      
             zumbieDistanceX = zumbiePosX - playerPosX
             zumbieDistanceY = zumbiePosY - playerPosY
+            
           
         } 
 
@@ -203,8 +204,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieHealth.style.width = `${lifePercentual}%`;
 
             if(zumbie.life <= 0) {
-                zumbieKill();    
                 zumbieIsDead = true;
+                clearInterval(intervalZumbieWalkDefault);
+                zumbieKill();    
+              
             }
         }
     }
@@ -244,4 +247,5 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbie.life = zumbie.maxLife;
         lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
         zumbieHealth.style.width = `${lifePercentual}%`;
+        intervalZumbieWalkDefault = setInterval(zumbieWalkDefault, 3000);
     }
