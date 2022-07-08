@@ -1,6 +1,8 @@
 let zumbie = {
     name: "Zumbie",
-    speed: 1000
+    speed: 1000,
+    maxLife: 240,
+    life: 240,
 }
 
 const zumbieUi = document.createElement('div');
@@ -128,6 +130,9 @@ function zumbieAnimaRightEnd () {
     zumbieImage.style.backgroundPosition = "50%";
 }
 
+let zumbieDistanceX = zumbiePosX - playerPosX;
+let zumbieDistanceY = zumbiePosY - playerPosY;
+
 var intervalZumbieWalk = setInterval(zumbieWalk, 900);
 
 
@@ -146,6 +151,8 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
             zumbieAnimaUp();
             zumbiePosX = zumbiePosX - 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
+            zumbieDistanceX = zumbiePosX - playerPosX;
+            
         }
 
         if(randwalkZumbie > 4 && randwalkZumbie <= 6 && zumbiePosY < 7020) {
@@ -158,5 +165,32 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
             zumbieAnimaDown();
             zumbiePosX = zumbiePosX + 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
+            zumbieDistanceX = zumbiePosX - playerPosX;
+            
         }
+    }
+
+
+
+
+    
+
+  
+    let lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+
+
+    zumbieUi.addEventListener('click', attackEnemy);
+    zumbieUi.addEventListener('dblclick', attackBowEnemy)
+
+    function attackEnemy() {
+        if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
+            zumbie.life -= 20;
+            lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+
+    document.getElementById('zumbie-health').style.width = `${lifePercentual}%`;
+        }
+    }
+
+    function attackBowEnemy() {
+
     }

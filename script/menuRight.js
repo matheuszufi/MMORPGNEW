@@ -12,7 +12,7 @@ menuRightOptionsBtn.innerHTML = "OPTIONS"
 const menuRightPlayerInfosBtn = document.createElement('button');
 menuRightPlayerInfosBtn.setAttribute('id', "menu-right-player-infos-btn");
 menuRightOptions.appendChild(menuRightPlayerInfosBtn);
-menuRightPlayerInfosBtn.innerHTML = "PLAYER INFOS"
+menuRightPlayerInfosBtn.innerHTML = "PLAYER PROGRESS"
 
 menuRightPlayerInfosBtn.addEventListener('click', closePlayerInfos);
 
@@ -90,7 +90,7 @@ playerInfosDiv.appendChild(playerInfosContent);
 const playerInfosH1 = document.createElement('h1');
 playerInfosH1.setAttribute("id", "player-infos-h1");
 playerInfosContent.appendChild(playerInfosH1);
-playerInfosH1.innerHTML = "Player Infos";
+playerInfosH1.innerHTML = "Player Progress";
 
 // EXP EXP EXP EXP  //
 // EXP EXP EXP EXP  //

@@ -1,6 +1,7 @@
 let player = {
     name: "Matheus",
-    speed: 800
+    speed: 800,
+    attack: 10
 }
 
 const world = document.getElementById('world');
@@ -16,6 +17,7 @@ world.style.marginTop = "40vh";
 
 let playerPosX = 0;
 let playerPosY = 0;
+
 
 let cooldownWalk = false;
 
