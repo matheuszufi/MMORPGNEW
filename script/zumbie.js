@@ -176,7 +176,7 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
     
 
   
-    let lifePercentual = `${zumbie.life / zumbie.maxLife} `;
+    let lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
 
     zumbieUi.addEventListener('click', attackEnemy);
@@ -185,7 +185,7 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
     function attackEnemy() {
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
             zumbie.life -= 20;
-            lifePercentual = `${zumbie.life / zumbie.maxLife} `;
+            lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
     document.getElementById('zumbie-health').style.width = `${lifePercentual}%`;
         }
