@@ -28,7 +28,7 @@ zumbieImage.setAttribute("id", "zumbie-image");
 zumbieUi.appendChild(zumbieImage);
 
 
-let zumbiePosX = 100;
+let zumbiePosX = 0;
 let zumbiePosY = 100;
 
 zumbieUi.style.transform = `translate(${zumbiePosX}px, ${zumbiePosY}px)`
