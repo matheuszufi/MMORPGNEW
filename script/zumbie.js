@@ -33,7 +33,7 @@ zumbieUi.appendChild(zumbieImage);
 let zumbiePosX = 0;
 let zumbiePosY = 100;
 
-zumbieUi.style.transform = `translate(${zumbiePosX}px, ${zumbiePosY}px)`
+zumbieUi.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
 
 let cooldownZumbieWalk = false;
 
@@ -145,6 +145,9 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
             zumbieAnimaLeft();
             zumbiePosY = zumbiePosY - 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;      
+            zumbieDistanceX = zumbiePosX - playerPosX
+            zumbieDistanceY = zumbiePosY - playerPosY
+          
         } 
 
         if(randwalkZumbie > 2 && randwalkZumbie <= 4 && zumbiePosX >= 50) {
@@ -152,27 +155,37 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
             zumbiePosX = zumbiePosX - 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
             zumbieDistanceX = zumbiePosX - playerPosX;
-            
+            zumbieDistanceX = zumbiePosX - playerPosX
+            zumbieDistanceY = zumbiePosY - playerPosY
         }
 
         if(randwalkZumbie > 4 && randwalkZumbie <= 6 && zumbiePosY < 7020) {
             zumbieAnimaRight();
             zumbiePosY = zumbiePosY + 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;   
+            zumbieDistanceX = zumbiePosX - playerPosX
+            zumbieDistanceY = zumbiePosY - playerPosY
         }
 
         if(randwalkZumbie > 6 && randwalkZumbie <= 8 && zumbiePosX < 4500) {
             zumbieAnimaDown();
             zumbiePosX = zumbiePosX + 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
-            zumbieDistanceX = zumbiePosX - playerPosX;
-            
+            zumbieDistanceX = zumbiePosX - playerPosX
+            zumbieDistanceY = zumbiePosY - playerPosY
         }
     }
 
 
-
-
+let zumbieIsNear = false
+setInterval(zumbieNear, 100);
+    function zumbieNear() {
+        if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
+         zumbieIsNear = true;   
+        } else {
+            zumbieIsNear = false;
+        }
+    } 
     
 
   

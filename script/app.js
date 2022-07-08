@@ -29,48 +29,61 @@ document.addEventListener('keydown', (event) => {
     btnS = "s";
  
     if(event.key === btnA) {
-        if (playerPosX > 0) {
+        if (playerPosY > 0) {
             if(!cooldownWalk){
                 animaLeft();
-                playerPosX = playerPosX - 100;
-                playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
-                world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;
+                playerPosY = playerPosY - 100;
+                playerUi.style.transform = `translate(${playerPosY}px, ${playerPosX}px)`;
+                world.style.transform =`translate(-${playerPosY}px, -${playerPosX}px)`;
                 cooldownWalk = true;
+                zumbieDistanceX = zumbiePosX - playerPosX
+                zumbieDistanceY = zumbiePosY - playerPosY
                 setTimeout(cdWalk, player.speed);
+                console.log(zumbieDistanceX, zumbieDistanceY);
             }    
         }   
     } else if (event.key === btnW) {
-        if(playerPosY > 0) {
+        if(playerPosX > 0) {
             if(!cooldownWalk){
                 animaUp();
-                playerPosY = playerPosY - 100;
-                playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
-                world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;
+                playerPosX = playerPosX - 100;
+                playerUi.style.transform = `translate(${playerPosY}px, ${playerPosX}px)`;
+                world.style.transform =`translate(-${playerPosY}px, -${playerPosX}px)`;
                 cooldownWalk = true;
+                zumbieDistanceX = zumbiePosX - playerPosX
+                zumbieDistanceY = zumbiePosY - playerPosY
                 setTimeout(cdWalk, player.speed);  
+                console.log(zumbieDistanceX, zumbieDistanceY);
             }
         }
     } else if (event.key === btnD) {
-        if(playerPosX < 10000) {
+        if(playerPosY < 10000) {
             if(!cooldownWalk){
                 animaRight();
-                playerPosX = playerPosX + 100;
-                playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
-                world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;     
+                playerPosY = playerPosY + 100;
+                playerUi.style.transform = `translate(${playerPosY}px, ${playerPosX}px)`;
+                world.style.transform =`translate(-${playerPosY}px, -${playerPosX}px)`;     
                 cooldownWalk = true;
+                zumbieDistanceX = zumbiePosX - playerPosX
+                zumbieDistanceY = zumbiePosY - playerPosY
+              
                 setTimeout(cdWalk, player.speed);  
+                console.log(zumbieDistanceX, zumbieDistanceY);
             }    
         } 
     } else if (event.key === btnS) {
-        if(playerPosY < 10000) {
+        if(playerPosX < 10000) {
             if(!cooldownWalk){
             animaDown();
-            playerPosY = playerPosY + 100;
-            playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
-            world.style.transform =`translate(-${playerPosX}px,  -${playerPosY}px)`;
+            playerPosX = playerPosX + 100;
+            playerUi.style.transform = `translate(${playerPosY}px, ${playerPosX}px)`;
+            world.style.transform =`translate(-${playerPosY}px,  -${playerPosX}px)`;
             cooldownWalk = true;
+            zumbieDistanceX = zumbiePosX - playerPosX
+            zumbieDistanceY = zumbiePosY - playerPosY
             setTimeout(cdWalk, player.speed);  
-            }
+            console.log(zumbieDistanceX, zumbieDistanceY);    
+        }
         }
 } 
 
