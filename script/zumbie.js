@@ -133,8 +133,11 @@ function zumbieAnimaRightEnd () {
 let zumbieDistanceX = zumbiePosX - playerPosX;
 let zumbieDistanceY = zumbiePosY - playerPosY;
 
-var intervalZumbieWalk = setInterval(zumbieWalk, 900);
-
+// while (!zumbieIsDead) {
+    var intervalZumbieWalk = setInterval(zumbieWalk, 900);
+// }
+    
+ 
 
     function zumbieWalk() {
         let minZumbie = 1;
@@ -154,7 +157,6 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
             zumbieAnimaUp();
             zumbiePosX = zumbiePosX - 100;
             zumbieUi.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`;
-            zumbieDistanceX = zumbiePosX - playerPosX;
             zumbieDistanceX = zumbiePosX - playerPosX
             zumbieDistanceY = zumbiePosY - playerPosY
         }
@@ -177,8 +179,10 @@ var intervalZumbieWalk = setInterval(zumbieWalk, 900);
     }
 
 
-let zumbieIsNear = false
-setInterval(zumbieNear, 100);
+    let zumbieIsNear = false
+    
+    setInterval(zumbieNear, 100);
+    
     function zumbieNear() {
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
          zumbieIsNear = true;   
@@ -187,10 +191,7 @@ setInterval(zumbieNear, 100);
         }
     } 
     
-
-  
     let lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
-
 
     zumbieUi.addEventListener('click', attackEnemy);
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
@@ -199,11 +200,48 @@ setInterval(zumbieNear, 100);
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
             zumbie.life -= 20;
             lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+            zumbieHealth.style.width = `${lifePercentual}%`;
 
-    document.getElementById('zumbie-health').style.width = `${lifePercentual}%`;
+            if(zumbie.life <= 0) {
+                zumbieKill();    
+                zumbieIsDead = true;
+            }
         }
     }
 
     function attackBowEnemy() {
 
+    }
+
+    var zumbieIsDead = false;
+
+    function zumbieKill() {
+        
+
+        zumbieName.style.opacity = "0";
+        zumbieDivHeM.style.opacity = "0";
+        zumbieImage.style.background = "url(../imgs/zumbie/dead.png)"
+        zumbieImage.style.backgroundSize = "50px"
+        zumbieImage.style.backgroundRepeat = "no-repeat"
+        zumbieImage.style.marginLeft = "20px"
+        zumbieIsDead = true;
+        setTimeout(zumbieHidden, 4000);
+    }
+
+    function zumbieHidden () {
+        zumbieUi.style.display = "none";
+        setTimeout(zumbieSpawn, 4000);
+    }
+
+    function zumbieSpawn(){
+        zumbieUi.style.display = "block";
+        zumbieIsDead = false;
+        zumbieName.style.opacity = "1";
+        zumbieDivHeM.style.opacity = "1";
+        zumbieImage.style.background = "url(../imgs/zumbie/down3.png)"
+        zumbieImage.style.backgroundSize = "50px"
+        zumbieImage.style.backgroundRepeat = "no-repeat"
+        zumbie.life = zumbie.maxLife;
+        lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+        zumbieHealth.style.width = `${lifePercentual}%`;
     }

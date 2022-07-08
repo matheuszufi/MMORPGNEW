@@ -49,3 +49,15 @@
     background-position: 50%;
     /* transition: 0.1s linear; */
 }
+
+
+#zumbie-dead {
+    width: 100px;
+    height: 100px;
+    background: url(../imgs/zumbie/dead.png);
+    position: absolute;
+    margin-top: -20px;  
+    background-repeat: no-repeat;
+    background-size: 50px;
+    background-position: 50%;
+}

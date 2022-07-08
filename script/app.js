@@ -39,7 +39,6 @@ document.addEventListener('keydown', (event) => {
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
                 setTimeout(cdWalk, player.speed);
-                console.log(zumbieDistanceX, zumbieDistanceY);
             }    
         }   
     } else if (event.key === btnW) {
@@ -52,8 +51,7 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
-                setTimeout(cdWalk, player.speed);  
-                console.log(zumbieDistanceX, zumbieDistanceY);
+                setTimeout(cdWalk, player.speed);
             }
         }
     } else if (event.key === btnD) {
@@ -66,9 +64,7 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
-              
                 setTimeout(cdWalk, player.speed);  
-                console.log(zumbieDistanceX, zumbieDistanceY);
             }    
         } 
     } else if (event.key === btnS) {
@@ -81,8 +77,7 @@ document.addEventListener('keydown', (event) => {
             cooldownWalk = true;
             zumbieDistanceX = zumbiePosX - playerPosX
             zumbieDistanceY = zumbiePosY - playerPosY
-            setTimeout(cdWalk, player.speed);  
-            console.log(zumbieDistanceX, zumbieDistanceY);    
+            setTimeout(cdWalk, player.speed);      
         }
         }
 } 
