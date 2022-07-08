@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 #div-menu-up {
     width: 100vw;
     height: 76px;
     position: fixed;
     display: flex;
     justify-content: center;
+    font-family: 'Bebas Neue';
 }
 
 #menu-up {
