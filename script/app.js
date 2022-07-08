@@ -1,5 +1,6 @@
 let player = {
     name: "Matheus",
+    speed: 800
 }
 
 const world = document.getElementById('world');
@@ -33,7 +34,7 @@ document.addEventListener('keydown', (event) => {
                 playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
                 world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;
                 cooldownWalk = true;
-                setTimeout(cdWalk, 1000);
+                setTimeout(cdWalk, player.speed);
             }    
         }   
     } else if (event.key === btnW) {
@@ -44,7 +45,7 @@ document.addEventListener('keydown', (event) => {
                 playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
                 world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;
                 cooldownWalk = true;
-                setTimeout(cdWalk, 1000);  
+                setTimeout(cdWalk, player.speed);  
             }
         }
     } else if (event.key === btnD) {
@@ -54,16 +55,23 @@ document.addEventListener('keydown', (event) => {
                 playerPosX = playerPosX + 100;
                 playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
                 world.style.transform =`translate(-${playerPosX}px, -${playerPosY}px)`;     
-           
+                cooldownWalk = true;
+                setTimeout(cdWalk, player.speed);  
             }    
         } 
     } else if (event.key === btnS) {
-        animaDown();
-        playerPosY = playerPosY + 100;
-        playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
-        world.style.transform =`translate(-${playerPosX}px,  -${playerPosY}px)`;
-
+        if(playerPosY < 10000) {
+            if(!cooldownWalk){
+            animaDown();
+            playerPosY = playerPosY + 100;
+            playerUi.style.transform = `translate(${playerPosX}px, ${playerPosY}px)`;
+            world.style.transform =`translate(-${playerPosX}px,  -${playerPosY}px)`;
+            cooldownWalk = true;
+            setTimeout(cdWalk, player.speed);  
+            }
+        }
 } 
+
 });
 
 

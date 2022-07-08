@@ -6,45 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/menuRight.css">
+    <link rel="stylesheet" href="css/menuDown.css">
+    <link rel="stylesheet" href="css/menuUp.css">
     <title>Document</title>
 
 </head>
 <body>
     <div id="container">
         <div id="engine">
-            <div id="world">
+            <div id="world"></div>
+        </div>
+
+        <div id="menu-right"></div>
+
+        <div id="div-menu-down">
+            <div id="menu-down"></div>
+        </div>
+
+        <div id="div-menu-up">
+            <div id="menu-up">
+                <div id="menu-up-life-div">
+                    <div id="menu-up-life-icon"><img src="./imgs/life.gif"></div>
+                    <div id="menu-up-life-bar"></div>
+                    <div id="menu-up-life-value">
+                        <p>180</p>
+                    </div>     
+                </div>
+
+                <div id="menu-up-mana-div">
+                    <div id="menu-up-mana-icon"><img src="./imgs/mana.gif"></div>
+                    <div id="menu-up-mana-bar"></div>
+                    <div id="menu-up-mana-value">
+                        <p>180</p>
+                    </div>
+                </div>
 
             </div>
         </div>
 
 
-        <div id="infos-right">
-
-        </div>
-
-        <div id="infos-down">
-
-        </div>
-
     </div>
 
 
 
-
-
-
-
-
-
-
-
-
+    <script src="script/menuUp.js"></script>
+    <script src="script/menuDown.js"></script>
+    <script src="script/menuRight.js"></script>
     <script src="script/player.js"></script>
     <script src="script/app.js"></script>
 
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </body>
 </html>

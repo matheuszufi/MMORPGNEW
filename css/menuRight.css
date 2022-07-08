@@ -1,0 +1,180 @@
+@font-face {font-family: tahoma8; src: url(../tahoma.ttf);}
+
+#player-infos-div {
+    width: 100%;
+    background: url(../imgs/backgroundStyleTibia.png);
+    height:340px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    overflow: hidden;
+    transition: 0.2s;
+}
+
+#player-infos-header {
+    width: 100%;
+    height: 12px;
+    background: url(../imgs/backgroundStyleTibia.png);
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(150, 150, 150);
+    display: flex;
+    justify-content: end;
+}
+
+#player-infos-min-btn {
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    color: white;
+    text-align: center;
+    cursor: pointer;
+}
+
+#player-infos-min-icon{
+    margin-top: -4px;
+    font-weight: 900;
+}
+
+#player-infos-close-btn {
+    width: 10px;
+    height: 10px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    color: white;
+    text-align: center;
+    cursor: pointer; 
+}
+
+#player-infos-close-icon{
+    margin-top: -2px;
+    font-weight: 900;
+    font-size: 10px;
+}
+
+#player-infos-content {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+}
+
+#player-infos-h1 {
+    font-family: 'martel';
+    text-shadow: 1px 1px 1px black;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.info-classes {
+    width: 100%;
+    height: 24px;
+    font-size: 12px;
+    font-weight: 800;
+    text-shadow: 1px 1px 1px black;
+
+}
+
+
+/*  EXP  */
+/*  EXP  */
+#info-experience-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-experience-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-experience-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-experience-progress-bar {width: 80%; height: 5px; background-color: rgba(255, 0, 0, 0.6);}
+
+/*  LEVEL */
+/*  LEVEL */
+
+#info-level-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-level-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-level-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-level-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+
+/*  ATTACK */
+/*  ATTACK */
+
+#info-attack-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-attack-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-attack-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-attack-progress-bar {width: 80%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  SPEED */
+/*  SPEED */
+
+#info-speed-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-speed-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-speed-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-speed-progress-bar {width: 80%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+
+/*  FIRE */
+/*  FIRE */
+
+#info-fire-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-fire-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-fire-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-fire-progress-bar {width: 50%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  ICE */
+/*  ICE */
+
+#info-ice-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-ice-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-ice-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-ice-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  ENERGY */
+/*  ENERGY */
+
+#info-energy-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-energy-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-energy-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-energy-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  TERRA */
+/*  TERRA */
+
+#info-terra-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-terra-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-terra-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-terra-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  DEATH */
+/*  DEATH */
+
+#info-death-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-death-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-death-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-death-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  HOLY */
+/*  HOLY */
+
+#info-holy-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-holy-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-holy-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-holy-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  DISTANCE */
+/*  DISTANCE */
+
+#info-distance-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-distance-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-distance-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-distance-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+
+/*  DEFENSE */
+/*  DEFENSE */
+
+#info-defense-up {font-family:'Courier New'; width: 98%; height: 10px; display: flex; justify-content: space-between;}
+#info-defense-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
+#info-defense-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
+#info-defense-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}

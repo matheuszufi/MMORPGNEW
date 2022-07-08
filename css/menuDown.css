@@ -1,0 +1,21 @@
+#div-menu-down {
+    width: 100%;
+    bottom: 0;
+    height: 150px;
+    position: fixed;
+
+    /* background:  url(../imgs/backgroundStyleTibia.png); */
+    display: flex;
+    justify-content: center;
+}
+#menu-down{
+    width: 800px;
+    height: 150px;
+    background: url(../imgs/backgroundStyleTibia.png);
+   
+    
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+}
