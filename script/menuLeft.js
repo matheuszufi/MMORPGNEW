@@ -1,0 +1,1 @@
+menuLeftDiv = document.getElementById('div-menu-left');

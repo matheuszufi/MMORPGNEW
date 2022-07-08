@@ -1,0 +1,119 @@
+#div-menu-left {
+    width: 225px;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-175px);
+    transition: 0.6s;
+
+}
+#div-menu-left:hover {
+    transform: translateX(0px);
+}
+#menu-left {
+    width: 100%;
+    height: 600px;
+    background: url(../imgs/backgroundStyleTibia.png);
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
+}
+#header-menu-left {
+    width: 100%;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+#header-h1-menu-left {
+    font-family: 'martel';
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+#header-menu-left img {
+filter:drop-shadow(1px 1px 1px black);
+width: 50px;
+height: 50px;
+}
+
+#div-set-menu-left {
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    display: flex;
+    justify-content: end;
+}
+
+.set-type {
+  
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    width: 50px;
+}
+.weapon-set-item {
+    width: 50px;
+    height: 50px;
+    border-bottom: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#div-backpack-menu-left {
+    width: 100%;
+    height: 320px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+}
+#div-header-backpack-menu-left {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    display: flex;
+
+}
+
+#h1-header-backpack-menu-left { 
+    width: 175px;
+    height: 100%;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    font-family: 'martel';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+#img-header-backpack-menu-left {
+    width: 50px;
+    height: 50px;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(150, 150, 150);
+    border-top: 1px solid rgb(150, 150, 150);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
