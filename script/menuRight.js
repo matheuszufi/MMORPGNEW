@@ -28,16 +28,15 @@ function closePlayerInfos() {
 
 }
 
+const menuRightStoreBtn = document.createElement('button');
+menuRightStoreBtn.setAttribute('id', "menu-right-store-btn");
+menuRightOptions.appendChild(menuRightStoreBtn);
+menuRightStoreBtn.innerHTML = "STORE"
+menuRightStoreBtn.addEventListener('click', openStore);
 
-
-
-
-
-
-
-
-
-
+function openStore() {
+    divStore.style.display = "flex";
+}
 
 // PLAYER INFOS PLAYER INFOS //
 // PLAYER INFOS PLAYER INFOS //
