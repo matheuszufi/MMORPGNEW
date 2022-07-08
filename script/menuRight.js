@@ -1,12 +1,52 @@
 const menuRight = document.getElementById('menu-right');
 
+const menuRightOptions = document.createElement('div');
+menuRightOptions.setAttribute('id', "menu-right-options");
+menuRight.appendChild(menuRightOptions);
+
+const menuRightOptionsBtn = document.createElement('button');
+menuRightOptionsBtn.setAttribute('id', "menu-right-options-btn");
+menuRightOptions.appendChild(menuRightOptionsBtn);
+menuRightOptionsBtn.innerHTML = "OPTIONS"
+
+const menuRightPlayerInfosBtn = document.createElement('button');
+menuRightPlayerInfosBtn.setAttribute('id', "menu-right-player-infos-btn");
+menuRightOptions.appendChild(menuRightPlayerInfosBtn);
+menuRightPlayerInfosBtn.innerHTML = "PLAYER INFOS"
+
+menuRightPlayerInfosBtn.addEventListener('click', closePlayerInfos);
+
+let playerInfosOpen = true;
+function closePlayerInfos() {
+    if(playerInfosOpen) {
+        playerInfosDiv.style.display = "none"  
+        playerInfosOpen = false; 
+    }  else {
+        playerInfosDiv.style.display = "flex"
+        playerInfosOpen = true; 
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// PLAYER INFOS PLAYER INFOS //
+// PLAYER INFOS PLAYER INFOS //
 const playerInfosDiv = document.createElement('div');
 playerInfosDiv.setAttribute("id", "player-infos-div");
 menuRight.appendChild(playerInfosDiv);
 
 // HEADER HEADER HEADER HEADER //
 // HEADER HEADER HEADER HEADER //
-
 const playerInfosHeader = document.createElement('div');
 playerInfosHeader.setAttribute("id", "player-infos-header");
 playerInfosDiv.appendChild(playerInfosHeader);
@@ -42,7 +82,6 @@ playerInfosCloseIcon.setAttribute("id", "player-infos-close-icon");
 playerInfosCloseBtn.appendChild(playerInfosCloseIcon);
 playerInfosCloseIcon.innerHTML = "x"
 
-
 // INFOS INFOS INFOS INFOS //
 // INFOS INFOS INFOS INFOS //
 const playerInfosContent = document.createElement('div');
@@ -56,7 +95,6 @@ playerInfosH1.innerHTML = "Player Infos";
 
 // EXP EXP EXP EXP  //
 // EXP EXP EXP EXP  //
-
 const infoExperience = document.createElement('div');
 infoExperience.setAttribute('class', 'info-classes');
 infoExperience.setAttribute('id', 'info-experience');
@@ -90,7 +128,6 @@ infoExperienceTotalBar.appendChild(infoExperienceProgressBar);
 
 // LEVEL LEVEL LEVEL LEVEL  //
 // LEVEL LEVEL LEVEL LEVEL  //
-
 const infoLevel = document.createElement('div');
 infoLevel.setAttribute('class', 'info-classes');
 infoLevel.setAttribute('id', 'info-level');
@@ -126,7 +163,6 @@ infoLevelTotalBar.appendChild(infoLevelProgressBar);
 
 // ATTACK ATTACK ATTACK ATTACK  //
 // ATTACK ATTACK ATTACK ATTACK  //
-
 const infoAttack = document.createElement('div');
 infoAttack.setAttribute('class', 'info-classes');
 infoAttack.setAttribute('id', 'info-attack');
@@ -161,7 +197,6 @@ infoAttackTotalBar.appendChild(infoAttackProgressBar);
 
 // SPEED SPEED SPEED SPEED  //
 // SPEED SPEED SPEED SPEED  //
-
 const infoSpeed = document.createElement('div');
 infoSpeed.setAttribute('class', 'info-classes');
 infoSpeed.setAttribute('id', 'info-speed');
@@ -196,7 +231,6 @@ infoSpeedTotalBar.appendChild(infoSpeedProgressBar);
 
 // FIRE FIRE FIRE FIRE  //
 // FIRE FIRE FIRE FIRE  //
-
 const infoFire = document.createElement('div');
 infoFire.setAttribute('class', 'info-classes');
 infoFire.setAttribute('id', 'info-fire');
@@ -231,7 +265,6 @@ infoFireTotalBar.appendChild(infoFireProgressBar);
 
 // ICE ICE ICE ICE  //
 // ICE ICE ICE ICE  //
-
 const infoIce = document.createElement('div');
 infoIce.setAttribute('class', 'info-classes');
 infoIce.setAttribute('id', 'info-ice');
@@ -266,7 +299,6 @@ infoIceTotalBar.appendChild(infoIceProgressBar);
 
 // ENERGY ENERGY ENERGY ENERGY  //
 // ENERGY ENERGY ENERGY ENERGY  //
-
 const infoEnergy = document.createElement('div');
 infoEnergy.setAttribute('class', 'info-classes');
 infoEnergy.setAttribute('id', 'info-energy');
@@ -301,7 +333,6 @@ infoEnergyTotalBar.appendChild(infoEnergyProgressBar);
 
 // TERRA TERRA TERRA TERRA  //
 // TERRA TERRA TERRA TERRA  //
-
 const infoTerra = document.createElement('div');
 infoTerra.setAttribute('class', 'info-classes');
 infoTerra.setAttribute('id', 'info-terra');
@@ -336,7 +367,6 @@ infoTerraTotalBar.appendChild(infoTerraProgressBar);
 
 // DEATH DEATH DEATH DEATH  //
 // DEATH DEATH DEATH DEATH  //
-
 const infoDeath = document.createElement('div');
 infoDeath.setAttribute('class', 'info-classes');
 infoDeath.setAttribute('id', 'info-death');
@@ -371,7 +401,6 @@ infoDeathTotalBar.appendChild(infoDeathProgressBar);
 
 // HOLY HOLY HOLY HOLY  //
 // HOLY HOLY HOLY HOLY  //
-
 const infoHoly = document.createElement('div');
 infoHoly.setAttribute('class', 'info-classes');
 infoHoly.setAttribute('id', 'info-holy');
@@ -406,7 +435,6 @@ infoHolyTotalBar.appendChild(infoHolyProgressBar);
 
 // DISTANCE DISTANCE DISTANCE DISTANCE  //
 // DISTANCE DISTANCE DISTANCE DISTANCE  //
-
 const infoDistance = document.createElement('div');
 infoDistance.setAttribute('class', 'info-classes');
 infoDistance.setAttribute('id', 'info-distance');
@@ -442,7 +470,6 @@ infoDistanceTotalBar.appendChild(infoDistanceProgressBar);
 
 // DEFENSE DEFENSE DEFENSE DEFENSE  //
 // DEFENSE DEFENSE DEFENSE DEFENSE  //
-
 const infoDefense = document.createElement('div');
 infoDefense.setAttribute('class', 'info-classes');
 infoDefense.setAttribute('id', 'info-defense');
