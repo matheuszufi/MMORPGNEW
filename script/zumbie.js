@@ -3,6 +3,8 @@ let zumbie = {
     speed: 1000,
     maxLife: 240,
     life: 240,
+    coins: 20,
+    experience: 120
 }
 
 const zumbieUi = document.createElement('div');
@@ -238,16 +240,23 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
     function zumbieKill() {
         zumbieUi.style.display = "none";
+        
         setTimeout(zumbieHidden, 4000);
+
         const zumbieDead = document.createElement('div');
         zumbieDead.setAttribute('id', 'zumbie-dead');
         world.appendChild(zumbieDead);
         zumbieDead.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
 
         zumbieDead.addEventListener('click', zumbieLoot);
+        
         function zumbieLoot() {
             zumbieDead.style.display = "none";
+            player.coins += zumbie.coins;
+            menuDownCoinsContent.innerHTML = `${player.coins}`
         }
+
+        player.experience += zumbie.experience;
     }
 
 

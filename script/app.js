@@ -2,7 +2,10 @@ let player = {
     name: "Matheus",
     speed: 800,
     attack: 10,
-    coins: 0
+    coins: 0,
+    level: 1,
+    experience: 0,
+   
 }
 
 const world = document.getElementById('world');
@@ -207,3 +210,12 @@ playerUi.appendChild(playerImage);
      playerImage.style.backgroundPosition = "50%";  
      playerIsWalking = false; 
   };
+
+
+
+
+
+
+
+
+
