@@ -257,6 +257,15 @@ playerUi.appendChild(playerImage);
     player.maxLife += 5; 
     player.maxMana += 15;
     player.life = player.maxLife;
+
+    playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
+    menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
+    menuUpLifeValue.innerHTML = `${player.life}`;
+
+
+
+
+
     player.mana = player.maxMana; 
     player.experience = 0;
     player.toLVLUP += 500;
@@ -264,9 +273,7 @@ playerUi.appendChild(playerImage);
     infoLevelProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`;
     ++player.level;
     infoLevelCount.innerHTML = `${player.level}`;
-    infoExperienceCount.innerHTML = `${player.experience}`;
-    menuUpLifeValue.innerHTML = `${player.life}`;
-    menuUpManaValue.innerHTML = `${player.mana}`;
+
 
 
     lvlUpAnim()

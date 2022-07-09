@@ -225,7 +225,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     
     let zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
-    zumbieUi.addEventListener('mousemove', attackEnemy);
+    zumbieUi.addEventListener('click', attackEnemy);
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
 
     function attackEnemy() {
