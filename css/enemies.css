@@ -135,3 +135,12 @@
     animation: atkanime 1s linear;
     margin-left: 90px;
 }
+
+#zumbie-distance-alert {
+    color: white;
+    position: absolute;
+    width: 300px;
+    bottom: 30vh;
+    font-family: 'rh';
+
+}

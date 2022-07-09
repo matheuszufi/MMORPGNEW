@@ -229,7 +229,6 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
 
     function attackEnemy() {
-
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
             ++player.attackCount;
             infoAttackProgressBar.style.width = `${(player.attackCount/player.attackToLVLUP)*100}%`
@@ -249,6 +248,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 zumbieKill();    
               
             }
+        } else {
+            stayCloserToEnemyAlert();
         }
     }
     function zumbieAttackAnim () {
@@ -385,4 +386,15 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     };
     
     
+    function stayCloserToEnemyAlert() {
+        const zumbieDistanceAlert = document.createElement('div');
+        zumbieDistanceAlert.setAttribute('id', 'zumbie-distance-alert');
+        zumbieDistanceAlert.innerHTML = `STAY CLOSER TO THE ENEMY`;
+
+        playerUi.appendChild(zumbieDistanceAlert);
+        setTimeout(zumbieCloseDistanceAlert, 3000);
     
+        function zumbieCloseDistanceAlert() {
+            zumbieDistanceAlert.remove();
+        }
+    }
