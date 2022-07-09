@@ -1,10 +1,10 @@
 let zumbie = {
     name: "Zumbie",
     speed: 1000,
-    maxLife: 240,
-    life: 240,
+    maxLife: 40,
+    life: 40,
     coins: 20,
-    experience: 120,
+    experience: 500,
     loot: {
         leatherBoots: {
             cost: 20,
@@ -27,9 +27,13 @@ const zumbieDivHeM = document.createElement('div');
 zumbieDivHeM.setAttribute('id', 'zumbie-div-hem');
 zumbieUi.appendChild(zumbieDivHeM);
 
+const zumbieMaxHealth = document.createElement('div');
+zumbieMaxHealth.setAttribute('id', 'zumbie-max-health');
+zumbieDivHeM.appendChild(zumbieMaxHealth);
+
 const zumbieHealth = document.createElement('div');
 zumbieHealth.setAttribute("id", "zumbie-health");
-zumbieDivHeM.appendChild(zumbieHealth);
+zumbieMaxHealth.appendChild(zumbieHealth);
 
 
 
@@ -38,8 +42,8 @@ zumbieImage.setAttribute("id", "zumbie-image");
 zumbieUi.appendChild(zumbieImage);
 
 
-let zumbiePosX = 0;
-let zumbiePosY = 100;
+let zumbiePosX = 300;
+let zumbiePosY = 300;
 
 zumbieUi.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
 
@@ -224,8 +228,16 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
 
     function attackEnemy() {
+
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
-            zumbie.life -= 20;
+            ++player.attackCount;
+            infoAttackProgressBar.style.width = `${(player.attackCount/player.attackToLVLUP)*100}%`
+            if (player.attackCount >= player.attackToLVLUP) {
+                attackLevelUp();
+            }
+   
+
+            zumbie.life -= player.attack;
             lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${lifePercentual}%`;
 
@@ -238,15 +250,23 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         }
     }
 
+
     function attackBowEnemy() {
 
     }
 
     var zumbieIsDead = false;
 
+
     function zumbieKill() {
         zumbieUi.style.display = "none";
-        
+        player.experience += zumbie.experience;
+        infoExperienceProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`
+        infoLevelProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`
+        infoExperienceCount.innerHTML = `${player.experience}`
+        if(player.experience >= player.toLVLUP) {
+            levelUp();
+        }
         setTimeout(zumbieHidden, 4000);
 
         const zumbieDeadUi = document.createElement('div');
@@ -260,11 +280,11 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieDeadUi.style.display = "none";
             player.coins += zumbie.coins;
             menuDownCoinsContent.innerHTML = `${player.coins}`
-            document.querySelector(".loot-slot")[0].appendChild("OIOIOI");
+         
             zumbieShowLoot();
         }
 
-        player.experience += zumbie.experience;
+ 
     }
 
 
@@ -288,3 +308,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbieHealth.style.width = `${lifePercentual}%`;
 
     }
+
+
+
+    
+    
+    
+    

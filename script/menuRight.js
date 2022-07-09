@@ -9,6 +9,11 @@ menuRightOptionsBtn.setAttribute('id', "menu-right-options-btn");
 menuRightOptions.appendChild(menuRightOptionsBtn);
 menuRightOptionsBtn.innerHTML = "OPTIONS"
 
+const menuRightInfosBtn = document.createElement('button');
+menuRightInfosBtn.setAttribute('id', "menu-right-infos-btn");
+menuRightOptions.appendChild(menuRightInfosBtn);
+menuRightInfosBtn.innerHTML = "INFOS"
+
 const menuRightPlayerInfosBtn = document.createElement('button');
 menuRightPlayerInfosBtn.setAttribute('id', "menu-right-player-infos-btn");
 menuRightOptions.appendChild(menuRightPlayerInfosBtn);

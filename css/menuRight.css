@@ -5,14 +5,14 @@
 
 #menu-right-options{
     width: 100%;
-    height: 65px;
+    height: 95px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
     border-left: 1px solid rgb(100, 100, 100);
     border-top: 1px solid rgb(100, 100, 100);
 }
 
-#menu-right-options-btn ,#menu-right-player-infos-btn, #menu-right-store-btn, #menu-right-donation-btn{
+#menu-right-options-btn ,#menu-right-player-infos-btn, #menu-right-store-btn, #menu-right-donation-btn,#menu-right-infos-btn{
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
     border-left: 1px solid rgb(100, 100, 100);
@@ -26,6 +26,8 @@
 #menu-right-options-btn:active{border-bottom: 1px solid rgb(100, 100, 100);border-right: 1px solid rgb(100, 100, 100);border-left: 1px solid rgb(30, 30, 30);border-top: 1px solid rgb(30, 30, 30);}
 #menu-right-player-infos-btn:active{border-bottom: 1px solid rgb(100, 100, 100);border-right: 1px solid rgb(100, 100, 100);border-left: 1px solid rgb(30, 30, 30);border-top: 1px solid rgb(30, 30, 30);}
 #menu-right-store-btn:active{border-bottom: 1px solid rgb(100, 100, 100);border-right: 1px solid rgb(100, 100, 100);border-left: 1px solid rgb(30, 30, 30);border-top: 1px solid rgb(30, 30, 30);}
+#menu-right-infos-btn:active{border-bottom: 1px solid rgb(100, 100, 100);border-right: 1px solid rgb(100, 100, 100);border-left: 1px solid rgb(30, 30, 30);border-top: 1px solid rgb(30, 30, 30);}
+#menu-right-donation-btn:active{border-bottom: 1px solid rgb(100, 100, 100);border-right: 1px solid rgb(100, 100, 100);border-left: 1px solid rgb(30, 30, 30);border-top: 1px solid rgb(30, 30, 30);}
 
 
 
@@ -141,7 +143,7 @@ font-family: 'rh';
 #info-experience-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-experience-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-experience-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-experience-progress-bar {width: 80%; height: 5px; background-color: rgba(255, 0, 0, 0.6);}
+#info-experience-progress-bar {width: 0%; height: 5px; background-color: rgba(255, 0, 0, 0.6);}
 
 /*  LEVEL */
 /*  LEVEL */
@@ -149,7 +151,7 @@ font-family: 'rh';
 #info-level-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-level-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-level-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-level-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-level-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 
 /*  ATTACK */
@@ -158,7 +160,7 @@ font-family: 'rh';
 #info-attack-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-attack-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-attack-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-attack-progress-bar {width: 80%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-attack-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  SPEED */
 /*  SPEED */
@@ -166,7 +168,7 @@ font-family: 'rh';
 #info-speed-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-speed-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-speed-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-speed-progress-bar {width: 80%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-speed-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 
 /*  FIRE */
@@ -175,7 +177,7 @@ font-family: 'rh';
 #info-fire-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-fire-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-fire-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-fire-progress-bar {width: 50%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-fire-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  ICE */
 /*  ICE */
@@ -183,7 +185,7 @@ font-family: 'rh';
 #info-ice-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-ice-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-ice-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-ice-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-ice-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  ENERGY */
 /*  ENERGY */
@@ -191,7 +193,7 @@ font-family: 'rh';
 #info-energy-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-energy-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-energy-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-energy-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-energy-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  TERRA */
 /*  TERRA */
@@ -199,7 +201,7 @@ font-family: 'rh';
 #info-terra-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-terra-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-terra-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-terra-progress-bar {width: 60%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-terra-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  DEATH */
 /*  DEATH */
@@ -207,7 +209,7 @@ font-family: 'rh';
 #info-death-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-death-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-death-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-death-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-death-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  HOLY */
 /*  HOLY */
@@ -215,7 +217,7 @@ font-family: 'rh';
 #info-holy-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-holy-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-holy-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-holy-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-holy-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  DISTANCE */
 /*  DISTANCE */
@@ -223,7 +225,7 @@ font-family: 'rh';
 #info-distance-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-distance-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-distance-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-distance-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-distance-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 /*  DEFENSE */
 /*  DEFENSE */
@@ -231,7 +233,7 @@ font-family: 'rh';
 #info-defense-up { width: 98%; height: 10px; display: flex; justify-content: space-between;}
 #info-defense-down {width: 100%; height: 10px; display: flex; justify-content: center; align-items: center;}
 #info-defense-total-bar {width: 98%; height: 5px; border: 1px solid black; margin-top: 2px; background-color: rgba(36, 36, 36, 0.6);}
-#info-defense-progress-bar {width: 90%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
+#info-defense-progress-bar {width: 0%; height: 5px; background-color: rgba(38, 186, 22, 0.72);}
 
 
 

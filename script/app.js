@@ -1,11 +1,25 @@
 let player = {
     name: "Matheus",
-    speed: 800,
-    attack: 10,
+   
+
     coins: 0,
     level: 1,
     experience: 0,
-   
+    toLVLUP: 500,
+
+    life: 180,
+    maxLife: 180,
+    mana: 240,
+    maxMana: 240,
+    attack: 4,
+
+    speed: 800,
+    speedCount: 0,
+    speedToLVLUP: 100,
+
+    attackLevel: 1,
+    attackCount: 0,
+    attackToLVLUP: 10
 }
 
 const world = document.getElementById('world');
@@ -42,6 +56,8 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
+                player.speedCount = player.speedCount + 1;
+                infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 setTimeout(cdWalk, player.speed);
             }    
         }   
@@ -55,6 +71,8 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
+                player.speedCount = player.speedCount + 1;
+                infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 setTimeout(cdWalk, player.speed);
             }
         }
@@ -68,6 +86,8 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
+                player.speedCount = player.speedCount + 1;
+                infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 setTimeout(cdWalk, player.speed);  
             }    
         } 
@@ -81,6 +101,8 @@ document.addEventListener('keydown', (event) => {
             cooldownWalk = true;
             zumbieDistanceX = zumbiePosX - playerPosX
             zumbieDistanceY = zumbiePosY - playerPosY
+            player.speedCount = player.speedCount + 1;
+            infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
             setTimeout(cdWalk, player.speed);      
         }
         }
@@ -212,9 +234,50 @@ playerUi.appendChild(playerImage);
 
 
 
+  function levelUp() {
+    player.maxLife += 10; 
+    player.maxMana += 15;
+    player.life = player.maxLife;
+    player.mana = player.maxMana; 
+    player.experience = 0;
+    player.toLVLUP += 500;
+    infoExperienceProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`;
+    infoLevelProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`;
+    ++player.level;
+    infoLevelCount.innerHTML = `${player.level}`;
+    infoExperienceCount.innerHTML = `${player.experience}`;
 
 
+    lvlUpAnim()
+
+}
+  
+
+function attackLevelUp() {
+    ++player.attackLevel;
+    infoAttackCount.innerHTML = `${player.attackLevel}`;
+    player.attackCount = 0;
+    player.attackToLVLUP =  player.attackToLVLUP * player.attackLevel;
+    infoAttackProgressBar.style.width = `${(player.attackCount / player.attackToLVLUP) * 100}%`
+}
+
+function lvlUpAnim() {
+    const lvlUpAnimation = document.createElement('div');
+    lvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    lvlUpAnimation.innerHTML = "LEVEL UP!"
+    playerUi.appendChild(lvlUpAnimation);
+    setTimeout(closeLvlUpAnim, 3000);
+
+    function closeLvlUpAnim() {
+        lvlUpAnimation.remove();
+    }
+}
 
 
+// if(player.speedCount >= player.attackToLVLUP) {
+//     speedLvlUp();
+// }
 
-
+// function speedLvlUp() {
+    
+// }

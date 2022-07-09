@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {font-family: martel; src: url(../martel.ttf);}
 @font-face {font-family: tahoma8; src: url(../tahoma.ttf);}
+@font-face {font-family: 1up; src: url(../1up.ttf);}
 
 *{padding: 0; margin: 0; box-sizing: border-box;}
 
@@ -71,10 +72,25 @@ body {overflow: hidden;}
 }
 
 #menu-right {
-    width: 200px;
+    width: 180px;
     height: 100vh;
     background: url(../imgs/backgroundStyleTibia.png);
     position: fixed;
     right: 0;
     border-left: 1px solid rgb(152, 152, 152);
+}
+
+#wooden-floor {
+    width: 200px;
+    height: 385px;
+    position: absolute;
+    background: url(../imgs/woodenFloor.bmp);
+}
+
+#lvl-up-animation {
+    width: 100px;
+    height: 100px;
+    font-family: '1up';
+    color: yellow
+
 }

@@ -25,11 +25,18 @@
     justify-content: space-evenly;
 }
 
-#zumbie-health {
+#zumbie-max-health {
 
+    width: 100%;
     height: 5px;
-    background-color: green;
+    background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid black;
+}
+
+#zumbie-health {
+    background-color: green;
+    height: 100%;
+ 
 }
 
 #zumbie-mana {
