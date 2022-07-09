@@ -38,6 +38,18 @@ function openStore() {
     divStore.style.display = "flex";
 }
 
+
+
+const menuRightDonationBtn = document.createElement('button');
+menuRightDonationBtn.setAttribute('id', "menu-right-donation-btn");
+menuRightOptions.appendChild(menuRightDonationBtn);
+menuRightDonationBtn.innerHTML = "DONATION"
+menuRightDonationBtn.addEventListener('click', openDonation);
+
+function openDonation() {
+    // divDonation.style.display = "flex";
+}
+
 // PLAYER INFOS PLAYER INFOS //
 // PLAYER INFOS PLAYER INFOS //
 const playerInfosDiv = document.createElement('div');

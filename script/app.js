@@ -1,7 +1,8 @@
 let player = {
     name: "Matheus",
     speed: 800,
-    attack: 10
+    attack: 10,
+    coins: 0
 }
 
 const world = document.getElementById('world');

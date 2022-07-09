@@ -42,7 +42,7 @@
 #zumbie-image {
     width: 100%;
     height: 64px;
-
+    z-index: 90;
     background: url(../imgs/zumbie/down3.png);
     background-repeat: no-repeat;
     background-size: 50px;
@@ -55,8 +55,7 @@
     width: 100px;
     height: 100px;
     background: url(../imgs/zumbie/dead.png);
-    position: absolute;
-    margin-top: -20px;  
+    position: absolute; 
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: 50%;

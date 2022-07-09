@@ -12,7 +12,7 @@
     border-top: 1px solid rgb(150, 150, 150);
 }
 
-#menu-right-options-btn ,#menu-right-player-infos-btn, #menu-right-store-btn{
+#menu-right-options-btn ,#menu-right-player-infos-btn, #menu-right-store-btn, #menu-right-donation-btn{
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
     border-left: 1px solid rgb(150, 150, 150);

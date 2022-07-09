@@ -155,13 +155,9 @@ function zumbieAnimaRightEnd () {
 let zumbieDistanceX = zumbiePosX - playerPosX;
 let zumbieDistanceY = zumbiePosY - playerPosY;
 
-// while (!zumbieIsDead) {
-    var intervalZumbieWalkDefault = setInterval(zumbieWalkDefault, 2800);
-// }
-    
- 
 
-    function zumbieWalkDefault() {
+    var intervalZumbieWalkDefault = setInterval(zumbieWalk, 2800);
+    function zumbieWalk() {
         let minZumbie = 1;
         let maxZumbie = 8;
         let randwalkZumbie = Math.floor(Math.random() * (maxZumbie - minZumbie) + minZumbie);
@@ -227,7 +223,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
             if(zumbie.life <= 0) {
                 zumbieIsDead = true;
-                clearInterval(intervalZumbieWalkDefault);
+     
                 zumbieKill();    
               
             }
@@ -241,34 +237,37 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     var zumbieIsDead = false;
 
     function zumbieKill() {
-        
-
-        zumbieName.style.opacity = "0";
-        zumbieDivHeM.style.opacity = "0";
-        zumbieImage.style.background = "url(../imgs/zumbie/dead.png)"
-        zumbieImage.style.backgroundSize = "50px"
-        zumbieImage.style.backgroundRepeat = "no-repeat"
-        zumbieImage.style.marginLeft = "20px"
-        zumbieIsDead = true;
+        zumbieUi.style.display = "none";
         setTimeout(zumbieHidden, 4000);
+        const zumbieDead = document.createElement('div');
+        zumbieDead.setAttribute('id', 'zumbie-dead');
+        world.appendChild(zumbieDead);
+        zumbieDead.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
+
+        zumbieDead.addEventListener('click', zumbieLoot);
+        function zumbieLoot() {
+            zumbieDead.style.display = "none";
+        }
     }
 
+
+
+
     function zumbieHidden () {
-        zumbieUi.style.display = "none";
-        setTimeout(zumbieSpawn, 4000);
+       
+        setTimeout(zumbieSpawn, 1000);
     }
 
     function zumbieSpawn(){
         zumbieUi.style.display = "block";
-        zumbieImage.style.marginLeft = "0px"
         zumbieIsDead = false;
-        zumbieName.style.opacity = "1";
-        zumbieDivHeM.style.opacity = "1";
         zumbieImage.style.background = "url(../imgs/zumbie/down3.png)"
         zumbieImage.style.backgroundSize = "50px"
         zumbieImage.style.backgroundRepeat = "no-repeat"
+        zumbieImage.style.backgroundPosition = "50%"
+
         zumbie.life = zumbie.maxLife;
         lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
         zumbieHealth.style.width = `${lifePercentual}%`;
-        intervalZumbieWalkDefault = setInterval(zumbieWalkDefault, 1000);
+
     }
