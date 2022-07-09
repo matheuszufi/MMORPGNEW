@@ -357,7 +357,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     };
     
 
-    setInterval(zumbieDamage, 1000);
+    setInterval(zumbieDamage, 2000);
     
     function zumbieDamage() {
             if (!zumbieIsDead && zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100){
