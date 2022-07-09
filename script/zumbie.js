@@ -270,6 +270,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     var zumbieIsDead = false;
 
 
+
     function zumbieKill() {
         
         zumbieUi.style.display = "none";
@@ -294,8 +295,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieDeadUi.style.display = "none";
             player.coins += zumbie.coins;
             menuDownCoinsContent.innerHTML = `${player.coins}`
-         
+            zumbieLootCoinAnime();
             zumbieShowLoot();
+            
+            return zumbieDeadUi;
         }
 
  
@@ -338,7 +341,18 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     };
 
 
+
+    function zumbieLootCoinAnime() {
+        const zumbieLootCoinAnimation = document.createElement('div');
+        zumbieLootCoinAnimation.setAttribute('id', 'zumbie-lootcoin-animation');
+        zumbieLootCoinAnimation.innerHTML = `+${zumbie.coins}`;
+
+        playerUi.appendChild(zumbieLootCoinAnimation);
+        setTimeout(zumbieCloseLootCoinAnimation, 1000);
     
-    
+        function zumbieCloseLootCoinAnimation() {
+            zumbieLootCoinAnimation.remove();
+        }
+    };
     
     
