@@ -48,7 +48,6 @@ let zumbiePosY = 300;
 
 zumbieUi.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
 
-let cooldownZumbieWalk = false;
 
 // Animação do Sprite
 //DOWN
@@ -169,7 +168,7 @@ let zumbieDistanceX = zumbiePosX - playerPosX;
 let zumbieDistanceY = zumbiePosY - playerPosY;
 
 
-    var intervalZumbieWalkDefault = setInterval(zumbieWalk, 2800);
+    var zumbieIntervalWalk = setInterval(zumbieWalk, 2800);
     function zumbieWalk() {
         let minZumbie = 1;
         let maxZumbie = 8;
@@ -249,7 +248,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
               
             }
         } else {
-            stayCloserToEnemyAlert();
+            zumbieStayCloserToEnemyAlert();
         }
     }
     function zumbieAttackAnim () {
@@ -386,7 +385,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     };
     
     
-    function stayCloserToEnemyAlert() {
+    function zumbieStayCloserToEnemyAlert() {
         const zumbieDistanceAlert = document.createElement('div');
         zumbieDistanceAlert.setAttribute('id', 'zumbie-distance-alert');
         zumbieDistanceAlert.innerHTML = `STAY CLOSER TO THE ENEMY`;

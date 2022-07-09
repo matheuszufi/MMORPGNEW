@@ -58,7 +58,7 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
-                player.speedCount = player.speedCount + 1;
+                player.speedCount = player.speedCount + 10;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 if(player.speedCount >= player.speedToLVLUP) {
                     speedLevelUp();
@@ -76,7 +76,7 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
-                player.speedCount = player.speedCount + 1;
+                player.speedCount = player.speedCount + 10;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 if(player.speedCount >= player.speedToLVLUP) {
                     speedLevelUp();
@@ -94,7 +94,7 @@ document.addEventListener('keydown', (event) => {
                 cooldownWalk = true;
                 zumbieDistanceX = zumbiePosX - playerPosX
                 zumbieDistanceY = zumbiePosY - playerPosY
-                player.speedCount = player.speedCount + 1;
+                player.speedCount = player.speedCount + 10;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
                 if(player.speedCount >= player.speedToLVLUP) {
                     speedLevelUp();
@@ -112,7 +112,7 @@ document.addEventListener('keydown', (event) => {
             cooldownWalk = true;
             zumbieDistanceX = zumbiePosX - playerPosX
             zumbieDistanceY = zumbiePosY - playerPosY
-            player.speedCount = player.speedCount + 1;
+            player.speedCount = player.speedCount + 10;
             infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
             if(player.speedCount >= player.speedToLVLUP) {
                 speedLevelUp();
@@ -257,15 +257,16 @@ playerUi.appendChild(playerImage);
     player.maxLife += 5; 
     player.maxMana += 15;
     player.life = player.maxLife;
+    player.mana = player.maxMana;
 
     playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
     menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
     menuUpLifeValue.innerHTML = `${player.life}`;
-
-
-
-
-
+    
+    menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
+    playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+    menuUpManaValue.innerHTML = `${player.mana}`;
+     
     player.mana = player.maxMana; 
     player.experience = 0;
     player.toLVLUP += 500;
@@ -273,13 +274,19 @@ playerUi.appendChild(playerImage);
     infoLevelProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`;
     ++player.level;
     infoLevelCount.innerHTML = `${player.level}`;
-
-
-
     lvlUpAnim()
-
 }
   
+function lvlUpAnim() {
+    const lvlUpAnimation = document.createElement('div');
+    lvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    lvlUpAnimation.innerHTML = "LEVEL UP!"
+    playerUi.appendChild(lvlUpAnimation);
+    setTimeout(closeLvlUpAnim, 3000);
+    function closeLvlUpAnim() {
+        lvlUpAnimation.remove();
+    }
+}
 
 function attackLevelUp() {
     ++player.attackLevel;
@@ -287,20 +294,22 @@ function attackLevelUp() {
     player.attackCount = 0;
     player.attackToLVLUP =  player.attackToLVLUP * player.attackLevel;
     infoAttackProgressBar.style.width = `${(player.attackCount / player.attackToLVLUP) * 100}%`
+    player.attack = player.attack + 1;
+    atkLvlUpAnim();
 }
 
-function lvlUpAnim() {
-    const lvlUpAnimation = document.createElement('div');
-    lvlUpAnimation.setAttribute('id', 'lvl-up-animation');
-    lvlUpAnimation.innerHTML = "LEVEL UP!"
- 
-    playerUi.appendChild(lvlUpAnimation);
-    setTimeout(closeLvlUpAnim, 3000);
-
-    function closeLvlUpAnim() {
-        lvlUpAnimation.remove();
+function atkLvlUpAnim() {
+    const atkLvlUpAnimation = document.createElement('div');
+    atkLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    atkLvlUpAnimation.innerHTML = "ATTACK LEVEL UP!"
+    playerUi.appendChild(atkLvlUpAnimation);
+    setTimeout(closeatkLvlUpAnim, 3000);
+    function closeatkLvlUpAnim() {
+        atkLvlUpAnimation.remove();
     }
 }
+
+
 
 
 function speedLevelUp() {
@@ -310,9 +319,22 @@ function speedLevelUp() {
     player.speedCount = 0;
     player.speedToLVLUP = 100 * player.speedLevel;
     infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
-         
+        speedLevelUpAnim(); 
 }
 
+
+function speedLevelUpAnim() {
+    const speedLvlUpAnimation = document.createElement('div');
+    speedLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    speedLvlUpAnimation.innerHTML = "SPEED LEVEL UP!"
+ 
+    playerUi.appendChild(speedLvlUpAnimation);
+    setTimeout(closeLvlUpAnim, 3000);
+
+    function closeLvlUpAnim() {
+        speedLvlUpAnimation.remove();
+    }
+}
 
 
 
