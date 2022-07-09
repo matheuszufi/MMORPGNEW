@@ -38,11 +38,30 @@
     border-right: 1px solid rgb(30, 30, 30);
     border-left: 1px solid rgb(150, 150, 150);
     border-top: 1px solid rgb(150, 150, 150);
-    overflow: hidden;
+    overflow-y: scroll;
     transition: 0.2s;
     display: flex;
     flex-direction: column;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f113;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(30, 30, 30);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 
 #player-infos-header {
     width: 100%;
