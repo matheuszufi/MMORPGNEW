@@ -115,7 +115,7 @@
     align-items:flex-start;
     color: gold;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 16px;
     animation: atkanime 1s linear;
     transform: translateX(180px);
 }

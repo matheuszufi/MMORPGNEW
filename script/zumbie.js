@@ -1,8 +1,8 @@
 let zumbie = {
     name: "Zumbie",
     speed: 1000,
-    maxLife: 40,
-    life: 40,
+    maxLife: 240,
+    life: 240,
     coins: 20,
     experience: 500,
     loot: {
