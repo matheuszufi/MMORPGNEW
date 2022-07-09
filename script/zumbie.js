@@ -225,7 +225,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     
     let zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
-    zumbieUi.addEventListener('click', attackEnemy);
+    zumbieUi.addEventListener('mousemove', attackEnemy);
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
 
     function attackEnemy() {
@@ -360,7 +360,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     setInterval(zumbieDamage, 1000);
     
     function zumbieDamage() {
-            if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100){
+            if (!zumbieIsDead && zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100){
                 player.life -= zumbie.attack;
                 playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
                 menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`

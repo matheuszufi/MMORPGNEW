@@ -48,7 +48,7 @@ document.addEventListener('keydown', (event) => {
     btnD = "d";
     btnS = "s";
  
-    if(event.key === btnA) {
+    if(event.key === btnA || event.keyCode === 37) {
         if (playerPosY > 0) {
             if(!cooldownWalk){
                 animaLeft();
@@ -66,7 +66,7 @@ document.addEventListener('keydown', (event) => {
                 setTimeout(cdWalk, player.speed);
             }    
         }   
-    } else if (event.key === btnW) {
+    } else if (event.key === btnW || event.keyCode === 38) {
         if(playerPosX > 0) {
             if(!cooldownWalk){
                 animaUp();
@@ -84,7 +84,7 @@ document.addEventListener('keydown', (event) => {
                 setTimeout(cdWalk, player.speed);
             }
         }
-    } else if (event.key === btnD) {
+    } else if (event.key === btnD || event.keyCode === 39) {
         if(playerPosY < 10000) {
             if(!cooldownWalk){
                 animaRight();
@@ -102,7 +102,7 @@ document.addEventListener('keydown', (event) => {
                 setTimeout(cdWalk, player.speed);  
             }    
         } 
-    } else if (event.key === btnS) {
+    } else if (event.key === btnS || event.keyCode === 40) {
         if(playerPosX < 10000) {
             if(!cooldownWalk){
             animaDown();
@@ -254,7 +254,7 @@ playerUi.appendChild(playerImage);
 
 
   function levelUp() {
-    player.maxLife += 10; 
+    player.maxLife += 5; 
     player.maxMana += 15;
     player.life = player.maxLife;
     player.mana = player.maxMana; 
@@ -265,6 +265,8 @@ playerUi.appendChild(playerImage);
     ++player.level;
     infoLevelCount.innerHTML = `${player.level}`;
     infoExperienceCount.innerHTML = `${player.experience}`;
+    menuUpLifeValue.innerHTML = `${player.life}`;
+    menuUpManaValue.innerHTML = `${player.mana}`;
 
 
     lvlUpAnim()
@@ -303,3 +305,35 @@ function speedLevelUp() {
     infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
          
 }
+
+
+
+
+function restoreMana() {
+    
+    if (player.mana < player.maxMana) {
+        player.mana += 2;
+
+        menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
+        menuUpManaValue.innerHTML = `${player.mana}`;
+        playerMana.width = `${(player.mana / player.maxMana) * 100}%`
+
+        }
+    }
+    
+    setInterval(restoreMana, 2000);
+
+function restoreLife() {
+
+    if (player.life < player.maxLife) {
+        player.life += 2;
+        
+        menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
+        menuUpLifeValue.innerHTML = `${player.life}`;
+        playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
+
+
+        }
+    }
+    
+    setInterval(restoreLife, 4000);
