@@ -236,7 +236,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 attackLevelUp();
             }
    
-
+            zumbieAttackAnim();
+            
             zumbie.life -= player.attack;
             lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${lifePercentual}%`;
@@ -249,7 +250,18 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             }
         }
     }
+    function zumbieAttackAnim () {
+        const zumbieAttackAnimation = document.createElement('div');
+        zumbieAttackAnimation.setAttribute('id', 'zumbie-atk-animation');
+        zumbieAttackAnimation.innerHTML = `-${player.attack}`
 
+        zumbieUi.appendChild(zumbieAttackAnimation);
+        setTimeout(zumbieCloseAttackAnimation, 1000);
+    
+        function zumbieCloseAttackAnimation() {
+            zumbieAttackAnimation.remove();
+        }      
+    }
 
     function attackBowEnemy() {
 
@@ -259,11 +271,13 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
 
     function zumbieKill() {
+        
         zumbieUi.style.display = "none";
         player.experience += zumbie.experience;
         infoExperienceProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`
         infoLevelProgressBar.style.width = `${(player.experience / player.toLVLUP) * 100}%`
         infoExperienceCount.innerHTML = `${player.experience}`
+        zumbieExpAnimation();
         if(player.experience >= player.toLVLUP) {
             levelUp();
         }
@@ -309,6 +323,19 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
     }
 
+
+    function zumbieExpAnimation() {
+        const zumbieExpAnimation = document.createElement('div');
+        zumbieExpAnimation.setAttribute('id', 'zumbie-exp-animation');
+        zumbieExpAnimation.innerHTML = `+${zumbie.experience}`
+
+        playerUi.appendChild(zumbieExpAnimation);
+        setTimeout(zumbieCloseExpAnimation, 1000);
+    
+        function zumbieCloseExpAnimation() {
+            zumbieExpAnimation.remove();
+        }
+    };
 
 
     

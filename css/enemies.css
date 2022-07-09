@@ -67,3 +67,40 @@
     background-size: 50px;
     background-position: 50%;
 }
+
+#zumbie-exp-animation{
+    width: 100px;
+    height: 100px;
+    font-family: 'rh';
+    position: absolute;
+    color: white;
+    font-weight: 700;
+    animation: xpanime 1s linear;
+}
+
+@keyframes xpanime {
+    0% {transform: translateY(-20px);}
+    100% {transform: translateY(-60px); opacity: 0a;}
+    
+}
+
+#zumbie-atk-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: red;
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+   
+}
+
+@keyframes atkanime {
+    0% {transform: translateY(-20px);}
+    100% {transform: translateY(-60px); opacity: 0a;}
+}
