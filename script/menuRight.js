@@ -534,6 +534,11 @@ const storeContentMenuRight = document.createElement('div');
 storeContentMenuRight.setAttribute('id', 'store-content-menu-right');
 storeDivMenuRight.appendChild(storeContentMenuRight);
 
+const storeH1MenuRight = document.createElement('h1');
+storeH1MenuRight.setAttribute('id', 'store-h1-menu-right');
+storeContentMenuRight.appendChild(storeH1MenuRight);
+storeH1MenuRight.innerHTML = "Premium Store"
+
 const storeImageMenuRight = document.createElement('img');
 storeImageMenuRight.setAttribute('src', '../imgs/Store_Icon.gif');
 storeImageMenuRight.setAttribute('id', 'store-image-menu-right');

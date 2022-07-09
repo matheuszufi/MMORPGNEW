@@ -4,7 +4,8 @@ let zumbie = {
     maxLife: 240,
     life: 240,
     coins: 20,
-    experience: 500,
+    experience: 250,
+    attack: 5,
     loot: {
         leatherBoots: {
             cost: 20,
@@ -222,7 +223,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         }
     } 
     
-    let lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+    let zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
     zumbieUi.addEventListener('click', attackEnemy);
     zumbieUi.addEventListener('dblclick', attackBowEnemy)
@@ -239,8 +240,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieAttackAnim();
             
             zumbie.life -= player.attack;
-            lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
-            zumbieHealth.style.width = `${lifePercentual}%`;
+            zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+            zumbieHealth.style.width = `${zumbieLifePercentual}%`;
 
             if(zumbie.life <= 0) {
                 zumbieIsDead = true;
@@ -321,8 +322,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbieImage.style.backgroundPosition = "50%"
 
         zumbie.life = zumbie.maxLife;
-        lifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
-        zumbieHealth.style.width = `${lifePercentual}%`;
+        zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+        zumbieHealth.style.width = `${zumbieLifePercentual}%`;
 
     }
 
@@ -354,5 +355,34 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieLootCoinAnimation.remove();
         }
     };
+    
+
+    setInterval(zumbieDamage, 1000);
+    
+    function zumbieDamage() {
+            if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100){
+                player.life -= zumbie.attack;
+                playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
+                menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
+                menuUpLifeValue.innerHTML = `${player.life}`;
+                zumbieAnimaDamage();
+         
+            }       
+    
+    }
+
+    function zumbieAnimaDamage(){
+        const zumbieDamageAnimation = document.createElement('div');
+        zumbieDamageAnimation.setAttribute('id', 'zumbie-damage-animation');
+        zumbieDamageAnimation.innerHTML = `-${zumbie.attack}`;
+
+        playerUi.appendChild(zumbieDamageAnimation);
+        setTimeout(zumbieCloseDamageAnimation, 1000);
+    
+        function zumbieCloseDamageAnimation() {
+            zumbieDamageAnimation.remove();
+        }
+    };
+    
     
     

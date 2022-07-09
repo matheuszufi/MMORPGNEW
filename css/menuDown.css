@@ -5,6 +5,7 @@
     bottom: 0;
     height: 120px;
     position: fixed;
+    box-shadow: 4px 4px 4px black;
 
     /* background:  url(../imgs/backgroundStyleTibia.png); */
     display: flex;

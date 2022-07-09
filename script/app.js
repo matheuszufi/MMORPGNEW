@@ -11,15 +11,17 @@ let player = {
     maxLife: 180,
     mana: 240,
     maxMana: 240,
-    attack: 4,
+    
 
     speed: 800,
+    speedLevel: 1,
     speedCount: 0,
     speedToLVLUP: 100,
 
+    attack: 4,
     attackLevel: 1,
     attackCount: 0,
-    attackToLVLUP: 10
+    attackToLVLUP: 100
 }
 
 const world = document.getElementById('world');
@@ -58,6 +60,9 @@ document.addEventListener('keydown', (event) => {
                 zumbieDistanceY = zumbiePosY - playerPosY
                 player.speedCount = player.speedCount + 1;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
+                if(player.speedCount >= player.speedToLVLUP) {
+                    speedLevelUp();
+                }
                 setTimeout(cdWalk, player.speed);
             }    
         }   
@@ -73,6 +78,9 @@ document.addEventListener('keydown', (event) => {
                 zumbieDistanceY = zumbiePosY - playerPosY
                 player.speedCount = player.speedCount + 1;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
+                if(player.speedCount >= player.speedToLVLUP) {
+                    speedLevelUp();
+                }
                 setTimeout(cdWalk, player.speed);
             }
         }
@@ -88,6 +96,9 @@ document.addEventListener('keydown', (event) => {
                 zumbieDistanceY = zumbiePosY - playerPosY
                 player.speedCount = player.speedCount + 1;
                 infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
+                if(player.speedCount >= player.speedToLVLUP) {
+                    speedLevelUp();
+                }
                 setTimeout(cdWalk, player.speed);  
             }    
         } 
@@ -103,6 +114,9 @@ document.addEventListener('keydown', (event) => {
             zumbieDistanceY = zumbiePosY - playerPosY
             player.speedCount = player.speedCount + 1;
             infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
+            if(player.speedCount >= player.speedToLVLUP) {
+                speedLevelUp();
+            }
             setTimeout(cdWalk, player.speed);      
         }
         }
@@ -124,9 +138,14 @@ const playerDivHeM = document.createElement('div');
 playerDivHeM.setAttribute('id', 'player-div-hem');
 playerUi.appendChild(playerDivHeM);
 
+const playerMaxHealth = document.createElement('div');
+playerMaxHealth.setAttribute("id", "player-max-health");
+playerDivHeM.appendChild(playerMaxHealth);
+
+
 const playerHealth = document.createElement('div');
 playerHealth.setAttribute("id", "player-health");
-playerDivHeM.appendChild(playerHealth);
+playerMaxHealth.appendChild(playerHealth);
 
 const playerMana = document.createElement('div');
 playerMana.setAttribute("id", "player-mana");
@@ -275,3 +294,12 @@ function lvlUpAnim() {
 }
 
 
+function speedLevelUp() {
+    ++player.speedLevel;
+    infoSpeedCount.innerHTML = `${player.speedLevel}`;
+    player.speed -= 10;
+    player.speedCount = 0;
+    player.speedToLVLUP = 100 * player.speedLevel;
+    infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
+         
+}

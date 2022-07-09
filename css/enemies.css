@@ -97,6 +97,7 @@
     font-size: 20px;
     animation: atkanime 1s linear;
     transform: translateX(180px);
+    
    
 }
 
@@ -118,4 +119,19 @@
     font-size: 16px;
     animation: atkanime 1s linear;
     transform: translateX(180px);
+}
+
+#zumbie-damage-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: red;
+    font-weight: bolder;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    margin-left: 90px;
 }
