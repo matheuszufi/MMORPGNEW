@@ -265,6 +265,7 @@ function lvlUpAnim() {
     const lvlUpAnimation = document.createElement('div');
     lvlUpAnimation.setAttribute('id', 'lvl-up-animation');
     lvlUpAnimation.innerHTML = "LEVEL UP!"
+ 
     playerUi.appendChild(lvlUpAnimation);
     setTimeout(closeLvlUpAnim, 3000);
 
@@ -274,10 +275,3 @@ function lvlUpAnim() {
 }
 
 
-// if(player.speedCount >= player.attackToLVLUP) {
-//     speedLvlUp();
-// }
-
-// function speedLvlUp() {
-    
-// }

@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @font-face {font-family: martel; src: url(../martel.ttf);}
 @font-face {font-family: tahoma8; src: url(../tahoma.ttf);}
-@font-face {font-family: 1up; src: url(../1up.ttf);}
+@font-face {font-family: up; src: url(../1up.ttf);}
 
 *{padding: 0; margin: 0; box-sizing: border-box;}
 
@@ -90,7 +90,10 @@ body {overflow: hidden;}
 #lvl-up-animation {
     width: 100px;
     height: 100px;
-    font-family: '1up';
-    color: yellow
+    font-family: 'up';
+    color: white;
+    font-size: 32px;
+    text-shadow: 2px 2px 2px black;
+    margin-top: -75px;
 
 }
