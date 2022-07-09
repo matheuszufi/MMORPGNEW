@@ -18,16 +18,16 @@
     background: url(../imgs/backgroundStyleTibia.png);
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.48);
 }
 #header-menu-left {
     width: 100%;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     height: 80px;
     display: flex;
     align-items: center;
@@ -49,8 +49,8 @@ height: 50px;
     height: 200px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     display: flex;
     justify-content: end;
 }
@@ -59,14 +59,14 @@ height: 50px;
   
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     width: 50px;
 }
 .weapon-set-item {
     width: 50px;
     height: 50px;
-    border-bottom: 1px solid rgb(150, 150, 150);
+    border-bottom: 1px solid rgb(100, 100, 100);
     border-left: 1px solid rgb(30, 30, 30);
     border-top: 1px solid rgb(30, 30, 30);
     background-color: rgba(0, 0, 0, 0.5);
@@ -79,16 +79,16 @@ height: 50px;
     height: 320px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
 }
 #div-header-backpack-menu-left {
     width: 100%;
     height: 50px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     display: flex;
 
 }
@@ -98,8 +98,8 @@ height: 50px;
     height: 100%;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     font-family: 'martel';
     display: flex;
     align-items: center;
@@ -113,8 +113,8 @@ height: 50px;
     height: 50px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -122,16 +122,17 @@ height: 50px;
 
 #div-content-backpack-menu-left {
     width: 420px;
-    height: 250px;
+    height: 265px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     transform: translateX(-200px);
     transition: 0.4s;
     display: flex;
     justify-content: end;
     flex-wrap: wrap;
+    background-color: rgba(0, 0, 0, 0.485);
     
 }
 #div-content-backpack-menu-left:hover {
@@ -143,9 +144,12 @@ height: 50px;
     height: 50px;
     border-bottom: 1px solid rgb(30, 30, 30);
     border-right: 1px solid rgb(30, 30, 30);
-    border-left: 1px solid rgb(150, 150, 150);
-    border-top: 1px solid rgb(150, 150, 150);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
     background: url(../imgs/backgroundStyleTibia.png);
+    margin: 1px;
+    color:white;
+    font-family: 'rh';
 }
 
 .backpack-counter {

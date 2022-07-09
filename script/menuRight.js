@@ -512,3 +512,24 @@ infoDefenseDown.appendChild(infoDefenseTotalBar);
 const infoDefenseProgressBar= document.createElement('div');
 infoDefenseProgressBar.setAttribute('id', 'info-defense-progress-bar');
 infoDefenseTotalBar.appendChild(infoDefenseProgressBar);
+
+
+
+// STORE STORE STORE STORE //
+// STORE STORE STORE STORE //
+const storeDivMenuRight = document.createElement('div');
+storeDivMenuRight.setAttribute("id", "store-div-menu-right");
+menuRight.appendChild(storeDivMenuRight);
+
+const storeHeaderMenuRight = document.createElement('div');
+storeHeaderMenuRight.setAttribute("id", "store-header-menu-right");
+storeDivMenuRight.appendChild(storeHeaderMenuRight);
+
+const storeContentMenuRight = document.createElement('div');
+storeContentMenuRight.setAttribute('id', 'store-content-menu-right');
+storeDivMenuRight.appendChild(storeContentMenuRight);
+
+const storeImageMenuRight = document.createElement('img');
+storeImageMenuRight.setAttribute('src', '../imgs/Store_Icon.gif');
+storeImageMenuRight.setAttribute('id', 'store-image-menu-right');
+storeContentMenuRight.appendChild(storeImageMenuRight);

@@ -4,7 +4,13 @@ let zumbie = {
     maxLife: 240,
     life: 240,
     coins: 20,
-    experience: 120
+    experience: 120,
+    loot: {
+        leatherBoots: {
+            cost: 20,
+            img: "../imgs/Leather+Boots.gif"
+        }
+    }
 }
 
 const zumbieUi = document.createElement('div');
@@ -243,17 +249,19 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         
         setTimeout(zumbieHidden, 4000);
 
-        const zumbieDead = document.createElement('div');
-        zumbieDead.setAttribute('id', 'zumbie-dead');
-        world.appendChild(zumbieDead);
-        zumbieDead.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`
-
-        zumbieDead.addEventListener('click', zumbieLoot);
+        const zumbieDeadUi = document.createElement('div');
+        zumbieDeadUi.setAttribute('id', 'zumbie-dead-ui');
+        world.appendChild(zumbieDeadUi);
+        
+        zumbieDeadUi.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`;
+        zumbieDeadUi.addEventListener('click', zumbieLoot);
         
         function zumbieLoot() {
-            zumbieDead.style.display = "none";
+            zumbieDeadUi.style.display = "none";
             player.coins += zumbie.coins;
             menuDownCoinsContent.innerHTML = `${player.coins}`
+            document.querySelector(".loot-slot")[0].appendChild("OIOIOI");
+            zumbieShowLoot();
         }
 
         player.experience += zumbie.experience;

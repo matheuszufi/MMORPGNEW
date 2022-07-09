@@ -1,6 +1,7 @@
 player = {
     coins: 0,
     loot: [
+        
 
     ] 
 }
@@ -22,6 +23,13 @@ const menuDownCoinsContent = document.createElement('div');
 menuDownCoinsContent.setAttribute('id', 'menu-down-coins-content');
 menuDownCoins.appendChild(menuDownCoinsContent);
 menuDownCoinsContent.innerHTML = `${player.coins}`
+
+
+const menuDownCoinsImage = document.createElement('div');
+menuDownCoinsImage.setAttribute('id', 'menu-down-coins-image');
+menuDownCoins.appendChild(menuDownCoinsImage);
+
+
 
 const menuDownLoot = document.createElement('menu-down-loot');
 menuDownLoot.setAttribute('id', 'menu-down-loot');
@@ -63,9 +71,15 @@ let enemiesLoot = [
     slot20 = '',
 ]
 
+
 enemiesLoot.forEach(() => {
     const menuDownLootSlot = document.createElement('div');
     menuDownLootSlot.setAttribute("class", "loot-slot");
     menuDownLootContent.appendChild(menuDownLootSlot);
+    
     }
 )
+
+function zumbieShowLoot() {
+
+}

@@ -192,7 +192,6 @@ playerUi.appendChild(playerImage);
      playerImage.style.background = "url(../imgs/player/right2.png)"
      playerImage.style.backgroundRepeat = "no-repeat";
      playerImage.style.backgroundSize = "50px";
-     
      playerImage.style.backgroundPosition = "50%";
      setTimeout(playerAnimaRightMid, 300);
   };
