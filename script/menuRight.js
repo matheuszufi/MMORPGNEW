@@ -76,7 +76,7 @@ playerInfosMinBtn.addEventListener('click', minInfos);
 let infosMin = false;
 function minInfos() {
     if (!infosMin) {
-        playerInfosDiv.style.height = "140px";
+        playerInfosDiv.style.height = "144px";
         infosMin = true;
     }else {
         playerInfosDiv.style.height = "340px"; 
