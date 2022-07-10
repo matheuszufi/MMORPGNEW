@@ -264,7 +264,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     const guanabaraTalkContentLeftUpTalk = document.createElement('div');
     guanabaraTalkContentLeftUpTalk.setAttribute('id', 'guanabara-talk-content-left-up-talk');
     guanabaraTalkContentLeftUpDivTalk.appendChild(guanabaraTalkContentLeftUpTalk);
-    guanabaraTalkContentLeftUpTalk.innerHTML = `Olá, me chamo guanabara, seja bem vindo ao meu site ${player.name}!`;
+    guanabaraTalkContentLeftUpTalk.innerHTML = `Olá, me chamo Guanabara, seja bem vindo a loja ${player.name}!`;
 
     //LEFT DOWN
     const guanabaraTalkContentLeftDown = document.createElement('div');
@@ -274,7 +274,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     const guanabaraTalkContentLeftDownAnswerOne = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerOne.setAttribute('id', 'guanabara-talk-content-left-down-answer-1');
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerOne);
-    guanabaraTalkContentLeftDownAnswerOne.innerHTML = "Que legal, quero conhecer mais sobre seu site!"
+    guanabaraTalkContentLeftDownAnswerOne.innerHTML = "Que legal, mostre-me a loja!"
 
     const guanabaraTalkContentLeftDownAnswerTwo = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerTwo.setAttribute('id', 'guanabara-talk-content-left-down-answer-2');
@@ -284,7 +284,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     const guanabaraTalkContentLeftDownAnswerThree = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerThree.setAttribute('id', 'guanabara-talk-content-left-down-answer-1');
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerThree);
-    guanabaraTalkContentLeftDownAnswerThree.innerHTML = "Que legal, mas quero JOGAAAR!!";
+    guanabaraTalkContentLeftDownAnswerThree.innerHTML = "Até mais!";
     guanabaraTalkContentLeftDownAnswerThree.addEventListener('click', guanabaraCloseTalk)
 
 
