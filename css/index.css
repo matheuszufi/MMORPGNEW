@@ -115,10 +115,11 @@ body {overflow: hidden;}
 #spear-animation {
     width: 10px;
     height: 10px;
-    background-color: red;
+    background-color: burlywood;
     position: absolute;
     transform: translate(0px, 0px);
     transition: 1s;
+    border-radius: 50%;
     
 
 }
