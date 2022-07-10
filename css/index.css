@@ -113,9 +113,9 @@ body {overflow: hidden;}
 }
 
 #spear-animation {
-    width: 10px;
-    height: 10px;
-    background-color: burlywood;
+    width: 8px;
+    height: 80px;
+    background-color: rgba(93, 63, 22, 0.9);
     position: absolute;
     transform: translate(0px, 0px);
     transition: 1s;
