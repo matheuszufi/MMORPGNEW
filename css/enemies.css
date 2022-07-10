@@ -14,6 +14,12 @@
     justify-content: center;
     font-size: 16px;
     height: 16px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #zumbie-div-hem {
@@ -98,9 +104,15 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
-#zumbie-atk-bow-animation {
+#atk-bow-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -114,6 +126,12 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 @keyframes atkanime {
@@ -121,7 +139,7 @@
     100% {transform: translateY(-60px); opacity: 0a;}
 }
 
-#zumbie-atk-fire-animation {
+#atk-fire-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -135,9 +153,15 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
-#zumbie-atk-ice-animation {
+#atk-ice-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -151,9 +175,15 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
-#zumbie-atk-energy-animation {
+#atk-energy-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -167,9 +197,15 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
-#zumbie-atk-terra-animation {
+#atk-terra-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -183,8 +219,14 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
-#zumbie-atk-death-animation {
+#atk-death-animation {
     width: 10px;
     height: 10px;
     font-family: 'rh';
@@ -198,6 +240,12 @@
     animation: atkanime 1s linear;
     transform: translateX(180px);
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #zumbie-lootcoin-animation{
@@ -237,4 +285,10 @@
     bottom: 30vh;
     font-family: 'rh';
 
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
