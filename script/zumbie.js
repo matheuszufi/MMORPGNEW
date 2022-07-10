@@ -14,6 +14,8 @@ let zumbie = {
     }
 }
 
+// let zumbieIsTag = false;
+
 const zumbieUi = document.createElement('div');
 zumbieUi.setAttribute("id", "zumbieUi");
 world.appendChild(zumbieUi);
@@ -224,28 +226,31 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     
     let zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
-    zumbieUi.addEventListener('mousemove', attackEnemy);
-    zumbieUi.addEventListener('click', attackBowEnemy)
+    zumbieUi.addEventListener('mousemove', zumbieAttackEnemy);
+    zumbieUi.addEventListener('click', zumbieAttackBowEnemy)
+    zumbieUi.addEventListener('context', zumbieAttackMagicEnemy)
     
-    function attackEnemy() {
+    function zumbieAttackEnemy() {
+        
+        // zumbieIsTag = true;
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
             player.attackCount = player.attackCount + 0.08;
             infoAttackProgressBar.style.width = `${(player.attackCount/player.attackToLVLUP)*100}%`
-            if (player.attackCount >= player.attackToLVLUP) {
-                attackLevelUp();
-            }
-   
+      
             zumbieAttackAnim();
             
             zumbie.life -= (player.attack / 10);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
 
+
+            if (player.attackCount >= player.attackToLVLUP) {
+                attackLevelUp();
+            }
             if(zumbie.life <= 0) {
                 zumbieIsDead = true;
-     
+                // zumbieIsTag = false
                 zumbieKill();    
-              
             }
         } else {
             zumbieStayCloserToEnemyAlert();
@@ -264,19 +269,9 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         }      
     }
 
-    function attackBowEnemy() {
-        zumbie.life -= (player.attack);
-        zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
-        zumbieHealth.style.width = `${zumbieLifePercentual}%`;
-        
-        ++player.distanceCount;
-        infoDistanceProgressBar.style.width = `${(player.distanceCount/player.distanceToLVLUP)*100}%`
+    function zumbieAttackBowEnemy() {
 
-
-
-
-
-        zumbieAttackBowAnim();
+        zumbiezumbieAttackDistanceAnim();
         if(zumbie.life <= 0) {
             zumbieIsDead = true;
  
@@ -285,53 +280,114 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         }
     }
     
-    function zumbieAttackBowAnim() {
-        const zumbieAttackBowAnimation = document.createElement('div');
-        zumbieAttackBowAnimation.setAttribute('id', 'zumbie-atk-bow-animation');
-        zumbieAttackBowAnimation.innerHTML = `-${player.attack}`
-
-        zumbieUi.appendChild(zumbieAttackBowAnimation);
-        setTimeout(zumbieCloseAttackBowAnimation, 600);
-
-        function zumbieCloseAttackBowAnimation() {
-            zumbieAttackBowAnimation.remove();
-        }  
-
-
-        const zumbieSpearAnimation = document.createElement('div');
-        zumbieSpearAnimation.setAttribute('id', 'spear-animation');
-        playerUi.appendChild(zumbieSpearAnimation);
-        zumbieSpearAnimation.style.transition = "0.5s linear"
-        setTimeout(zumbieSpearTargetAnime, 1);
-        
-        // zumbieSpearAnimation.style.margin = `${zumbiePosY}px,${zumbiePosX}px`
-        setTimeout(zumbieSpearCloseAnimation, 501);
-
-
-
-        function zumbieSpearTargetAnime () {
-            if (zumbieDistanceX < zumbieDistanceY ) {
-                zumbieSpearAnimation.style.width = "80px"
-                zumbieSpearAnimation.style.height = "5px"
-                zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
-            } else {
-                zumbieSpearAnimation.style.width = "5px"
-                zumbieSpearAnimation.style.height = "80px"
-                zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+    function zumbiezumbieAttackDistanceAnim() {
+        if (spearSelect = true && !fireSelect) {
+            zumbie.life -= (player.attackDistance);
+            zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+            zumbieHealth.style.width = `${zumbieLifePercentual}%`;
+            ++player.distanceCount;
+            infoDistanceProgressBar.style.width = `${(player.distanceCount/player.distanceToLVLUP)*100}%`
+            if(player.distanceCount >= player.distanceToLVLUP ) {
+                distanceLevelUp();
             }
-           
-        }
+    
 
-        function zumbieSpearCloseAnimation() {
-            zumbieSpearAnimation.remove();
+            const zumbieAttackBowAnimation = document.createElement('div');
+            zumbieAttackBowAnimation.setAttribute('id', 'zumbie-atk-bow-animation');
+            zumbieAttackBowAnimation.innerHTML = `-${player.attackDistance}`
+            zumbieUi.appendChild(zumbieAttackBowAnimation);
+            setTimeout(zumbieClosezumbieAttackBowAnimation, 500);
+    
+            function zumbieClosezumbieAttackBowAnimation() {
+                zumbieAttackBowAnimation.remove();
+            }  
+    
+            const zumbieSpearAnimation = document.createElement('div');
+            zumbieSpearAnimation.setAttribute('id', 'spear-animation');
+            playerUi.appendChild(zumbieSpearAnimation);
+            zumbieSpearAnimation.style.transition = "0.5s linear"
+            setTimeout(zumbieSpearTargetAnime, 1);
+            
+            setTimeout(zumbieSpearCloseAnimation, 501)
+    
+            function zumbieSpearTargetAnime () {
+                if (zumbieDistanceX < zumbieDistanceY ) {
+                    zumbieSpearAnimation.style.width = "80px"
+                    zumbieSpearAnimation.style.height = "5px"
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+                } else {
+                    zumbieSpearAnimation.style.width = "5px"
+                    zumbieSpearAnimation.style.height = "80px"
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+                }
+            }
+            function zumbieSpearCloseAnimation() {
+                zumbieSpearAnimation.remove();
+            }
+        } 
+
+
+        // FIRE SELECT FIRE SELECT FIRE SELECT FIRE SELECT 
+        // FIRE SELECT FIRE SELECT FIRE SELECT FIRE SELECT 
+        if (!spearSelect && fireSelect) {
+            zumbie.life -= (player.fire);
+            zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+            zumbieHealth.style.width = `${zumbieLifePercentual}%`;
+            ++player.fireCount;
+            infoFireProgressBar.style.width = `${(player.fireCount/player.fireToLVLUP)*100}%`
+            if(player.fireCount >= player.fireToLVLUP ) {
+                fireLevelUp();
+            }
+
+            const zumbieAttackFireAnimation = document.createElement('div');
+            zumbieAttackFireAnimation.setAttribute('id', 'zumbie-atk-fire-animation');
+            zumbieAttackFireAnimation.innerHTML = `-${player.fire}`
+            zumbieUi.appendChild(zumbieAttackFireAnimation);
+            setTimeout(zumbieClosezumbieAttackFireAnimation, 500);
+    
+            function zumbieClosezumbieAttackFireAnimation() {
+                zumbieAttackFireAnimation.remove();
+            }  
+            const zumbieFireAnimation = document.createElement('div');
+            zumbieFireAnimation.setAttribute('id', 'fire-animation');
+            playerUi.appendChild(zumbieFireAnimation);
+            zumbieFireAnimation.style.transition = "0.5s linear"
+            setTimeout(zumbieFireTargetAnime, 1);
+            
+            setTimeout(zumbieFireCloseAnimation, 501)
+    
+            function zumbieFireTargetAnime () {          
+                zumbieFireAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+            }
+            
+            function zumbieFireCloseAnimation() {
+                zumbieFireAnimation.remove();
+            }
+        }
+         
         }
     
+    
+
+
+    function zumbieAttackMagicEnemy() {
+        if(player.mana > 30) {
+            player.mana = player.mana - 30;
+
+            if(FireSelect) {
+                zumbie.life = zumbie.life - player.fire;
+            }
+             
+        }
     }
 
 
+
+
+
+
+
     var zumbieIsDead = false;
-
-
 
     function zumbieKill() {
         

@@ -102,26 +102,36 @@ body {overflow: hidden;}
 }
 
 #lvl-up-animation {
-    width: 100px;
+    width: 420px;
     height: 100px;
     font-family: 'up';
     color: white;
     font-size: 32px;
     text-shadow: 2px 2px 2px black;
     margin-top: -75px;
+    text-align: center;
+   
 
 }
 
 #spear-animation {
-
     background-color: rgb(71, 47, 14);
     position: absolute;
     transform: translate(0px, 0px);
     transition: 1s;
     border-radius: 20%;
     border: 1px solid black;
-    
+}
 
+#fire-animation {
+    background-color: rgb(243, 106, 48);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0px, 0px);
+    transition: 1s;
+    border-radius: 50%;
+    border: 1px solid black;
 }
 
 #healing-fx {
@@ -130,3 +140,4 @@ body {overflow: hidden;}
     transform: translateY(15px);
 
 }
+

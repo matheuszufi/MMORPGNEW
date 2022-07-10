@@ -121,6 +121,22 @@
     100% {transform: translateY(-60px); opacity: 0a;}
 }
 
+#zumbie-atk-fire-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: rgb(228, 100, 54);
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 #zumbie-lootcoin-animation{
     width: 10px;
     height: 10px;

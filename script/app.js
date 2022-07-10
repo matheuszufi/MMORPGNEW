@@ -23,11 +23,17 @@ let player = {
     attackCount: 0,
     attackToLVLUP: 100,
 
+    fire: 20,
+    fireLevel: 1,
+    fireCount: 0,
+    fireToLVLUP: 100,
+
     holy: 5,
     holyLevel: 1,
     holyCount: 0,
     holyToLVLUP: 100,
 
+    attackDistance: 4,
     distanceLevel: 1,
     distanceCount: 0,
     distanceToLVLUP: 100
@@ -51,6 +57,14 @@ let playerPosY = 0;
 let cooldownWalk = false;
 let isHealingCooldown = false;
 
+let spearSelect = true;
+let fireSelect = false;
+let iceSelect = false;
+let energySelect = false;
+let terraSelect = false;
+let deathSelect = false;
+let holySelect = false;
+
 document.addEventListener('keydown', (event) => {
 
     btnA = "a";
@@ -58,7 +72,13 @@ document.addEventListener('keydown', (event) => {
     btnD = "d";
     btnS = "s";
 
-    btn1 = "1";
+    btn1 = "1"; // HEALING
+    btn2 = "2"; // SELECT BOW
+    btn3 = "3"; // SELECT FIRE
+    btn4 = "4"; // SELECT ICE
+    btn5 = "5"; // SELECT ENERGY
+    btn6 = "6"; // SELECT TERRA
+    btn7 = "7"; // SELECT DEATH
 
 
  
@@ -135,13 +155,11 @@ document.addEventListener('keydown', (event) => {
             }
         }
     } else if(event.key === btn1) {
-        if(!isHealingCooldown && player.life < player.maxLife){
-            
+        if(!isHealingCooldown && player.life < player.maxLife){      
         player.life += player.holy;
         playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
         menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
         menuUpLifeValue.innerHTML = `${player.life}`
-
         player.mana -= 20;
         playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
         menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
@@ -149,7 +167,56 @@ document.addEventListener('keydown', (event) => {
   
         healingAnim();    
         }
+    } else if(event.key === btn2) {
+        spearSelect = true;
+        fireSelect = false;
+        iceSelect = false;
+        energySelect = false;
+        terraSelect = false;
+        deathSelect = false;
+     
+    } else if(event.key === btn3) {
+        spearSelect = false;
+        fireSelect = true;
+        iceSelect = false;
+        energySelect = false;
+        terraSelect = false;
+        deathSelect = false;
+     
+    } else if(event.key === btn4) {
+        spearSelect = false;
+        fireSelect = false;
+        iceSelect = true;
+        energySelect = false;
+        terraSelect = false;
+        deathSelect = false;
+     
+    } else if(event.key === btn5) {
+        spearSelect = false;
+        fireSelect = false;
+        iceSelect = false;
+        energySelect = true;
+        terraSelect = false;
+        deathSelect = false;
+
+    } else if(event.key === btn6) {
+        spearSelect = false;
+        fireSelect = false;
+        iceSelect = false;
+        energySelect = false;
+        terraSelect = true;
+        deathSelect = false;
+
+    } else if(event.key === btn7) {
+        spearSelect = false;
+        fireSelect = false;
+        iceSelect = false;
+        energySelect = false;
+        terraSelect = false;
+        deathSelect = true;
+     
     } 
+     
     
     
 });
@@ -364,6 +431,53 @@ function atkLvlUpAnim() {
     setTimeout(closeatkLvlUpAnim, 3000);
     function closeatkLvlUpAnim() {
         atkLvlUpAnimation.remove();
+    }
+}
+
+function fireLevelUp() {
+    ++player.fireLevel;
+    player.fire = player.fire + 1;
+    infoFireCount.innerHTML = `${player.fireLevel}`;
+    player.fireCount = 0;
+    player.fireToLVLUP =  player.fireToLVLUP * player.fireLevel;
+    infoFireProgressBar.style.width = `${(player.fireCount / player.fireToLVLUP) * 100}%`
+    player.fireAttack = player.fireAttack + 1;
+    fireLvlUpAnim();
+}
+
+function distanceLvlUpAnim() {
+    const fireLvlUpAnimation = document.createElement('div');
+    fireLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    fireLvlUpAnimation.innerHTML = "FIRE LEVEL UP!"
+    playerUi.appendChild(fireLvlUpAnimation);
+    setTimeout(closefireLvlUpAnim, 3000);
+    function closefireLvlUpAnim() {
+        fireLvlUpAnimation.remove();
+    }
+}
+
+
+
+
+function distanceLevelUp() {
+    ++player.distanceLevel;
+    player.attackDistance = player.attackDistance + 1;
+    infoDistanceCount.innerHTML = `${player.distanceLevel}`;
+    player.distanceCount = 0;
+    player.distanceToLVLUP =  player.distanceToLVLUP * player.distanceLevel;
+    infoDistanceProgressBar.style.width = `${(player.distanceCount / player.distanceToLVLUP) * 100}%`
+    player.distanceAttack = player.distanceAttack + 1;
+    distanceLvlUpAnim();
+}
+
+function distanceLvlUpAnim() {
+    const distanceLvlUpAnimation = document.createElement('div');
+    distanceLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    distanceLvlUpAnimation.innerHTML = "DISTANCE LEVEL UP!"
+    playerUi.appendChild(distanceLvlUpAnimation);
+    setTimeout(closedistanceLvlUpAnim, 3000);
+    function closedistanceLvlUpAnim() {
+        distanceLvlUpAnimation.remove();
     }
 }
 
