@@ -292,3 +292,17 @@
     -webkit-user-select: none;
     -o-user-select: none;
 }
+
+#atk-death-animation-enemy,#atk-energy-animation-enemy {
+
+    position: absolute;
+    margin-top: -60px;
+    margin-left: 25px;
+    width: 50px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}

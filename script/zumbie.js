@@ -443,6 +443,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 energyLevelUp();
             }
 
+            //ENERGY HIT
             const zumbieAttackEnergyAnimation = document.createElement('div');
             zumbieAttackEnergyAnimation.setAttribute('id', 'atk-energy-animation');
             zumbieAttackEnergyAnimation.innerHTML = `-${player.energy}`
@@ -452,6 +453,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieClosezumbieAttackEnergyAnimation() {
                 zumbieAttackEnergyAnimation.remove();
             }  
+
+            //ENERGY ANIMATION LINE
             const zumbieEnergyAnimation = document.createElement('div');
             zumbieEnergyAnimation.setAttribute('id', 'energy-animation');
             playerUi.appendChild(zumbieEnergyAnimation);
@@ -467,6 +470,27 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieEnergyCloseAnimation() {
                 zumbieEnergyAnimation.remove();
             }
+
+            //ENERGY ANIMATION ENEMY
+            const zumbieAttackEnergyAnimationEnemy = document.createElement('img');
+            zumbieAttackEnergyAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackEnergyAnimationEnemy.setAttribute('id', 'atk-energy-animation-enemy');
+            zumbieAttackEnergyAnimationEnemy.setAttribute('src', '../imgs/Energy_Effect.webp');
+            
+            setTimeout(() => {
+                zumbieAttackEnergyAnimationEnemy.src = `${zumbieAttackEnergyAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 1000)
+
+
+
+            zumbieUi.appendChild(zumbieAttackEnergyAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackEnergyAnimationEnemy, 500);
+    
+            function zumbieClosezumbieAttackEnergyAnimationEnemy() {
+                zumbieAttackEnergyAnimationEnemy.remove();
+            } 
+
+
         } 
 
         // TERRA SELECT TERRA SELECT TERRA SELECT TERRA SELECT 
@@ -542,6 +566,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 deathLevelUp();
             }
 
+            //DEATH HIT
             const zumbieAttackDeathAnimation = document.createElement('div');
             zumbieAttackDeathAnimation.setAttribute('id', 'atk-death-animation');
             zumbieAttackDeathAnimation.innerHTML = `-${player.death}`
@@ -551,6 +576,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieClosezumbieAttackDeathAnimation() {
                 zumbieAttackDeathAnimation.remove();
             }  
+            //DEATH ANIMATION LINE
             const zumbieDeathAnimation = document.createElement('div');
             zumbieDeathAnimation.setAttribute('id', 'death-animation');
             playerUi.appendChild(zumbieDeathAnimation);
@@ -566,6 +592,26 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieDeathCloseAnimation() {
                 zumbieDeathAnimation.remove();
             }
+
+            //DEATH ANIMATION ENEMY
+            const zumbieAttackDeathAnimationEnemy = document.createElement('img');
+            zumbieAttackDeathAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackDeathAnimationEnemy.setAttribute('id', 'atk-death-animation-enemy');
+            zumbieAttackDeathAnimationEnemy.setAttribute('src', '../imgs/Death_Effect.webp');
+            
+            setTimeout(() => {
+                zumbieAttackDeathAnimationEnemy.src = `${zumbieAttackDeathAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 1000)
+
+
+
+            zumbieUi.appendChild(zumbieAttackDeathAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackDeathAnimationEnemy, 500);
+    7
+            function zumbieClosezumbieAttackDeathAnimationEnemy() {
+                zumbieAttackDeathAnimationEnemy.style.animationPlayState = "paused"
+                zumbieAttackDeathAnimationEnemy.remove();
+            }  
         } 
     }
     
