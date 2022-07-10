@@ -28,6 +28,26 @@ let player = {
     fireCount: 0,
     fireToLVLUP: 100,
 
+    ice: 20,
+    iceLevel: 1,
+    iceCount: 0,
+    iceToLVLUP: 100,
+
+    energy: 20,
+    energyLevel: 1,
+    energyCount: 0,
+    energyToLVLUP: 100,
+
+    terra: 20,
+    terraLevel: 1,
+    terraCount: 0,
+    terraToLVLUP: 100,
+
+    death: 20,
+    deathLevel: 1,
+    deathCount: 0,
+    deathToLVLUP: 100,
+
     holy: 5,
     holyLevel: 1,
     holyCount: 0,
@@ -64,6 +84,13 @@ let energySelect = false;
 let terraSelect = false;
 let deathSelect = false;
 let holySelect = false;
+
+let fireCooldown = false;
+let iceCooldown = false;
+let energyCooldown = false;
+let terraCooldown = false;
+let deathCooldown = false;
+let holyCooldown = false;
 
 document.addEventListener('keydown', (event) => {
 

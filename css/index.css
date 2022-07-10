@@ -11,7 +11,7 @@ body {overflow: hidden;}
 
 #world {
     background: url(../imgs/tibiaGrass.png);
-    border: 1px solid black;
+    border: 1px solid;
     width: 7000px;
     height: 7000px;
     transition: 0.6s linear;  
@@ -132,6 +132,54 @@ body {overflow: hidden;}
     transition: 1s;
     border-radius: 50%;
     border: 1px solid black;
+}
+
+#ice-animation {
+    background-color: rgb(87, 205, 216);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0px, 0px);
+    transition: 1s;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#energy-animation {
+    background-color: rgb(124, 104, 214);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0px, 0px);
+    transition: 1s;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#terra-animation {
+    background-color: rgb(70, 156, 33);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0px, 0px);
+    transition: 1s;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+#death-animation {
+    background-color: rgb(25, 25, 25);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(0px, 0px);
+    transition: 1s;
+    border-radius: 50%;
+    border: 1px solid black;
+    
+    box-shadow: 1px 0 0 purple, -1px 0 0 purple, 0 1px 0 purple, 0 -1px 0 purple, 1px 1px purple, -1px -1px 0 purple, 1px -1px 0 purple, -1px 1px 0 purple;
+    
+    
 }
 
 #healing-fx {

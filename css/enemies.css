@@ -137,6 +137,69 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
 }
 
+#zumbie-atk-ice-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: rgb(70, 216, 201);
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#zumbie-atk-energy-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: rgb(151, 111, 215);
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+#zumbie-atk-terra-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: rgb(44, 145, 64);
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+#zumbie-atk-death-animation {
+    width: 10px;
+    height: 10px;
+    font-family: 'rh';
+    position: absolute;
+    display: flex;
+    justify-content: end;
+    align-items:flex-start;
+    color: rgb(16, 16, 16);
+    font-weight: 700;
+    font-size: 20px;
+    animation: atkanime 1s linear;
+    transform: translateX(180px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
 #zumbie-lootcoin-animation{
     width: 10px;
     height: 10px;
