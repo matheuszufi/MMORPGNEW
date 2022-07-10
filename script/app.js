@@ -440,6 +440,7 @@ function lvlUpAnim() {
     }
 }
 
+// ATTACK LEVEL UP ATTACK LEVEL UP ATTACK LEVEL UP  //
 function attackLevelUp() {
     ++player.attackLevel;
     infoAttackCount.innerHTML = `${player.attackLevel}`;
@@ -461,6 +462,7 @@ function atkLvlUpAnim() {
     }
 }
 
+// FIRE LEVEL UP FIRE LEVEL UP FIRE LEVEL UP  //
 function fireLevelUp() {
     ++player.fireLevel;
     player.fire = player.fire + 1;
@@ -472,7 +474,7 @@ function fireLevelUp() {
     fireLvlUpAnim();
 }
 
-function distanceLvlUpAnim() {
+function fireLvlUpAnim() {
     const fireLvlUpAnimation = document.createElement('div');
     fireLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
     fireLvlUpAnimation.innerHTML = "FIRE LEVEL UP!"
@@ -483,6 +485,97 @@ function distanceLvlUpAnim() {
     }
 }
 
+// ICE LEVEL UP ICE LEVEL UP ICE LEVEL UP  //
+function iceLevelUp() {
+    ++player.iceLevel;
+    player.ice = player.ice + 1;
+    infoIceCount.innerHTML = `${player.iceLevel}`;
+    player.iceCount = 0;
+    player.iceToLVLUP =  player.iceToLVLUP * player.iceLevel;
+    infoIceProgressBar.style.width = `${(player.iceCount / player.iceToLVLUP) * 100}%`
+    player.iceAttack = player.iceAttack + 1;
+    iceLvlUpAnim();
+}
+
+function iceLvlUpAnim() {
+    const iceLvlUpAnimation = document.createElement('div');
+    iceLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    iceLvlUpAnimation.innerHTML = "ICE LEVEL UP!"
+    playerUi.appendChild(iceLvlUpAnimation);
+    setTimeout(closeiceLvlUpAnim, 3000);
+    function closeiceLvlUpAnim() {
+        iceLvlUpAnimation.remove();
+    }
+}
+
+// ENERGY LEVEL UP ENERGY LEVEL UP ENERGY LEVEL UP  //
+function energyLevelUp() {
+    ++player.energyLevel;
+    player.energy = player.energy + 1;
+    infoEnergyCount.innerHTML = `${player.energyLevel}`;
+    player.energyCount = 0;
+    player.energyToLVLUP =  player.energyToLVLUP * player.energyLevel;
+    infoEnergyProgressBar.style.width = `${(player.energyCount / player.energyToLVLUP) * 100}%`
+    player.energyAttack = player.energyAttack + 1;
+    energyLvlUpAnim();
+}
+
+function energyLvlUpAnim() {
+    const energyLvlUpAnimation = document.createElement('div');
+    energyLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    energyLvlUpAnimation.innerHTML = "ENERGY LEVEL UP!"
+    playerUi.appendChild(energyLvlUpAnimation);
+    setTimeout(closeenergyLvlUpAnim, 3000);
+    function closeenergyLvlUpAnim() {
+        energyLvlUpAnimation.remove();
+    }
+}
+
+// TERRA LEVEL UP TERRA LEVEL UP TERRA LEVEL UP  //
+function terraLevelUp() {
+    ++player.terraLevel;
+    player.terra = player.terra + 1;
+    infoTerraCount.innerHTML = `${player.terraLevel}`;
+    player.terraCount = 0;
+    player.terraToLVLUP =  player.terraToLVLUP * player.terraLevel;
+    infoTerraProgressBar.style.width = `${(player.terraCount / player.terraToLVLUP) * 100}%`
+    player.terraAttack = player.terraAttack + 1;
+    terraLvlUpAnim();
+}
+
+function terraLvlUpAnim() {
+    const terraLvlUpAnimation = document.createElement('div');
+    terraLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    terraLvlUpAnimation.innerHTML = "TERRA LEVEL UP!"
+    playerUi.appendChild(terraLvlUpAnimation);
+    setTimeout(closeterraLvlUpAnim, 3000);
+    function closeterraLvlUpAnim() {
+        terraLvlUpAnimation.remove();
+    }
+}
+
+// DEATH LEVEL UP DEATH LEVEL UP DEATH LEVEL UP  //
+function deathLevelUp() {
+    ++player.deathLevel;
+    player.death = player.death + 1;
+    infoDeathCount.innerHTML = `${player.deathLevel}`;
+    player.deathCount = 0;
+    player.deathToLVLUP =  player.deathToLVLUP * player.deathLevel;
+    infoDeathProgressBar.style.width = `${(player.deathCount / player.deathToLVLUP) * 100}%`
+    player.deathAttack = player.deathAttack + 1;
+    deathLvlUpAnim();
+}
+
+function deathLvlUpAnim() {
+    const deathLvlUpAnimation = document.createElement('div');
+    deathLvlUpAnimation.setAttribute('id', 'lvl-up-animation');
+    deathLvlUpAnimation.innerHTML = "DEATH LEVEL UP!"
+    playerUi.appendChild(deathLvlUpAnimation);
+    setTimeout(closedeathLvlUpAnim, 3000);
+    function closedeathLvlUpAnim() {
+        deathLvlUpAnimation.remove();
+    }
+}
 
 
 
