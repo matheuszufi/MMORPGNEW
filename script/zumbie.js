@@ -237,7 +237,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
    
             zumbieAttackAnim();
             
-            zumbie.life -= (player.attack / 5);
+            zumbie.life -= (player.attack / 10);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
 
@@ -291,7 +291,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbieAttackBowAnimation.innerHTML = `-${player.attack}`
 
         zumbieUi.appendChild(zumbieAttackBowAnimation);
-        setTimeout(zumbieCloseAttackBowAnimation, 1000);
+        setTimeout(zumbieCloseAttackBowAnimation, 600);
 
         function zumbieCloseAttackBowAnimation() {
             zumbieAttackBowAnimation.remove();
@@ -310,7 +310,16 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
 
         function zumbieSpearTargetAnime () {
-            zumbieSpearAnimation.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`
+            if (zumbieDistanceX < zumbieDistanceY ) {
+                zumbieSpearAnimation.style.width = "80px"
+                zumbieSpearAnimation.style.height = "5px"
+                zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+            } else {
+                zumbieSpearAnimation.style.width = "5px"
+                zumbieSpearAnimation.style.height = "80px"
+                zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+            }
+           
         }
 
         function zumbieSpearCloseAnimation() {

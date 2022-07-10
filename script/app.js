@@ -23,6 +23,11 @@ let player = {
     attackCount: 0,
     attackToLVLUP: 100,
 
+    holy: 5,
+    holyLevel: 1,
+    holyCount: 0,
+    holyToLVLUP: 100,
+
     distanceLevel: 1,
     distanceCount: 0,
     distanceToLVLUP: 100
@@ -44,6 +49,7 @@ let playerPosY = 0;
 
 
 let cooldownWalk = false;
+let isHealingCooldown = false;
 
 document.addEventListener('keydown', (event) => {
 
@@ -51,6 +57,10 @@ document.addEventListener('keydown', (event) => {
     btnW = "w";
     btnD = "d";
     btnS = "s";
+
+    btn1 = "1";
+
+
  
     if(event.key === btnA || event.keyCode === 37) {
         if (playerPosY > 0) {
@@ -118,15 +128,59 @@ document.addEventListener('keydown', (event) => {
             zumbieDistanceY = zumbiePosY - playerPosY
             player.speedCount = player.speedCount + 10;
             infoSpeedProgressBar.style.width = `${(player.speedCount / player.speedToLVLUP) * 100}%`;
-            if(player.speedCount >= player.speedToLVLUP) {
-                speedLevelUp();
-            }
+                if(player.speedCount >= player.speedToLVLUP) {
+                    speedLevelUp();
+                }
             setTimeout(cdWalk, player.speed);      
+            }
         }
-        }
-} 
+    } else if(event.key === btn1) {
+        if(!isHealingCooldown && player.life < player.maxLife){
+            
+        player.life += player.holy;
+        playerHealth.style.width = `${(player.life / player.maxLife) * 100}%`
+        menuUpLifeBar.style.width = `${(player.life / player.maxLife) * 100}%`
+        menuUpLifeValue.innerHTML = `${player.life}`
 
+        player.mana -= 20;
+        playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+        menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
+        menuUpManaValue.innerHTML = `${player.mana}`
+  
+        healingAnim();    
+        }
+    } 
+    
+    
 });
+
+
+function healingAnim () {
+  
+        isHealingCooldown = true;
+        const healingAnimation = document.createElement('img');
+        healingAnimation.setAttribute('src', '../imgs/healFx.webp');
+        healingAnimation.setAttribute('id', 'healing-fx');
+        playerUi.appendChild(healingAnimation);
+        setTimeout(healingAnimationClose,1000);
+    
+        function healingAnimationClose() {
+            healingAnimation.remove();
+            setTimeout(healingCooldownClose,1000);
+
+            function healingCooldownClose () {
+                isHealingCooldown = false;
+            }
+     
+        }
+
+
+    
+
+
+}
+
+
 
 
 function cdWalk () {
@@ -369,4 +423,4 @@ function restoreLife() {
         }
     }
     
-    setInterval(restoreLife, 4000);
+    setInterval(restoreLife, 2000);
