@@ -46,7 +46,7 @@ let cooldownNpcMatheusWalk = false;
 //DOWN
 function npcMatheusAnimaDown() { 
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/down1.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/down1.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -55,7 +55,7 @@ function npcMatheusAnimaDown() {
 };
 function npcMatheusAnimaDownMid () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/down2.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/down2.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -65,7 +65,7 @@ function npcMatheusAnimaDownMid () {
 }
 function npcMatheusAnimaDownEnd () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/down3.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/down3.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -75,7 +75,7 @@ function npcMatheusAnimaDownEnd () {
 //UP
 function npcMatheusAnimaUp() {
         
-    npcMatheusImage.style.background = "url(../imgs/zumbie/up1.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/up1.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -84,7 +84,7 @@ function npcMatheusAnimaUp() {
 };
 function npcMatheusAnimaUpMid () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/up2.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/up2.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -93,7 +93,7 @@ function npcMatheusAnimaUpMid () {
 }
 function npcMatheusAnimaUpEnd () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/up3.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/up3.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -103,7 +103,7 @@ function npcMatheusAnimaUpEnd () {
 //LEFT
 function npcMatheusAnimaLeft() {
         
-    npcMatheusImage.style.background = "url(../imgs/zumbie/left1.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/left1.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -112,7 +112,7 @@ function npcMatheusAnimaLeft() {
 };
 function npcMatheusAnimaLeftMid () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/left2.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/left2.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -122,7 +122,7 @@ function npcMatheusAnimaLeftMid () {
 }
 function npcMatheusAnimaLeftEnd () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/left3.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/left3.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -132,7 +132,7 @@ function npcMatheusAnimaLeftEnd () {
 //RIGHT
 function npcMatheusAnimaRight() {
         
-    npcMatheusImage.style.background = "url(../imgs/zumbie/right1.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/right1.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -141,7 +141,7 @@ function npcMatheusAnimaRight() {
 };
 function npcMatheusAnimaRightMid () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/right2.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/right2.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -150,7 +150,7 @@ function npcMatheusAnimaRightMid () {
 }
 function npcMatheusAnimaRightEnd () {
     
-    npcMatheusImage.style.background = "url(../imgs/zumbie/right3.png)"
+    npcMatheusImage.style.background = "url(../imgs/NpcMatheus/right3.png)"
     npcMatheusImage.style.backgroundRepeat = "no-repeat";
     npcMatheusImage.style.backgroundSize = "50px";
     npcMatheusImage.style.backgroundPosition = "50%";
@@ -215,6 +215,87 @@ let npcMatheusDistanceY = npcMatheusPosY - playerPosY;
             npcMatheusIsNear = false;
         }
     } 
+
+
+
+   
+
+ 
     
+
+    const matheusTalkDiv = document.createElement('div');
+    matheusTalkDiv.setAttribute('id', 'matheus-talk-div');
+    document.getElementById('engine').appendChild(matheusTalkDiv);
+
+
+    npcMatheusUi.addEventListener('click', matheusWellcome);
+
+    function matheusWellcome() {
+        matheusTalkDiv.style.display = "flex" 
+    }
+
+    const matheusTalkContent = document.createElement('div');
+    matheusTalkContent.setAttribute('id', 'matheus-talk-content');
+    matheusTalkDiv.appendChild(matheusTalkContent);
+
+    //CONTENT LEFT
+    const matheusTalkContentLeft = document.createElement('div');
+    matheusTalkContentLeft.setAttribute('id', 'matheus-talk-content-left');
+    matheusTalkContent.appendChild(matheusTalkContentLeft);
+
+    //LEFT UP
+    const matheusTalkContentLeftUp = document.createElement('div');
+    matheusTalkContentLeftUp.setAttribute('id', 'matheus-talk-content-left-up');
+    matheusTalkContentLeft.appendChild(matheusTalkContentLeftUp);
+
+    const matheusTalkContentLeftUpDivImg = document.createElement('div');
+    matheusTalkContentLeftUpDivImg.setAttribute('id', 'matheus-talk-content-left-up-div-img');
+    matheusTalkContentLeftUp.appendChild(matheusTalkContentLeftUpDivImg);
+
+    const matheusTalkContentLeftUpImg = document.createElement('img');
+    matheusTalkContentLeftUpImg.setAttribute('id', 'matheus-talk-content-left-up-img');
+    matheusTalkContentLeftUpImg.setAttribute('src', '../imgs/NpcMatheus/down3.png');
+    matheusTalkContentLeftUpDivImg.appendChild(matheusTalkContentLeftUpImg);
+
+    const matheusTalkContentLeftUpDivTalk = document.createElement('div');
+    matheusTalkContentLeftUpDivTalk.setAttribute('id', 'matheus-talk-content-left-up-div-talk');
+    matheusTalkContentLeftUp.appendChild(matheusTalkContentLeftUpDivTalk);
+
+    const matheusTalkContentLeftUpTalk = document.createElement('div');
+    matheusTalkContentLeftUpTalk.setAttribute('id', 'matheus-talk-content-left-up-talk');
+    matheusTalkContentLeftUpDivTalk.appendChild(matheusTalkContentLeftUpTalk);
+    matheusTalkContentLeftUpTalk.innerHTML = `Olá, me chamo Matheus, seja bem vindo ao meu site ${player.name}!`;
+
+    //LEFT DOWN
+    const matheusTalkContentLeftDown = document.createElement('div');
+    matheusTalkContentLeftDown.setAttribute('id', 'matheus-talk-content-left-down');
+    matheusTalkContentLeft.appendChild(matheusTalkContentLeftDown);
+
+    const matheusTalkContentLeftDownAnswerOne = document.createElement('div');
+    matheusTalkContentLeftDownAnswerOne.setAttribute('id', 'matheus-talk-content-left-down-answer-1');
+    matheusTalkContentLeftDown.appendChild(matheusTalkContentLeftDownAnswerOne);
+    matheusTalkContentLeftDownAnswerOne.innerHTML = "Que legal, quero conhecer mais sobre seu site!"
+
+    const matheusTalkContentLeftDownAnswerTwo = document.createElement('div');
+    matheusTalkContentLeftDownAnswerTwo.setAttribute('id', 'matheus-talk-content-left-down-answer-2');
+    matheusTalkContentLeftDown.appendChild(matheusTalkContentLeftDownAnswerTwo);
+    matheusTalkContentLeftDownAnswerTwo.innerHTML = "Que legal, quero conhecer mais sobre você!"
+
+    const matheusTalkContentLeftDownAnswerThree = document.createElement('div');
+    matheusTalkContentLeftDownAnswerThree.setAttribute('id', 'matheus-talk-content-left-down-answer-1');
+    matheusTalkContentLeftDown.appendChild(matheusTalkContentLeftDownAnswerThree);
+    matheusTalkContentLeftDownAnswerThree.innerHTML = "Que legal, mas quero JOGAAAR!!";
+    matheusTalkContentLeftDownAnswerThree.addEventListener('click', matheusCloseTalk)
+
+
+    function matheusCloseTalk () {
+        matheusTalkDiv.style.display = "none" 
+    }
+    //CONTENT RIGHT
+    const matheusTalkContentRight = document.createElement('div');
+    matheusTalkContentRight.setAttribute('id', 'matheus-talk-content-right');
+    matheusTalkContent.appendChild(matheusTalkContentRight);
+
+
   
 

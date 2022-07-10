@@ -50,9 +50,142 @@
     width: 100%;
     height: 64px;
     z-index: 90;
-    background: url(../imgs/npc-matheus/down3.png);
+    background: url(../imgs/NpcMatheus/down3.png);
     background-repeat: no-repeat;
     background-size: 50px;
     background-position: 50%;
     /* transition: 0.1s linear; */
 }
+
+
+#matheus-talk-div {
+    width: 800px;
+    height: 400px;
+    background: url(../imgs/backgroundStyleTibia.png);
+    position: absolute;
+    top: calc(50vh - 200px);
+    left: calc(50vw - 400px);
+    z-index: 101;
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#matheus-talk-content {
+    width: 790px;
+    height: 390px;
+    background-color: rgba(0, 0, 0, 0.53);
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+    display: flex;
+    flex-direction: column;
+}
+
+#matheus-talk-content-left{
+    width: 50%;
+    height: 100%;
+    background: url(../imgs/backgroundStyleTibia.png);
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
+}
+
+#matheus-talk-content-left-up {
+    width: 100%;
+    height: 50%;
+    display: flex;
+
+}
+
+#matheus-talk-content-left-up-div-img {
+width: 35%;
+height: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+#matheus-talk-content-left-up-img {
+    width: 50%;
+}
+
+#matheus-talk-content-left-up-div-talk {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+
+#matheus-talk-content-left-up-talk{
+    width: 90%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-family: 'rh';
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#matheus-talk-content-left-down {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#matheus-talk-content-left-down-answer-1,#matheus-talk-content-left-down-answer-2,#matheus-talk-content-left-down-answer-3 {
+    width: 100%;
+    height: 30%;
+    background: url(../imgs/backgroundStyleTibia.png);
+    border-bottom: 1px solid rgb(30, 30, 30);
+    border-right: 1px solid rgb(30, 30, 30);
+    border-left: 1px solid rgb(100, 100, 100);
+    border-top: 1px solid rgb(100, 100, 100);
+    color: white;
+    font-family: 'rh';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#matheus-talk-content-left-down-answer-1:active{
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+}
+#matheus-talk-content-left-down-answer-2:active{
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+}
+#matheus-talk-content-left-down-answer-3:active{
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+}
+
+
+
+
+#matheus-talk-content-right{}
