@@ -21,7 +21,11 @@ let player = {
     attack: 4,
     attackLevel: 1,
     attackCount: 0,
-    attackToLVLUP: 100
+    attackToLVLUP: 100,
+
+    distanceLevel: 1,
+    distanceCount: 0,
+    distanceToLVLUP: 100
 }
 
 const world = document.getElementById('world');

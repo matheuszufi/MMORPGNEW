@@ -224,12 +224,12 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     
     let zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
 
-    zumbieUi.addEventListener('click', attackEnemy);
-    zumbieUi.addEventListener('dblclick', attackBowEnemy)
-
+    zumbieUi.addEventListener('mousemove', attackEnemy);
+    zumbieUi.addEventListener('click', attackBowEnemy)
+    
     function attackEnemy() {
         if (zumbieDistanceX <= 100 && zumbieDistanceX >= -100 && zumbieDistanceY <= 100 && zumbieDistanceY >= -100) {
-            ++player.attackCount;
+            player.attackCount = player.attackCount + 0.08;
             infoAttackProgressBar.style.width = `${(player.attackCount/player.attackToLVLUP)*100}%`
             if (player.attackCount >= player.attackToLVLUP) {
                 attackLevelUp();
@@ -237,7 +237,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
    
             zumbieAttackAnim();
             
-            zumbie.life -= player.attack;
+            zumbie.life -= (player.attack / 5);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
 
@@ -254,7 +254,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     function zumbieAttackAnim () {
         const zumbieAttackAnimation = document.createElement('div');
         zumbieAttackAnimation.setAttribute('id', 'zumbie-atk-animation');
-        zumbieAttackAnimation.innerHTML = `-${player.attack}`
+        zumbieAttackAnimation.innerHTML = `-${player.attack / 10}`
 
         zumbieUi.appendChild(zumbieAttackAnimation);
         setTimeout(zumbieCloseAttackAnimation, 1000);
@@ -265,8 +265,35 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     }
 
     function attackBowEnemy() {
+        zumbie.life -= (player.attack);
+        zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
+        zumbieHealth.style.width = `${zumbieLifePercentual}%`;
+        ++player.distanceCount;
 
+        infoDistanceProgressBar.style.width = `${(player.distanceCount/player.distanceToLVLUP)*100}%`
+
+        zumbieAttackBowAnim();
+        if(zumbie.life <= 0) {
+            zumbieIsDead = true;
+ 
+            zumbieKill();    
+          
+        }
     }
+    
+    function zumbieAttackBowAnim() {
+        const zumbieAttackBowAnimation = document.createElement('div');
+        zumbieAttackBowAnimation.setAttribute('id', 'zumbie-atk-bow-animation');
+        zumbieAttackBowAnimation.innerHTML = `-${player.attack}`
+
+        zumbieUi.appendChild(zumbieAttackBowAnimation);
+        setTimeout(zumbieCloseAttackBowAnimation, 1000);
+    
+        function zumbieCloseAttackBowAnimation() {
+            zumbieAttackBowAnimation.remove();
+        }  
+    }
+
 
     var zumbieIsDead = false;
 
