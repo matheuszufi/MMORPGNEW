@@ -223,7 +223,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
     zumbieUi.addEventListener('mousemove', zumbieAttackEnemy);
     zumbieUi.addEventListener('click', zumbieAttackBowEnemy)
-    zumbieUi.addEventListener('context', zumbieAttackMagicEnemy)
+    // zumbieUi.addEventListener('context', zumbieAttackMagicEnemy)
     
     function zumbieAttackEnemy() {
         
@@ -322,6 +322,26 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieSpearCloseAnimation() {
                 zumbieSpearAnimation.remove();
             }
+
+                //SPEAR ANIMATION ENEMY
+            const zumbieAttackSpearAnimationEnemy = document.createElement('img');
+            zumbieAttackSpearAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackSpearAnimationEnemy.setAttribute('id', 'atk-spear-animation-enemy');
+            zumbieAttackSpearAnimationEnemy.setAttribute('src', '../imgs/Blood_Effect.webp');
+            
+            setTimeout(() => {
+                zumbieAttackSpearAnimationEnemy.src = `${zumbieAttackSpearAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 100)
+
+
+
+            zumbieUi.appendChild(zumbieAttackSpearAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackSpearAnimationEnemy, 500);
+    
+            function zumbieClosezumbieAttackSpearAnimationEnemy() {
+                zumbieAttackSpearAnimationEnemy.remove();
+            } 
+
         } 
 
         // FIRE SELECT FIRE SELECT FIRE SELECT FIRE SELECT 
@@ -337,6 +357,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             player.mana = player.mana - 30
             menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
             menuUpManaValue.innerHTML = `${player.mana}`
+            playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+
             zumbie.life -= (player.fire);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
@@ -370,6 +392,26 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieFireCloseAnimation() {
                 zumbieFireAnimation.remove();
             }
+
+            //FIRE ANIMATION ENEMY
+            const zumbieAttackFireAnimationEnemy = document.createElement('img');
+            zumbieAttackFireAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackFireAnimationEnemy.setAttribute('id', 'atk-fire-animation-enemy');
+            zumbieAttackFireAnimationEnemy.setAttribute('src', '../imgs/Fireball_Effect.gif');
+            
+            setTimeout(() => {
+                zumbieAttackFireAnimationEnemy.src = `${zumbieAttackFireAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 1000)
+
+
+
+            zumbieUi.appendChild(zumbieAttackFireAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackFireAnimationEnemy, 500);
+    
+            function zumbieClosezumbieAttackFireAnimationEnemy() {
+                zumbieAttackFireAnimationEnemy.style.animationPlayState = "paused"
+                zumbieAttackFireAnimationEnemy.remove();
+            }  
         }   
    
         // ICE SELECT ICE SELECT ICE SELECT ICE SELECT 
@@ -386,6 +428,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             player.mana = player.mana - 30
             menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
             menuUpManaValue.innerHTML = `${player.mana}`
+            playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+
             zumbie.life -= (player.ice);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
@@ -419,6 +463,28 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieIceCloseAnimation() {
                 zumbieIceAnimation.remove();
             }
+
+            //ICE ANIMATION ENEMY
+            const zumbieAttackIceAnimationEnemy = document.createElement('img');
+            zumbieAttackIceAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackIceAnimationEnemy.setAttribute('id', 'atk-ice-animation-enemy');
+            zumbieAttackIceAnimationEnemy.setAttribute('src', '../imgs/Ice_Explosion_Effect.gif');
+            
+            setTimeout(() => {
+                zumbieAttackIceAnimationEnemy.src = `${zumbieAttackIceAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 1000)
+
+
+
+            zumbieUi.appendChild(zumbieAttackIceAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackIceAnimationEnemy, 500);
+    
+            function zumbieClosezumbieAttackIceAnimationEnemy() {
+                zumbieAttackIceAnimationEnemy.remove();
+            } 
+
+
+
         }   
         // ENERGY SELECT ENERGY SELECT ENERGY SELECT ENERGY SELECT 
         // ENERGY SELECT ENERGY SELECT ENERGY SELECT ENERGY SELECT 
@@ -434,6 +500,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             player.mana = player.mana - 30
             menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
             menuUpManaValue.innerHTML = `${player.mana}`
+            playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+
             zumbie.life -= (player.energy);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
@@ -507,6 +575,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             player.mana = player.mana - 30
             menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
             menuUpManaValue.innerHTML = `${player.mana}`
+            playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
 
             zumbie.life -= (player.terra);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
@@ -541,6 +610,29 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             function zumbieTerraCloseAnimation() {
                 zumbieTerraAnimation.remove();
             }
+
+            //TERRA ANIMATION ENEMY
+            const zumbieAttackTerraAnimationEnemy = document.createElement('img');
+            zumbieAttackTerraAnimationEnemy.style.animationPlayState = "paused"
+            zumbieAttackTerraAnimationEnemy.setAttribute('id', 'atk-terra-animation-enemy');
+            zumbieAttackTerraAnimationEnemy.setAttribute('src', '../imgs/Slicing_Plant_Effect.webp');
+            
+            setTimeout(() => {
+                zumbieAttackTerraAnimationEnemy.src = `${zumbieAttackTerraAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+            }, 1000)
+
+
+
+            zumbieUi.appendChild(zumbieAttackTerraAnimationEnemy);
+            setTimeout(zumbieClosezumbieAttackTerraAnimationEnemy, 500);
+    
+            function zumbieClosezumbieAttackTerraAnimationEnemy() {
+                zumbieAttackTerraAnimationEnemy.style.animationPlayState = "paused"
+                zumbieAttackTerraAnimationEnemy.remove();
+            }  
+
+
+
         }   
         // DEATH SELECT DEATH SELECT DEATH SELECT DEATH SELECT 
         // DEATH SELECT DEATH SELECT DEATH SELECT DEATH SELECT 
@@ -556,6 +648,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             player.mana = player.mana - 30
             menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
             menuUpManaValue.innerHTML = `${player.mana}`
+            playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
 
             zumbie.life -= (player.death);
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;

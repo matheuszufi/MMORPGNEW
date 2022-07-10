@@ -299,9 +299,13 @@ const playerHealth = document.createElement('div');
 playerHealth.setAttribute("id", "player-health");
 playerMaxHealth.appendChild(playerHealth);
 
+const playerMaxMana = document.createElement('div');
+playerMaxMana.setAttribute("id", "player-max-mana");
+playerDivHeM.appendChild(playerMaxMana);
+
 const playerMana = document.createElement('div');
 playerMana.setAttribute("id", "player-mana");
-playerDivHeM.appendChild(playerMana);
+playerMaxMana.appendChild(playerMana);
 
 const playerImage = document.createElement('div');
 playerImage.setAttribute("id", "player-image");
