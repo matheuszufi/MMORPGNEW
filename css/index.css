@@ -102,7 +102,7 @@ body {overflow: hidden;}
 
 #wooden-floor {
     width: 200px;
-    height: 385px;
+    height: 885px;
     position: absolute;
     background: url(../imgs/woodenFloor.bmp);
 }
@@ -166,7 +166,7 @@ body {overflow: hidden;}
     transition: 1s;
     border-radius: 50%;
     border: 1px solid black;
-    box-shadow: 3px 0 3px rgb(164,144,254), -3px 0 3px rgb(164,144,254), 0 3px 3px rgb(164,144,254), 0 -3px 3px rgb(164,144,254), 3px 3px rgb(164,144,254), -3px -3px 3px rgb(164,144,254), 3px -3px 3px rgb(164,144,254), -3px 3px 3px rgb(164,144,254);
+    box-shadow: 3px 0 12px rgb(164,144,254), -3px 0 3px rgb(164,144,254), 0 3px 3px rgb(164,144,254), 0 -3px 3px rgb(164,144,254), 3px 3px rgb(164,144,254), -3px -3px 3px rgb(164,144,254), 3px -3px 3px rgb(164,144,254), -3px 3px 3px rgb(164,144,254);
     /* SHADOW CERTO */
 }
 

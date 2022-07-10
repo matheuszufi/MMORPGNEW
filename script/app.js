@@ -637,7 +637,7 @@ function restoreMana() {
 
         menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
         menuUpManaValue.innerHTML = `${player.mana}`;
-        playerMana.width = `${(player.mana / player.maxMana) * 100}%`
+        playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
 
         }
     }
