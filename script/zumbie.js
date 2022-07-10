@@ -301,11 +301,20 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         const zumbieSpearAnimation = document.createElement('div');
         zumbieSpearAnimation.setAttribute('id', 'spear-animation');
         playerUi.appendChild(zumbieSpearAnimation);
-        zumbieSpearAnimation.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`
-        setTimeout(zumbieSpearCloseAnimation, 500);
+        zumbieSpearAnimation.style.transition = "0.5s linear"
+        setTimeout(zumbieSpearTargetAnime, 1);
+        
+        // zumbieSpearAnimation.style.margin = `${zumbiePosY}px,${zumbiePosX}px`
+        setTimeout(zumbieSpearCloseAnimation, 501);
+
+
+
+        function zumbieSpearTargetAnime () {
+            zumbieSpearAnimation.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`
+        }
 
         function zumbieSpearCloseAnimation() {
-            
+            zumbieSpearAnimation.remove();
         }
     
     }
