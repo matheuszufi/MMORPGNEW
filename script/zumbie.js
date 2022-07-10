@@ -268,9 +268,13 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbie.life -= (player.attack);
         zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
         zumbieHealth.style.width = `${zumbieLifePercentual}%`;
+        
         ++player.distanceCount;
-
         infoDistanceProgressBar.style.width = `${(player.distanceCount/player.distanceToLVLUP)*100}%`
+
+
+
+
 
         zumbieAttackBowAnim();
         if(zumbie.life <= 0) {
@@ -288,10 +292,22 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
         zumbieUi.appendChild(zumbieAttackBowAnimation);
         setTimeout(zumbieCloseAttackBowAnimation, 1000);
-    
+
         function zumbieCloseAttackBowAnimation() {
             zumbieAttackBowAnimation.remove();
         }  
+
+
+        const zumbieSpearAnimation = document.createElement('div');
+        zumbieSpearAnimation.setAttribute('id', 'spear-animation');
+        playerUi.appendChild(zumbieSpearAnimation);
+        zumbieSpearAnimation.style.transform = `translate(${zumbiePosY}px,${zumbiePosX}px)`
+        setTimeout(zumbieSpearCloseAnimation, 500);
+
+        function zumbieSpearCloseAnimation() {
+            
+        }
+    
     }
 
 
@@ -424,3 +440,4 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             zumbieDistanceAlert.remove();
         }
     }
+
