@@ -51,36 +51,53 @@ const menuDownPowerSelectSlotSpear = document.createElement('div');
 menuDownPowerSelectSlotSpear.setAttribute('id', 'menu-down-power-select-slot-spear')
 menuDownPowerSelectSlotSpear.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotSpear)
+const slotSpearSelect = document.createElement('img')
+slotSpearSelect.setAttribute('src', '../imgs/Strong_Ethereal_Spear.gif');
+menuDownPowerSelectSlotSpear.appendChild(slotSpearSelect);
 
 
 const menuDownPowerSelectSlotFire = document.createElement('div');
 menuDownPowerSelectSlotFire.setAttribute('id', 'menu-down-power-select-slot-fire')
 menuDownPowerSelectSlotFire.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotFire)
+const slotFireSelect = document.createElement('img')
+slotFireSelect.setAttribute('src', '../imgs/Strong_Flame_Strike.gif');
+menuDownPowerSelectSlotFire.appendChild(slotFireSelect);
 
 
 const menuDownPowerSelectSlotIce = document.createElement('div');
 menuDownPowerSelectSlotIce.setAttribute('id', 'menu-down-power-select-slot-ice')
 menuDownPowerSelectSlotIce.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotIce)
+const slotIceSelect = document.createElement('img')
+slotIceSelect.setAttribute('src', '../imgs/Strong_Ice_Strike.gif');
+menuDownPowerSelectSlotIce.appendChild(slotIceSelect);
 
 
 const menuDownPowerSelectSlotEnergy = document.createElement('div');
 menuDownPowerSelectSlotEnergy.setAttribute('id', 'menu-down-power-select-slot-energy')
 menuDownPowerSelectSlotEnergy.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotEnergy)
+const slotEnergySelect = document.createElement('img')
+slotEnergySelect.setAttribute('src', '../imgs/Ultimate_Energy_Strike.gif');
+menuDownPowerSelectSlotEnergy.appendChild(slotEnergySelect);
 
 
 const menuDownPowerSelectSlotTerra = document.createElement('div');
 menuDownPowerSelectSlotTerra.setAttribute('id', 'menu-down-power-select-slot-terra')
 menuDownPowerSelectSlotTerra.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotTerra)
-
+const slotTerraSelect = document.createElement('img')
+slotTerraSelect.setAttribute('src', '../imgs/Ultimate_Terra_Strike.gif');
+menuDownPowerSelectSlotTerra.appendChild(slotTerraSelect);
 
 const menuDownPowerSelectSlotDeath = document.createElement('div');
 menuDownPowerSelectSlotDeath.setAttribute('id', 'menu-down-power-select-slot-death')
 menuDownPowerSelectSlotDeath.setAttribute('class', 'menu-down-power-select')
 menuDownPowerSelectContent.appendChild(menuDownPowerSelectSlotDeath)
+const slotDeathSelect = document.createElement('img')
+slotDeathSelect.setAttribute('src', '../imgs/Whirlwind_Throw.gif');
+menuDownPowerSelectSlotDeath.appendChild(slotDeathSelect);
 
 
 const menuDownLoot = document.createElement('menu-down-loot');
