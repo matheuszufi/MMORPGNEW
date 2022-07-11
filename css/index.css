@@ -146,29 +146,48 @@ body {overflow: hidden;}
 }
 
 #fire-animation {
-    background-color: rgb(243, 106, 48);
-    width: 30px;
-    height: 30px;
+    background-image: url(../imgs/Fire_Field.gif);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    /* background-color: rgb(243, 48, 48); */
+    width: 80px;
+    height: 80px;
     position: absolute;
     transform: translate(0px, 0px);
     transition: 0.3s;
-    border-radius: 50%;
-    border: 1px solid black;
+    /* border-radius: 50%; */
+    /* border: 1px solid black; */
+    
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
-#ice-animation {
-    background-color: rgb(87, 205, 216);
+#ice-animation {    
+    background-image: url(../imgs/Ice_Collector.gif);
+    background-position: 50%;
+    background-repeat: no-repeat;
+    /* background-color: rgb(87, 205, 216); */
     width: 30px;
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
     transition: 0.3s;
     border-radius: 50%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #energy-animation {
-    background-color: rgb(124, 104, 214);
+    /* background-color: rgb(124, 104, 214); */
+    background: url(../imgs/Energy_Field.gif);
     width: 30px;
     height: 30px;
     position: absolute;
@@ -178,10 +197,20 @@ body {overflow: hidden;}
     border: 1px solid black;
     box-shadow: 3px 0 12px rgb(164,144,254), -3px 0 3px rgb(164,144,254), 0 3px 3px rgb(164,144,254), 0 -3px 3px rgb(164,144,254), 3px 3px rgb(164,144,254), -3px -3px 3px rgb(164,144,254), 3px -3px 3px rgb(164,144,254), -3px 3px 3px rgb(164,144,254);
     /* SHADOW CERTO */
+
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #terra-animation {
     background-color: rgb(70, 156, 33);
+    background-image: url(../imgs/Poison_Gas.gif);
+    background-position: 50%;
+    background-repeat: no-repeat;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -191,10 +220,18 @@ body {overflow: hidden;}
     border: 1px solid black;
     box-shadow: 1px 0 0 rgb(38, 96, 22), -1px 0 0 rgb(38, 96, 22), 0 1px 0 rgb(38, 96, 22), 0 -1px 0 rgb(38, 96, 22), 1px 1px rgb(38, 96, 22), -1px -1px 0 rgb(38, 96, 22), 1px -1px 0 rgb(38, 96, 22), -1px 1px 0 rgb(38, 96, 22);
     
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 #death-animation {
     background-color: rgb(25, 25, 25);
+    background-image: url(../imgs/Smoke.gif);
+    background-position: 50%;
+    background-repeat: no-repeat;
     width: 30px;
     height: 30px;
     position: absolute;
@@ -205,6 +242,11 @@ body {overflow: hidden;}
     
     box-shadow: 1px 0 0 purple, -1px 0 0 purple, 0 1px 0 purple, 0 -1px 0 purple, 1px 1px purple, -1px -1px 0 purple, 1px -1px 0 purple, -1px 1px 0 purple;
     
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
     
 }
 

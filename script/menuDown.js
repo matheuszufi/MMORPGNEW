@@ -51,6 +51,7 @@ let enemiesLoot = [
 
 
 
+
 // enemiesLoot.forEach(() => {
 //     const menuDownLootSlot = document.createElement('div');
 //     menuDownLootSlot.setAttribute("class", "loot-slot");

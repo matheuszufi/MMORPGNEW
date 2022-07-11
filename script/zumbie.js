@@ -354,6 +354,9 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             }else if (zumbieDistanceX > 0 && zumbieDistanceY === 0) {
                 zumbieSpearAnimation.style.transition = '0.3s'
                 zumbieSpearAnimation.style.transform = `rotateZ(45deg)`
+            } else if (zumbieDistanceX > 0 && zumbieDistanceY < 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(90deg)`
             }
     
             function zumbieSpearTargetAnime () {
@@ -379,6 +382,9 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieSpearAnimation.style.transition = '0.3s'
                     zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(90deg)`
                 }else if (zumbieDistanceX > 0 && zumbieDistanceY === 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(45deg)`
+                }else if (zumbieDistanceX > 0 && zumbieDistanceY < 0) {
                     zumbieSpearAnimation.style.transition = '0.3s'
                     zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(45deg)`
                 }
@@ -863,6 +869,16 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLoot1 = document.createElement('img');
                     zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLoot1.appendChild(zumbieImgLoot1)
+                    
+                    zumbieImgLoot1.addEventListener('ondragstart', dragStart(event))
+
+                    zumbieLoot1.addEventListener('ondrop', drop(event))
+                    zumbieLoot1.addEventListener('ondragover', allowDrop(event))
+
+                    const bpSlot = document.getElementById('bp-slot-1')
+                    bpSlot.addEventListener("ondrop", drop(event))
+                    bpSlot.addEventListener("ondragover", allowDrop(event));
+
                 } 
                 if(zumbieRandLoot2 > 7) {
                     const zumbieLoot2 = document.createElement('div');
@@ -904,6 +920,23 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieLootCoinAnime();
                     zumbieLoot4.remove();
                 }
+
+
+                function dragStart(event) {
+                    event.dataTransfer.setData("img", event.target.id);
+                    }
+                  
+                  function allowDrop(event) {
+                    event.preventDefault();
+                  }
+                  
+                  function drop(event) {
+                    event.preventDefault();
+                    var data = event.dataTransfer.getData("img");
+                    event.target.appendChild(document.getElementById(data));
+                    document.getElementById("demo").innerHTML = "The p element was dropped";
+                  }
+                
 
         
             
