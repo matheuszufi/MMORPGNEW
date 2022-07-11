@@ -92,6 +92,15 @@ let terraCooldown = false;
 let deathCooldown = false;
 let holyCooldown = false;
 
+const bowSlot = document.getElementById("bow-slot");
+bowSlot.style.filter = "grayscale(0%)"
+
+const wandSlot = document.getElementById("wand-slot");
+wandSlot.style.filter =  "grayscale(100%)";
+
+const weaponSlot = document.getElementById("sword-slot");
+weaponSlot.style.filter =  "grayscale(0%)";
+
 document.addEventListener('keydown', (event) => {
 
     btnA = "a";
@@ -201,6 +210,11 @@ document.addEventListener('keydown', (event) => {
         energySelect = false;
         terraSelect = false;
         deathSelect = false;
+        
+        bowSlot.style.filter = "grayscale(0%)";
+        wandSlot.style.filter =  "grayscale(100%)";
+        weaponSlot.style.background = "rgba(0,0,0,0.05)"
+    
      
     } else if(event.key === btn3) {
         spearSelect = false;
@@ -209,6 +223,11 @@ document.addEventListener('keydown', (event) => {
         energySelect = false;
         terraSelect = false;
         deathSelect = false;
+
+        bowSlot.style.filter = "grayscale(100%)";
+        wandSlot.style.filter =  "grayscale(0%)";
+        wandSlot.style.background = "rgba(255,0,0,0.3)"
+        weaponSlot.style.background = "rgba(255,0,0,0.3)"
      
     } else if(event.key === btn4) {
         spearSelect = false;
@@ -217,6 +236,11 @@ document.addEventListener('keydown', (event) => {
         energySelect = false;
         terraSelect = false;
         deathSelect = false;
+
+        bowSlot.style.filter = "grayscale(100%)";
+        wandSlot.style.filter =  "grayscale(0%)";
+        wandSlot.style.background = "rgba(180,180,255,0.3)"
+        weaponSlot.style.background = "rgba(180,180,255,0.3)"
      
     } else if(event.key === btn5) {
         spearSelect = false;
@@ -226,6 +250,11 @@ document.addEventListener('keydown', (event) => {
         terraSelect = false;
         deathSelect = false;
 
+        bowSlot.style.filter = "grayscale(100%)";
+        wandSlot.style.filter =  "grayscale(0%)";
+        wandSlot.style.background = "rgba(120,120,255,0.3)"
+        weaponSlot.style.background = "rgba(120,120,255,0.3)"
+
     } else if(event.key === btn6) {
         spearSelect = false;
         fireSelect = false;
@@ -233,6 +262,11 @@ document.addEventListener('keydown', (event) => {
         energySelect = false;
         terraSelect = true;
         deathSelect = false;
+
+        bowSlot.style.filter = "grayscale(100%)";
+        wandSlot.style.filter =  "grayscale(0%)";
+        wandSlot.style.background = "rgba(120,255,120,0.3)"
+        weaponSlot.style.background = "rgba(120,255,120,0.3)"
 
     } else if(event.key === btn7) {
         spearSelect = false;
@@ -242,6 +276,10 @@ document.addEventListener('keydown', (event) => {
         terraSelect = false;
         deathSelect = true;
      
+        bowSlot.style.filter = "grayscale(100%)";
+        wandSlot.style.filter =  "grayscale(0%)";
+        wandSlot.style.background = "rgba(20,20,20,1)"
+        weaponSlot.style.background = "rgba(20,20,20,1)"
     } 
      
     

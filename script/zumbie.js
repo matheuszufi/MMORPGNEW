@@ -889,6 +889,23 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLoot3 = document.createElement('img');
                     zumbieImgLoot3.setAttribute('src', `${redMushroom.img}`) 
                     zumbieLoot3.appendChild(zumbieImgLoot3)
+
+                    zumbieLoot3.addEventListener('click', () => {
+                        player.life += 5;
+                        player.mana += 5;
+
+                        menuUpLifeBar.style.width = `${(player.life / player.maxlife) * 100}%`
+                        menuUpLifeValue.innerHTML = `${player.life}`
+                        playerHealth.style.width = `${(player.life / player.maxlife) * 100}%`
+
+                        menuUpManaBar.style.width = `${(player.mana / player.maxMana) * 100}%`
+                        menuUpManaValue.innerHTML = `${player.mana}`
+                        playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
+
+                        zumbieLoot3.remove();
+
+
+                    })
                 }
               
                 const zumbieLoot4 = document.createElement('div');
