@@ -177,7 +177,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
           
         } 
 
-        if(randwalkNpcGuanabara > 2 && randwalkNpcGuanabara <= 4 && npcGuanabaraPosX >= 100) {
+        if(randwalkNpcGuanabara > 2 && randwalkNpcGuanabara <= 4 && npcGuanabaraPosX >= 400) {
             npcGuanabaraAnimaUp();
             npcGuanabaraPosX = npcGuanabaraPosX - 100;
             npcGuanabaraUi.style.transform = `translate(${npcGuanabaraPosY}px,${npcGuanabaraPosX}px)`;
@@ -277,6 +277,10 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerOne);
     guanabaraTalkContentLeftDownAnswerOne.innerHTML = "UPGRADE <br>SET"
 
+    // guanabaraTalkContentLeftDownAnswerOne.addEventListener('click', () => {
+    //     showUpgradeSetDiv();
+    // })
+
     const guanabaraTalkContentLeftDownAnswerTwo = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerTwo.setAttribute('id', 'guanabara-talk-content-left-down-answer-2');
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerTwo);
@@ -288,16 +292,28 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     guanabaraTalkContentLeftDownAnswerThree.innerHTML = "Até mais!";
     guanabaraTalkContentLeftDownAnswerThree.addEventListener('click', guanabaraCloseTalk)
 
+  //CONTENT RIGHT
+  const guanabaraTalkContentRight = document.createElement('div');
+  guanabaraTalkContentRight.setAttribute('id', 'guanabara-talk-content-right');
+  guanabaraTalkContent.appendChild(guanabaraTalkContentRight);
+
+
+
+
+    const upgradeSetDiv = document.createElement('div');
+    upgradeSetDiv.setAttribute('id', 'upgrade-set-div');
+    guanabaraTalkContentRight.appendChild(upgradeSetDiv);
+
 
     function guanabaraCloseTalk () {
         guanabaraTalkDiv.style.display = "none" 
         guanabaraTalkingWith = false;
     }
-    //CONTENT RIGHT
-    const guanabaraTalkContentRight = document.createElement('div');
-    guanabaraTalkContentRight.setAttribute('id', 'guanabara-talk-content-right');
-    guanabaraTalkContent.appendChild(guanabaraTalkContentRight);
+  
 
-
+    const upgradeSetDivHeader = document.createElement('div');
+    upgradeSetDivHeader.setAttribute('id', 'upgrade-set-div-header');
+    upgradeSetDiv.appendChild(upgradeSetDivHeader);
+    upgradeSetDivHeader.innerHTML = "Guanabara Store <span>Set Items</span>"
   
 

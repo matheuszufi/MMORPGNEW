@@ -101,6 +101,13 @@ wandSlot.style.filter =  "grayscale(100%)";
 const weaponSlot = document.getElementById("sword-slot");
 weaponSlot.style.filter =  "grayscale(0%)";
 
+slotSpearSelect.style.filter = "grayscale(0%)"
+slotFireSelect.style.filter = "grayscale(100%)"
+slotIceSelect.style.filter = "grayscale(100%)"
+slotEnergySelect.style.filter = "grayscale(100%)"
+slotTerraSelect.style.filter = "grayscale(100%)"
+slotDeathSelect.style.filter = "grayscale(100%)"
+
 document.addEventListener('keydown', (event) => {
 
     btnA = "a";
