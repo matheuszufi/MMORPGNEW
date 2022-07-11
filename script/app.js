@@ -23,27 +23,27 @@ let player = {
     attackCount: 0,
     attackToLVLUP: 100,
 
-    fire: 20,
+    fire: 50,
     fireLevel: 1,
     fireCount: 0,
     fireToLVLUP: 100,
 
-    ice: 20,
+    ice: 50,
     iceLevel: 1,
     iceCount: 0,
     iceToLVLUP: 100,
 
-    energy: 20,
+    energy: 50,
     energyLevel: 1,
     energyCount: 0,
     energyToLVLUP: 100,
 
-    terra: 20,
+    terra: 50,
     terraLevel: 1,
     terraCount: 0,
     terraToLVLUP: 100,
 
-    death: 20,
+    death: 50,
     deathLevel: 1,
     deathCount: 0,
     deathToLVLUP: 100,
@@ -214,7 +214,16 @@ document.addEventListener('keydown', (event) => {
         bowSlot.style.filter = "grayscale(0%)";
         wandSlot.style.filter =  "grayscale(100%)";
         weaponSlot.style.background = "rgba(0,0,0,0.05)"
-    
+
+        slotSpearSelect.style.filter = "grayscale(0%)"
+        slotFireSelect.style.filter = "grayscale(100%)"
+        slotIceSelect.style.filter = "grayscale(100%)"
+        slotEnergySelect.style.filter = "grayscale(100%)"
+        slotTerraSelect.style.filter = "grayscale(100%)"
+        slotDeathSelect.style.filter = "grayscale(100%)"
+        
+
+
      
     } else if(event.key === btn3) {
         spearSelect = false;
@@ -228,6 +237,13 @@ document.addEventListener('keydown', (event) => {
         wandSlot.style.filter =  "grayscale(0%)";
         wandSlot.style.background = "rgba(255,0,0,0.3)"
         weaponSlot.style.background = "rgba(255,0,0,0.3)"
+
+        slotSpearSelect.style.filter = "grayscale(100%)"
+        slotFireSelect.style.filter = "grayscale(0%)"
+        slotIceSelect.style.filter = "grayscale(100%)"
+        slotEnergySelect.style.filter = "grayscale(100%)"
+        slotTerraSelect.style.filter = "grayscale(100%)"
+        slotDeathSelect.style.filter = "grayscale(100%)"
      
     } else if(event.key === btn4) {
         spearSelect = false;
@@ -241,6 +257,13 @@ document.addEventListener('keydown', (event) => {
         wandSlot.style.filter =  "grayscale(0%)";
         wandSlot.style.background = "rgba(180,180,255,0.3)"
         weaponSlot.style.background = "rgba(180,180,255,0.3)"
+
+        slotSpearSelect.style.filter = "grayscale(100%)"
+        slotFireSelect.style.filter = "grayscale(100%)"
+        slotIceSelect.style.filter = "grayscale(0%)"
+        slotEnergySelect.style.filter = "grayscale(100%)"
+        slotTerraSelect.style.filter = "grayscale(100%)"
+        slotDeathSelect.style.filter = "grayscale(100%)"
      
     } else if(event.key === btn5) {
         spearSelect = false;
@@ -255,6 +278,13 @@ document.addEventListener('keydown', (event) => {
         wandSlot.style.background = "rgba(120,120,255,0.3)"
         weaponSlot.style.background = "rgba(120,120,255,0.3)"
 
+        slotSpearSelect.style.filter = "grayscale(100%)"
+        slotFireSelect.style.filter = "grayscale(100%)"
+        slotIceSelect.style.filter = "grayscale(100%)"
+        slotEnergySelect.style.filter = "grayscale(0%)"
+        slotTerraSelect.style.filter = "grayscale(100%)"
+        slotDeathSelect.style.filter = "grayscale(100%)"
+
     } else if(event.key === btn6) {
         spearSelect = false;
         fireSelect = false;
@@ -268,6 +298,13 @@ document.addEventListener('keydown', (event) => {
         wandSlot.style.background = "rgba(120,255,120,0.3)"
         weaponSlot.style.background = "rgba(120,255,120,0.3)"
 
+        slotSpearSelect.style.filter = "grayscale(100%)"
+        slotFireSelect.style.filter = "grayscale(100%)"
+        slotIceSelect.style.filter = "grayscale(100%)"
+        slotEnergySelect.style.filter = "grayscale(100%)"
+        slotTerraSelect.style.filter = "grayscale(0%)"
+        slotDeathSelect.style.filter = "grayscale(100%)"
+
     } else if(event.key === btn7) {
         spearSelect = false;
         fireSelect = false;
@@ -280,6 +317,14 @@ document.addEventListener('keydown', (event) => {
         wandSlot.style.filter =  "grayscale(0%)";
         wandSlot.style.background = "rgba(20,20,20,1)"
         weaponSlot.style.background = "rgba(20,20,20,1)"
+
+        
+        slotSpearSelect.style.filter = "grayscale(100%)"
+        slotFireSelect.style.filter = "grayscale(100%)"
+        slotIceSelect.style.filter = "grayscale(100%)"
+        slotEnergySelect.style.filter = "grayscale(100%)"
+        slotTerraSelect.style.filter = "grayscale(100%)"
+        slotDeathSelect.style.filter = "grayscale(0%)"
     } 
      
     

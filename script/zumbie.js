@@ -860,7 +860,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
           
                 
              
-                if(zumbieRandLoot > 5) {
+                if(zumbieRandLoot > 50) {
                     enemiesLoot.push(steelHelmetItem) 
                     const zumbieLoot1 = document.createElement('div');
                     zumbieLoot1.setAttribute('class', 'loot-slot')
@@ -870,11 +870,19 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLoot1.appendChild(zumbieImgLoot1)
         
+                    zumbieLoot1.addEventListener('click', () => {
+    
+                        player.coins += steelHelmetItem.value;
+                        menuDownCoinsContent.innerHTML = `${player.coins}`
+                        zumbieLoot1.style.display = "none";
+                    })
+
+
                     zumbieLoot1.addEventListener('mouseover', () => {
                         const steelHelmetItemInfo = document.createElement('div');
                         steelHelmetItemInfo.setAttribute('id', "steel-helmet-info");
                         zumbieLoot1.appendChild(steelHelmetItemInfo)
-                        steelHelmetItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+20 DEFENSE EXP <span>PRICE:</span> 50GP`
+                        steelHelmetItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+20 DEFENSE EXP <span>PRICE:</span> 30GP`
 
                         zumbieLoot1.addEventListener('mouseout', () => {
                             steelHelmetItemInfo.remove(); 
@@ -884,7 +892,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 } 
     
 
-                if(zumbieRandLoot2 > 7) {
+                if(zumbieRandLoot2 > 70) {
                     const zumbieLoot2 = document.createElement('div');
                     zumbieLoot2.setAttribute('class', 'loot-slot')
                     menuDownLootContent.appendChild(zumbieLoot2);
