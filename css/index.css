@@ -137,12 +137,12 @@ body {overflow: hidden;}
 }
 
 #spear-animation {
-    background-color: rgb(71, 47, 14);
+  
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
-    border-radius: 20%;
-    border: 1px solid black;
+    transition: 0.1s;
+
+
 }
 
 #fire-animation {

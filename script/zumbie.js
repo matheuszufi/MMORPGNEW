@@ -247,6 +247,28 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 // zumbieIsTag = false
                 zumbieKill();    
             }
+
+
+                //WEAPON ANIMATION ENEMY
+                const zumbieAttackWeaponAnimationEnemy = document.createElement('img');
+                zumbieAttackWeaponAnimationEnemy.style.animationPlayState = "paused"
+                zumbieAttackWeaponAnimationEnemy.setAttribute('id', 'atk-wseapon-animation-enemy');
+                zumbieAttackWeaponAnimationEnemy.setAttribute('src', '../imgs/Blood_Effect.webp');
+                
+                setTimeout(() => {
+                    zumbieAttackWeaponAnimationEnemy.src = `${zumbieAttackWeaponAnimationEnemy.src.replace(/\?.*$/,"")}?x=${Math.random()}`;
+                }, 100)
+    
+    
+    
+                zumbieUi.appendChild(zumbieAttackWeaponAnimationEnemy);
+                setTimeout(zumbieClosezumbieAttackWeaponAnimationEnemy, 500);
+        
+                function zumbieClosezumbieAttackWeaponAnimationEnemy() {
+                    zumbieAttackWeaponAnimationEnemy.remove();
+                } 
+
+
         } else {
             zumbieStayCloserToEnemyAlert();
         }
@@ -300,24 +322,67 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 zumbieAttackBowAnimation.remove();
             }  
     
-            const zumbieSpearAnimation = document.createElement('div');
+            const zumbieSpearAnimation = document.createElement('img');
             zumbieSpearAnimation.setAttribute('id', 'spear-animation');
+            zumbieSpearAnimation.setAttribute('src', '../imgs/Ethereal_Spear_Missile.gif');
+
             playerUi.appendChild(zumbieSpearAnimation);
             zumbieSpearAnimation.style.transition = "0.5s linear"
             setTimeout(zumbieSpearTargetAnime, 1);
             
-            setTimeout(zumbieSpearCloseAnimation, 501)
+            setTimeout(zumbieSpearCloseAnimation, 301)
+
+          
+            if (zumbieDistanceX === 0 && zumbieDistanceY > 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(-45deg)`
+            } else if (zumbieDistanceX < 0 && zumbieDistanceY > 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(-90deg)`
+            } else if (zumbieDistanceX < 0 && zumbieDistanceY === 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(-135deg)`
+            }else if (zumbieDistanceX < 0 && zumbieDistanceY < 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(-180deg)`
+            }else if (zumbieDistanceX === 0 && zumbieDistanceY < 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(135deg)`
+            }else if (zumbieDistanceX < 0 && zumbieDistanceY < 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(90deg)`
+            }else if (zumbieDistanceX > 0 && zumbieDistanceY === 0) {
+                zumbieSpearAnimation.style.transition = '0.3s'
+                zumbieSpearAnimation.style.transform = `rotateZ(45deg)`
+            }
     
             function zumbieSpearTargetAnime () {
-                if (zumbieDistanceX < zumbieDistanceY ) {
-                    zumbieSpearAnimation.style.width = "80px"
-                    zumbieSpearAnimation.style.height = "5px"
+                if (zumbieDistanceX > 0 && zumbieDistanceY > 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
                     zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
-                } else {
-                    zumbieSpearAnimation.style.width = "5px"
-                    zumbieSpearAnimation.style.height = "80px"
-                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
+                } else if (zumbieDistanceX === 0 && zumbieDistanceY > 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(-45deg)`
+                } else if (zumbieDistanceX < 0 && zumbieDistanceY > 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(-90deg)`
+                } else if (zumbieDistanceX < 0 && zumbieDistanceY === 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(-135deg)`
+                }else if (zumbieDistanceX < 0 && zumbieDistanceY < 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(-180deg)`
+                }else if (zumbieDistanceX === 0 && zumbieDistanceY < 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(135deg)`
+                }else if (zumbieDistanceX < 0 && zumbieDistanceY < 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(90deg)`
+                }else if (zumbieDistanceX > 0 && zumbieDistanceY === 0) {
+                    zumbieSpearAnimation.style.transition = '0.3s'
+                    zumbieSpearAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px) rotateZ(45deg)`
                 }
+
             }
             function zumbieSpearCloseAnimation() {
                 zumbieSpearAnimation.remove();

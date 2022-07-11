@@ -293,7 +293,7 @@
     -o-user-select: none;
 }
 
-#atk-death-animation-enemy,#atk-energy-animation-enemy,#atk-ice-animation-enemy, #atk-spear-animation-enemy, #atk-terra-animation-enemy, #atk-fire-animation-enemy  {
+#atk-wseapon-animation-enemy,#atk-death-animation-enemy,#atk-energy-animation-enemy,#atk-ice-animation-enemy, #atk-spear-animation-enemy, #atk-terra-animation-enemy, #atk-fire3-animation-enemy  {
 
     position: absolute;
     margin-top: -60px;
