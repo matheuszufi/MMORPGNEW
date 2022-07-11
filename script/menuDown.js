@@ -44,41 +44,19 @@ const menuDownLootContent = document.createElement('div');
 menuDownLootContent.setAttribute('id', "menu-down-loot-content");
 menuDownLoot.appendChild(menuDownLootContent);
 
-// const menuDownLootSlot = document.createElement('div');
-// menuDownLootSlot.setAttribute("class", "loot-slot");
-// menuDownLootContent.appendChild(menuDownLootSlot);
 
 let enemiesLoot = [
-    slot1 = 'slot1',
-    slot2 = 'slot2',
-    slot3 = 'slot3',
-    slot4 = '',
-    slot5 = '',
-    slot6 = '',
-    slot7 = '',
-    slot8 = '',
-    slot9 = '',
-    slot10 = '',
-    slot11 = '',
-    slot12 = '',
-    slot13 = '',
-    slot14 = '',
-    slot15 = '',
-    slot16 = '',
-    slot17 = '',
-    slot18 = '',
-    slot19 = '',
-    slot20 = '',
+
 ]
 
 
-enemiesLoot.forEach(() => {
-    const menuDownLootSlot = document.createElement('div');
-    menuDownLootSlot.setAttribute("class", "loot-slot");
-    for (var i = 0; i < 20; i++){
-        menuDownLootSlot.setAttribute("id", `${([enemiesLoot.slic])}`);
-        menuDownLootContent.appendChild(menuDownLootSlot);
-    }   
-});
-    
+
+// enemiesLoot.forEach(() => {
+//     const menuDownLootSlot = document.createElement('div');
+//     menuDownLootSlot.setAttribute("class", "loot-slot");
+//     for (var i = 0; i < 15; i++){
+//         menuDownLootSlot.setAttribute("id", `${([enemiesLoot.slic])}`);
+//         menuDownLootContent.appendChild(menuDownLootSlot);
+//     }   
+// });
     

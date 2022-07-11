@@ -104,7 +104,10 @@
     border-top: 1px solid rgb(100, 100, 100);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.439);
     background: url(../imgs/backgroundStyleTibia.png);
-    margin: 1px
+    margin: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -113,4 +116,12 @@
     flex-wrap: wrap;
     justify-content: center;
  
+}
+
+#coin-count{
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 30px;
+    color: white;
+    font-family: 'rh';
 }

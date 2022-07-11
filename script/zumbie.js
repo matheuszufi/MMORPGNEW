@@ -787,6 +787,19 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
     var zumbieIsDead = false;
 
+
+
+  
+    // setInterval(function(){   
+    //     zumbieRandLoot = (Math.floor((Math.random()*100)+1)); 
+    //     zumbieRandLoot2 = (Math.floor((Math.random()*100)+1)); 
+    //     zumbieRandLoot3 = (Math.floor((Math.random()*100)+1)); 
+    //     zumbieRandLoot4 = (Math.floor((Math.random()*80)+1)); 
+    //     console.log(zumbieRandLoot, zumbieRandLoot2, zumbieRandLoot3);
+    
+    //  }, 5000);
+
+
     function zumbieKill() {
         
         zumbieUi.style.display = "none";
@@ -809,14 +822,93 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         
         function zumbieLoot() {
             zumbieDeadUi.style.display = "none";
-            player.coins += zumbie.coins;
-            menuDownCoinsContent.innerHTML = `${player.coins}`
-            zumbieLootCoinAnime();
-            zumbieShowLoot();
-            function zumbieShowLoot() {
-                enemiesLoot[0] = "Oi" 
-            }
+
+
+                const steelHelmetItem = {
+                    name: "Steel Helmet",
+                    value: 30,
+                    img: "../imgs/Steel_Helmet.gif",
+                    defense: 6 
+                }
+                const spiritCapeItem = {
+                    name: "Spirit Cape",
+                    value: 50,
+                    img: "../imgs/Spirit_Cloak.gif",
+                    defense: 5,
+                    holyLevel: 5
+                }
+                const redMushroom = {
+                    name: "Red Mushroom",
+                    value: 5,
+                    img: "../imgs/Red_Mushroom.gif",
+                    life: 20,
+                    
+                }
+              
+                    zumbieRandLoot = (Math.floor((Math.random()*100)+1)); 
+                    zumbieRandLoot2 = (Math.floor((Math.random()*100)+1)); 
+                    zumbieRandLoot3 = (Math.floor((Math.random()*100)+1)); 
+                    zumbieRandLoot4 = (Math.floor((Math.random()*80)+1)); 
+                    console.log(zumbieRandLoot, zumbieRandLoot2, zumbieRandLoot3);
+                
+          
+                
+             
+                if(zumbieRandLoot > 5) {
+                    enemiesLoot.push(steelHelmetItem) 
+                    const zumbieLoot1 = document.createElement('div');
+                    zumbieLoot1.setAttribute('class', 'loot-slot')
+                    menuDownLootContent.appendChild(zumbieLoot1);
+    
+                    const zumbieImgLoot1 = document.createElement('img');
+                    zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
+                    zumbieLoot1.appendChild(zumbieImgLoot1)
+                } 
+                if(zumbieRandLoot2 > 7) {
+                    const zumbieLoot2 = document.createElement('div');
+                    zumbieLoot2.setAttribute('class', 'loot-slot')
+                    menuDownLootContent.appendChild(zumbieLoot2);
+    
+                    const zumbieImgLoot2 = document.createElement('img');
+                    zumbieImgLoot2.setAttribute('src', `${spiritCapeItem.img}`) 
+                    zumbieLoot2.appendChild(zumbieImgLoot2)
+                }
+                if(zumbieRandLoot3 > 7) {
+                    const zumbieLoot3 = document.createElement('div');
+                    zumbieLoot3.setAttribute('class', 'loot-slot')
+                    menuDownLootContent.appendChild(zumbieLoot3);
+    
+                    const zumbieImgLoot3 = document.createElement('img');
+                    zumbieImgLoot3.setAttribute('src', `${redMushroom.img}`) 
+                    zumbieLoot3.appendChild(zumbieImgLoot3)
+                }
+              
+                const zumbieLoot4 = document.createElement('div');
+                zumbieLoot4.setAttribute('class', 'loot-slot')
+                menuDownLootContent.appendChild(zumbieLoot4);
+
+                const zumbieImgLoot4 = document.createElement('img');
+                zumbieImgLoot4.setAttribute('src', '../imgs/Gold_Coin.gif') 
+                zumbieLoot4.appendChild(zumbieImgLoot4)
+
+                const zumbieCountLoot4 = document.createElement('p');
+                zumbieCountLoot4.setAttribute('id', 'coin-count');
+                zumbieCountLoot4.innerHTML = `${zumbieRandLoot4}`
+                zumbieLoot4.appendChild(zumbieCountLoot4);
+
+                zumbieLoot4.addEventListener('click', zumbieColectCoin)
+
+                function zumbieColectCoin() {
+                    player.coins += zumbieRandLoot4;
+                    menuDownCoinsContent.innerHTML = `${player.coins}`
+                    zumbieLootCoinAnime();
+                    zumbieLoot4.remove();
+                }
+
+        
+            
             // return zumbieDeadUi;
+
         }
 
  
@@ -857,7 +949,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     function zumbieLootCoinAnime() {
         const zumbieLootCoinAnimation = document.createElement('div');
         zumbieLootCoinAnimation.setAttribute('id', 'zumbie-lootcoin-animation');
-        zumbieLootCoinAnimation.innerHTML = `+${zumbie.coins}`;
+        zumbieLootCoinAnimation.innerHTML = `+${zumbieRandLoot4}`;
 
         playerUi.appendChild(zumbieLootCoinAnimation);
         setTimeout(zumbieCloseLootCoinAnimation, 1000);
