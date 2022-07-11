@@ -895,6 +895,17 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                             menuDownCoinsContent.innerHTML = `${player.coins}`
                             zumbieLoot2.style.display = "none";
                         })
+                        zumbieLoot2.addEventListener('mouseover', () => {
+                            const spiritCapeItemInfo = document.createElement('div');
+                            spiritCapeItemInfo.setAttribute('id', "spirit-cape-info");
+                            zumbieLoot2.appendChild(spiritCapeItemInfo)
+                            spiritCapeItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+20 DEATH EXP <span>PRICE:</span> 50GP`
+
+                            zumbieLoot2.addEventListener('mouseout', () => {
+                                spiritCapeItemInfo.remove(); 
+                            })
+                        })
+              
                     }
                 }
 
