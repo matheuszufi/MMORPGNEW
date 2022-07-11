@@ -869,15 +869,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLoot1 = document.createElement('img');
                     zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLoot1.appendChild(zumbieImgLoot1)
-                    
-                    zumbieImgLoot1.addEventListener('ondragstart', dragStart(event))
-
-                    zumbieLoot1.addEventListener('ondrop', drop(event))
-                    zumbieLoot1.addEventListener('ondragover', allowDrop(event))
-
-                    const bpSlot = document.getElementById('bp-slot-1')
-                    bpSlot.addEventListener("ondrop", drop(event))
-                    bpSlot.addEventListener("ondragover", allowDrop(event));
+           
 
                 } 
                 if(zumbieRandLoot2 > 7) {
@@ -921,21 +913,6 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieLoot4.remove();
                 }
 
-
-                function dragStart(event) {
-                    event.dataTransfer.setData("img", event.target.id);
-                    }
-                  
-                  function allowDrop(event) {
-                    event.preventDefault();
-                  }
-                  
-                  function drop(event) {
-                    event.preventDefault();
-                    var data = event.dataTransfer.getData("img");
-                    event.target.appendChild(document.getElementById(data));
-                    document.getElementById("demo").innerHTML = "The p element was dropped";
-                  }
                 
 
         
