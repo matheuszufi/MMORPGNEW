@@ -151,7 +151,7 @@ body {overflow: hidden;}
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 50%;
     border: 1px solid black;
 }
@@ -162,7 +162,7 @@ body {overflow: hidden;}
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 50%;
     border: 1px solid black;
 }
@@ -173,7 +173,7 @@ body {overflow: hidden;}
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 50%;
     border: 1px solid black;
     box-shadow: 3px 0 12px rgb(164,144,254), -3px 0 3px rgb(164,144,254), 0 3px 3px rgb(164,144,254), 0 -3px 3px rgb(164,144,254), 3px 3px rgb(164,144,254), -3px -3px 3px rgb(164,144,254), 3px -3px 3px rgb(164,144,254), -3px 3px 3px rgb(164,144,254);
@@ -186,7 +186,7 @@ body {overflow: hidden;}
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 50%;
     border: 1px solid black;
     box-shadow: 1px 0 0 rgb(38, 96, 22), -1px 0 0 rgb(38, 96, 22), 0 1px 0 rgb(38, 96, 22), 0 -1px 0 rgb(38, 96, 22), 1px 1px rgb(38, 96, 22), -1px -1px 0 rgb(38, 96, 22), 1px -1px 0 rgb(38, 96, 22), -1px 1px 0 rgb(38, 96, 22);
@@ -199,7 +199,7 @@ body {overflow: hidden;}
     height: 30px;
     position: absolute;
     transform: translate(0px, 0px);
-    transition: 1s;
+    transition: 0.3s;
     border-radius: 50%;
     border: 1px solid black;
     

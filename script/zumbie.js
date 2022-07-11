@@ -252,7 +252,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                 //WEAPON ANIMATION ENEMY
                 const zumbieAttackWeaponAnimationEnemy = document.createElement('img');
                 zumbieAttackWeaponAnimationEnemy.style.animationPlayState = "paused"
-                zumbieAttackWeaponAnimationEnemy.setAttribute('id', 'atk-wseapon-animation-enemy');
+                zumbieAttackWeaponAnimationEnemy.setAttribute('id', 'atk-weapon-animation-enemy');
                 zumbieAttackWeaponAnimationEnemy.setAttribute('src', '../imgs/Blood_Effect.webp');
                 
                 setTimeout(() => {
@@ -445,10 +445,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             const zumbieFireAnimation = document.createElement('div');
             zumbieFireAnimation.setAttribute('id', 'fire-animation');
             playerUi.appendChild(zumbieFireAnimation);
-            zumbieFireAnimation.style.transition = "0.5s linear"
+            zumbieFireAnimation.style.transition = "0.3s linear"
             setTimeout(zumbieFireTargetAnime, 1);
             
-            setTimeout(zumbieFireCloseAnimation, 501)
+            setTimeout(zumbieFireCloseAnimation, 301)
     
             function zumbieFireTargetAnime () {          
                 zumbieFireAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
@@ -516,10 +516,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             const zumbieIceAnimation = document.createElement('div');
             zumbieIceAnimation.setAttribute('id', 'ice-animation');
             playerUi.appendChild(zumbieIceAnimation);
-            zumbieIceAnimation.style.transition = "0.5s linear"
+            zumbieIceAnimation.style.transition = "0.3s linear"
             setTimeout(zumbieIceTargetAnime, 1);
             
-            setTimeout(zumbieIceCloseAnimation, 501)
+            setTimeout(zumbieIceCloseAnimation, 301)
     
             function zumbieIceTargetAnime () {          
                 zumbieIceAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
@@ -591,10 +591,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             const zumbieEnergyAnimation = document.createElement('div');
             zumbieEnergyAnimation.setAttribute('id', 'energy-animation');
             playerUi.appendChild(zumbieEnergyAnimation);
-            zumbieEnergyAnimation.style.transition = "0.5s linear"
+            zumbieEnergyAnimation.style.transition = "0.3s linear"
             setTimeout(zumbieEnergyTargetAnime, 1);
             
-            setTimeout(zumbieEnergyCloseAnimation, 501)
+            setTimeout(zumbieEnergyCloseAnimation, 301)
     
             function zumbieEnergyTargetAnime () {          
                 zumbieEnergyAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
@@ -663,10 +663,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             const zumbieTerraAnimation = document.createElement('div');
             zumbieTerraAnimation.setAttribute('id', 'terra-animation');
             playerUi.appendChild(zumbieTerraAnimation);
-            zumbieTerraAnimation.style.transition = "0.5s linear"
+            zumbieTerraAnimation.style.transition = "0.3s linear"
             setTimeout(zumbieTerraTargetAnime, 1);
             
-            setTimeout(zumbieTerraCloseAnimation, 501)
+            setTimeout(zumbieTerraCloseAnimation, 301)
     
             function zumbieTerraTargetAnime () {          
                 zumbieTerraAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
@@ -738,10 +738,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             const zumbieDeathAnimation = document.createElement('div');
             zumbieDeathAnimation.setAttribute('id', 'death-animation');
             playerUi.appendChild(zumbieDeathAnimation);
-            zumbieDeathAnimation.style.transition = "0.5s linear"
+            zumbieDeathAnimation.style.transition = "0.3s linear"
             setTimeout(zumbieDeathTargetAnime, 1);
             
-            setTimeout(zumbieDeathCloseAnimation, 501)
+            setTimeout(zumbieDeathCloseAnimation, 301)
     
             function zumbieDeathTargetAnime () {          
                 zumbieDeathAnimation.style.transform = `translate(${zumbieDistanceY}px,${zumbieDistanceX}px)`
@@ -774,16 +774,16 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
     }
     
 
-    function zumbieAttackMagicEnemy() {
-        if(player.mana > 30) {
-            player.mana = player.mana - 30;
+    // function zumbieAttackMagicEnemy() {
+    //     if(player.mana > 30) {
+    //         player.mana = player.mana - 30;
 
-            if(FireSelect) {
-                zumbie.life = zumbie.life - player.fire;
-            }
+    //         if(FireSelect) {
+    //             zumbie.life = zumbie.life - player.fire;
+    //         }
              
-        }
-    }
+    //     }
+    // }
 
     var zumbieIsDead = false;
 
@@ -813,6 +813,9 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             menuDownCoinsContent.innerHTML = `${player.coins}`
             zumbieLootCoinAnime();
             zumbieShowLoot();
+            function zumbieShowLoot() {
+                enemiesLoot[0] = "Oi" 
+            }
             // return zumbieDeadUi;
         }
 

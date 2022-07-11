@@ -49,9 +49,9 @@ menuDownLoot.appendChild(menuDownLootContent);
 // menuDownLootContent.appendChild(menuDownLootSlot);
 
 let enemiesLoot = [
-    slot1 = '',
-    slot2 = '',
-    slot3 = '',
+    slot1 = 'slot1',
+    slot2 = 'slot2',
+    slot3 = 'slot3',
     slot4 = '',
     slot5 = '',
     slot6 = '',
@@ -75,11 +75,10 @@ let enemiesLoot = [
 enemiesLoot.forEach(() => {
     const menuDownLootSlot = document.createElement('div');
     menuDownLootSlot.setAttribute("class", "loot-slot");
-    menuDownLootContent.appendChild(menuDownLootSlot);
+    for (var i = 0; i < 20; i++){
+        menuDownLootSlot.setAttribute("id", `${([enemiesLoot.slic])}`);
+        menuDownLootContent.appendChild(menuDownLootSlot);
+    }   
+});
     
-    }
-)
-
-function zumbieShowLoot() {
-
-}
+    
