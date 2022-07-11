@@ -381,6 +381,7 @@ align-items: center;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #guanabara-talk-content-left-down-answer-1:active{

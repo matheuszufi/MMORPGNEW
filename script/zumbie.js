@@ -870,12 +870,17 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLoot1.appendChild(zumbieImgLoot1)
         
-                    if (guanabaraTalkingWith = true) {
-                        
-                        player.coins += steelHelmetItem.value;
-                        menuDownCoinsContent.innerHTML = `${player.coins}`
-                        zumbieLoot1.style.display = "none";
-                    }
+                    zumbieLoot1.addEventListener('mouseover', () => {
+                        const steelHelmetItemInfo = document.createElement('div');
+                        steelHelmetItemInfo.setAttribute('id', "steel-helmet-info");
+                        zumbieLoot1.appendChild(steelHelmetItemInfo)
+                        steelHelmetItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+20 DEFENSE EXP <span>PRICE:</span> 50GP`
+
+                        zumbieLoot1.addEventListener('mouseout', () => {
+                            steelHelmetItemInfo.remove(); 
+                        })
+                    })
+       
                 } 
     
 
@@ -888,7 +893,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieImgLoot2.setAttribute('src', `${spiritCapeItem.img}`) 
                     zumbieLoot2.appendChild(zumbieImgLoot2)
             
-                    if (guanabaraTalkingWith = true) {
+                    
                         zumbieLoot2.addEventListener('click', () => {
     
                             player.coins += spiritCapeItem.value;
@@ -906,7 +911,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                             })
                         })
               
-                    }
+                    
                 }
 
 
@@ -935,6 +940,18 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
 
                     })
+
+                    zumbieLoot3.addEventListener('mouseover', () => {
+                        const redMushroomItemInfo = document.createElement('div');
+                        redMushroomItemInfo.setAttribute('id', "red-mushroom-info");
+                        zumbieLoot3.appendChild(redMushroomItemInfo)
+                        redMushroomItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+5 LIFE/MANA`
+
+                        zumbieLoot3.addEventListener('mouseout', () => {
+                            redMushroomItemInfo.remove(); 
+                        })
+                    })
+       
                 }
               
                 const zumbieLoot4 = document.createElement('div');

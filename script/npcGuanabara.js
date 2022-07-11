@@ -275,12 +275,12 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     const guanabaraTalkContentLeftDownAnswerOne = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerOne.setAttribute('id', 'guanabara-talk-content-left-down-answer-1');
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerOne);
-    guanabaraTalkContentLeftDownAnswerOne.innerHTML = "Que legal, mostre-me a loja!"
+    guanabaraTalkContentLeftDownAnswerOne.innerHTML = "UPGRADE <br>SET"
 
     const guanabaraTalkContentLeftDownAnswerTwo = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerTwo.setAttribute('id', 'guanabara-talk-content-left-down-answer-2');
     guanabaraTalkContentLeftDown.appendChild(guanabaraTalkContentLeftDownAnswerTwo);
-    guanabaraTalkContentLeftDownAnswerTwo.innerHTML = "Que legal, quero conhecer mais sobre você!"
+    guanabaraTalkContentLeftDownAnswerTwo.innerHTML = "UPGRADE <br>WEAPONS"
 
     const guanabaraTalkContentLeftDownAnswerThree = document.createElement('div');
     guanabaraTalkContentLeftDownAnswerThree.setAttribute('id', 'guanabara-talk-content-left-down-answer-1');

@@ -18,7 +18,7 @@ let player = {
     speedCount: 0,
     speedToLVLUP: 100,
 
-    attack: 4,
+    attack: 10,
     attackLevel: 1,
     attackCount: 0,
     attackToLVLUP: 100,
@@ -53,7 +53,7 @@ let player = {
     holyCount: 0,
     holyToLVLUP: 100,
 
-    attackDistance: 4,
+    attackDistance: 40,
     distanceLevel: 1,
     distanceCount: 0,
     distanceToLVLUP: 100
