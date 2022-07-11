@@ -227,11 +227,12 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     guanabaraTalkDiv.setAttribute('id', 'guanabara-talk-div');
     document.getElementById('engine').appendChild(guanabaraTalkDiv);
 
+    let guanabaraTalkingWith = false;
+    npcGuanabaraUi.addEventListener('click', guanabaraStoreOpen);
 
-    npcGuanabaraUi.addEventListener('click', guanabaraWellcome);
-
-    function guanabaraWellcome() {
+    function guanabaraStoreOpen() {
         guanabaraTalkDiv.style.display = "flex" 
+        guanabaraTalkingWith = true;
     }
 
     const guanabaraTalkContent = document.createElement('div');
@@ -290,6 +291,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
 
     function guanabaraCloseTalk () {
         guanabaraTalkDiv.style.display = "none" 
+        guanabaraTalkingWith = false;
     }
     //CONTENT RIGHT
     const guanabaraTalkContentRight = document.createElement('div');

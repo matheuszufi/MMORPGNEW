@@ -869,9 +869,16 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLoot1 = document.createElement('img');
                     zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLoot1.appendChild(zumbieImgLoot1)
-           
-
+        
+                    if (guanabaraTalkingWith = true) {
+                        
+                        player.coins += steelHelmetItem.value;
+                        menuDownCoinsContent.innerHTML = `${player.coins}`
+                        zumbieLoot1.style.display = "none";
+                    }
                 } 
+    
+
                 if(zumbieRandLoot2 > 7) {
                     const zumbieLoot2 = document.createElement('div');
                     zumbieLoot2.setAttribute('class', 'loot-slot')
@@ -880,7 +887,18 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLoot2 = document.createElement('img');
                     zumbieImgLoot2.setAttribute('src', `${spiritCapeItem.img}`) 
                     zumbieLoot2.appendChild(zumbieImgLoot2)
+            
+                    if (guanabaraTalkingWith = true) {
+                        zumbieLoot2.addEventListener('click', () => {
+    
+                            player.coins += spiritCapeItem.value;
+                            menuDownCoinsContent.innerHTML = `${player.coins}`
+                            zumbieLoot2.style.display = "none";
+                        })
+                    }
                 }
+
+
                 if(zumbieRandLoot3 > 7) {
                     const zumbieLoot3 = document.createElement('div');
                     zumbieLoot3.setAttribute('class', 'loot-slot')
