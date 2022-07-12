@@ -56,7 +56,12 @@ let player = {
     attackDistance: 40,
     distanceLevel: 1,
     distanceCount: 0,
-    distanceToLVLUP: 100
+    distanceToLVLUP: 100,
+
+    defense: 0,
+    defenseLevel: 1,
+    defenseCount: 0,
+    defenseToLVLUP: 100
 }
 
 const world = document.getElementById('world');

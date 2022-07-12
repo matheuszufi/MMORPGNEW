@@ -826,6 +826,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
         zumbieDeadUi.style.transform = `translate(${zumbiePosY}px, ${zumbiePosX}px)`;
         zumbieDeadUi.addEventListener('click', zumbieLoot);
         
+        
         function zumbieLoot() {
             zumbieDeadUi.style.display = "none";
 
@@ -872,18 +873,44 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     const zumbieImgLootSteelHelmet = document.createElement('img');
                     zumbieImgLootSteelHelmet.setAttribute('src', `${steelHelmetItem.img}`) 
                     zumbieLootSteelHelmet.appendChild(zumbieImgLootSteelHelmet)
-        
+                    
+
                     zumbieLootSteelHelmet.addEventListener('click', () => {
                         document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
                         
-                                    //VENDER
-
+                            //VENDER
+                        if(guanabaraTalkingWith) {
+                            zumbieLootSteelHelmet.addEventListener('click', () => {
+                                zumbieLootSteelHelmet.style.display = "none";
+                                player.coins += steelHelmetItem.value;
+                                menuDownCoinsContent.innerHTML = `${player.coins}`                    
+                            })
+                        } 
+                        itemIsEquiped = false
+                            // EQUIPAR
                         zumbieLootSteelHelmet.addEventListener('click', () => {
-                            zumbieLootSteelHelmet.style.display = "none";
-                            player.coins += steelHelmetItem.value;
-                            menuDownCoinsContent.innerHTML = `${player.coins}`
+                            if (document.getElementById('helmet-slot').childNodes.length === 0) {
+                                itemIsEquiped = true;
+                                document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet);
+                     
 
-                        })
+
+                                if (itemIsEquiped) {
+                                    //DEVOLVER PARA A BOLSA
+                                    zumbieLootSteelHelmet.addEventListener('click', () => {
+                                        document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
+                                       
+                                    })
+                                }
+                   
+                            }
+                        })    
+                         
+                        
+                 
+                    
+
+                     
             
 
 
