@@ -858,9 +858,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     console.log(zumbieRandLoot, zumbieRandLoot2, zumbieRandLoot3);
                 
           
-                
-             
-                if(zumbieRandLoot > 50) {
+                // LOOT STEEL HELMET
+                if(zumbieRandLoot > 1) {
                     enemiesLoot.push(steelHelmetItem) 
                     const zumbieLoot1 = document.createElement('div');
                     zumbieLoot1.setAttribute('class', 'loot-slot')
@@ -871,10 +870,25 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieLoot1.appendChild(zumbieImgLoot1)
         
                     zumbieLoot1.addEventListener('click', () => {
+                        document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLoot1)
+                        
+
+
+                        // zumbieLoot1.addEventListener('dblclick', () => {
+                        //     zumbieLoot1
+
+                        // })
+                        if(guanabaraTalkingWith) {
+                        zumbieLoot1.addEventListener('click', () => {
+                            
+                                zumbieLoot1.style.display = "none";
+                                player.coins += steelHelmetItem.value;
+                                menuDownCoinsContent.innerHTML = `${player.coins}`
     
-                        player.coins += steelHelmetItem.value;
-                        menuDownCoinsContent.innerHTML = `${player.coins}`
-                        zumbieLoot1.style.display = "none";
+                            }
+                            
+                        )}
+                   
                     })
 
 
@@ -891,7 +905,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
        
                 } 
     
-
+                // LOOT SPIRIT CAPE
+                // LOOT SPIRIT CAPE
                 if(zumbieRandLoot2 > 70) {
                     const zumbieLoot2 = document.createElement('div');
                     zumbieLoot2.setAttribute('class', 'loot-slot')
@@ -922,7 +937,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     
                 }
 
-
+                // LOOT MUSHROOM
+                // LOOT MUSHROOM
                 if(zumbieRandLoot3 > 7) {
                     const zumbieLoot3 = document.createElement('div');
                     zumbieLoot3.setAttribute('class', 'loot-slot')
@@ -949,6 +965,8 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
                     })
 
+                    // LOOT GOLD
+                    // LOOT GOLD
                     zumbieLoot3.addEventListener('mouseover', () => {
                         const redMushroomItemInfo = document.createElement('div');
                         redMushroomItemInfo.setAttribute('id', "red-mushroom-info");

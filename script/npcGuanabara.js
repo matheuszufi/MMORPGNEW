@@ -227,7 +227,7 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     guanabaraTalkDiv.setAttribute('id', 'guanabara-talk-div');
     document.getElementById('engine').appendChild(guanabaraTalkDiv);
 
-    let guanabaraTalkingWith = false;
+    var guanabaraTalkingWith = false;
     npcGuanabaraUi.addEventListener('click', guanabaraStoreOpen);
 
     function guanabaraStoreOpen() {
@@ -325,12 +325,21 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     upgradeSetHelmet.setAttribute('class', 'upgrade-item-slot');
     upgradeSetSetUpgrades.appendChild(upgradeSetHelmet);
 
+    const upgrade1SetHelmetImg = document.createElement('img');
+    upgrade1SetHelmetImg.setAttribute('id', 'upgrade-set-armor-img');
+    upgrade1SetHelmetImg.setAttribute('src', '../');
+    upgradeSetHelmet.appendChild(upgrade1SetHelmetImg)
 
 
     //ARMOR
     const upgradeSetArmor = document.createElement('div');
     upgradeSetArmor.setAttribute('class', 'upgrade-item-slot');
     upgradeSetSetUpgrades.appendChild(upgradeSetArmor);
+
+    const upgradeSetArmorImg = document.createElement('img');
+    upgradeSetArmorImg.setAttribute('id', 'upgrade-set-armor-img');
+    upgradeSetArmorImg.setAttribute('src', '../');
+    upgradeSetArmor.appendChild(upgradeSetArmorImg)
 
 
     //LEGS
