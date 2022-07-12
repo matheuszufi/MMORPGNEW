@@ -1,5 +1,5 @@
 let player = {
-    name: "Matheus",
+    name: "User",
    
 
     coins: 0,

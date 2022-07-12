@@ -315,5 +315,23 @@ let npcGuanabaraDistanceY = npcGuanabaraPosY - playerPosY;
     upgradeSetDivHeader.setAttribute('id', 'upgrade-set-div-header');
     upgradeSetDiv.appendChild(upgradeSetDivHeader);
     upgradeSetDivHeader.innerHTML = "Guanabara Store <span>Set Items</span>"
-  
 
+    const upgradeSetSetUpgrades = document.createElement('div');
+    upgradeSetSetUpgrades.setAttribute('id', 'upgrade-set-set-upgrade')
+    upgradeSetDiv.appendChild(upgradeSetSetUpgrades);
+  
+const upgradeSetHelmet = document.createElement('div');
+upgradeSetHelmet.setAttribute('class', 'upgrade-item-slot');
+upgradeSetSetUpgrades.appendChild(upgradeSetHelmet);
+
+const upgradeSetArmor = document.createElement('div');
+upgradeSetArmor.setAttribute('class', 'upgrade-item-slot');
+upgradeSetSetUpgrades.appendChild(upgradeSetArmor);
+
+const upgradeSetLegs = document.createElement('div');
+upgradeSetLegs.setAttribute('class', 'upgrade-item-slot');
+upgradeSetSetUpgrades.appendChild(upgradeSetLegs);
+
+const upgradeSetBoots = document.createElement('div');
+upgradeSetBoots.setAttribute('class', 'upgrade-item-slot');
+upgradeSetSetUpgrades.appendChild(upgradeSetBoots);

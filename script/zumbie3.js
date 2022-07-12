@@ -43,13 +43,16 @@ zumbie3MaxHealth.appendChild(zumbie3Health);
 const zumbie3Image = document.createElement('div');
 zumbie3Image.setAttribute("id", "zumbie3-image");
 zumbie3Ui.appendChild(zumbie3Image);
+zumbie3Image.style.background = "url(../imgs/zumbie/down3.png)"
 
 
 let zumbie3PosX = 400;
 let zumbie3PosY = 500;
 
 zumbie3Ui.style.transform = `translate(${zumbie3PosY}px, ${zumbie3PosX}px)`
-
+zumbie3Image.style.backgroundRepeat = "no-repeat";
+zumbie3Image.style.backgroundSize = "50px";
+zumbie3Image.style.backgroundPosition = "50%";
 
 // Animação do Sprite
 //DOWN
@@ -1003,7 +1006,7 @@ let zumbie3DistanceY = zumbie3PosY - playerPosY;
     function zumbie3Spawn(){
         zumbie3Ui.style.display = "block";
         zumbie3IsDead = false;
-        zumbie3Image.style.background = "url(../imgs/zumbie3/down3.png)"
+        zumbie3Image.style.background = "url(../imgs/zumbie/down3.png)"
         zumbie3Image.style.backgroundSize = "50px"
         zumbie3Image.style.backgroundRepeat = "no-repeat"
         zumbie3Image.style.backgroundPosition = "50%"
