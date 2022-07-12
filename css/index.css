@@ -257,3 +257,6 @@ body {overflow: hidden;}
 
 }
 
+#helmet-slot {
+    display: flex;
+}

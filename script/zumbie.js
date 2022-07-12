@@ -841,7 +841,11 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     value: 50,
                     img: "../imgs/Spirit_Cloak.gif",
                     defense: 5,
-                    holyLevel: 5
+                    holyLevel: 5,
+
+                    ifEquiped: {
+                        defense: 5
+                    }
                 }
                 const redMushroom = {
                     name: "Red Mushroom",
@@ -860,45 +864,53 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
           
                 // LOOT STEEL HELMET
                 if(zumbieRandLoot > 1) {
-                    enemiesLoot.push(steelHelmetItem) 
-                    const zumbieLoot1 = document.createElement('div');
-                    zumbieLoot1.setAttribute('class', 'loot-slot')
-                    menuDownLootContent.appendChild(zumbieLoot1);
+                    // enemiesLoot.push(steelHelmetItem) 
+                    const zumbieLootSteelHelmet = document.createElement('div');
+                    zumbieLootSteelHelmet.setAttribute('class', 'loot-slot')
+                    menuDownLootContent.appendChild(zumbieLootSteelHelmet);
     
-                    const zumbieImgLoot1 = document.createElement('img');
-                    zumbieImgLoot1.setAttribute('src', `${steelHelmetItem.img}`) 
-                    zumbieLoot1.appendChild(zumbieImgLoot1)
+                    const zumbieImgLootSteelHelmet = document.createElement('img');
+                    zumbieImgLootSteelHelmet.setAttribute('src', `${steelHelmetItem.img}`) 
+                    zumbieLootSteelHelmet.appendChild(zumbieImgLootSteelHelmet)
         
-                    zumbieLoot1.addEventListener('click', () => {
-                        document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLoot1)
+                    zumbieLootSteelHelmet.addEventListener('click', () => {
+                        document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
                         
+                                    //VENDER
+
+                                    zumbieLootSteelHelmet.addEventListener('click', () => {
+                                        zumbieLootSteelHelmet.style.display = "none";
+                                        player.coins += steelHelmetItem.value;
+                                        menuDownCoinsContent.innerHTML = `${player.coins}`
+            
+                                    })
 
 
-                        // zumbieLoot1.addEventListener('dblclick', () => {
-                        //     zumbieLoot1
+
+
+                        
+             
+
+                        // zumbieLootSteelHelmet.addEventListener('dblclick', () => {
+                        //     zumbieLootSteelHelmet
 
                         // })
-                        if(guanabaraTalkingWith) {
-                        zumbieLoot1.addEventListener('click', () => {
-                            
-                                zumbieLoot1.style.display = "none";
-                                player.coins += steelHelmetItem.value;
-                                menuDownCoinsContent.innerHTML = `${player.coins}`
+             
+            
+
+
     
-                            }
-                            
-                        )}
                    
                     })
 
 
-                    zumbieLoot1.addEventListener('mouseover', () => {
+                    zumbieLootSteelHelmet.addEventListener('mouseover', () => {
                         const steelHelmetItemInfo = document.createElement('div');
                         steelHelmetItemInfo.setAttribute('id', "steel-helmet-info");
-                        zumbieLoot1.appendChild(steelHelmetItemInfo)
+                        zumbieLootSteelHelmet.appendChild(steelHelmetItemInfo)
                         steelHelmetItemInfo.innerHTML = `<span>ATTRIBUTE: </span>+20 DEFENSE EXP <span>PRICE:</span> 30GP`
 
-                        zumbieLoot1.addEventListener('mouseout', () => {
+                        zumbieLootSteelHelmet.addEventListener('mouseout', () => {
                             steelHelmetItemInfo.remove(); 
                         })
                     })

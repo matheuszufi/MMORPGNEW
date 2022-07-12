@@ -62,6 +62,7 @@ height: 50px;
     border-left: 1px solid rgb(100, 100, 100);
     border-top: 1px solid rgb(100, 100, 100);
     width: 50px;
+ 
 }
 .weapon-set-item {
     width: 50px;
@@ -162,3 +163,8 @@ height: 50px;
     position: absolute;
 
 } */
+
+
+#helmet-slot, #armor-slot, #legs-slot, #boots-slot {
+    filter: grayscale(100%)
+}
