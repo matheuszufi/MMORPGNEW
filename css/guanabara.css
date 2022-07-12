@@ -264,3 +264,14 @@ align-items: center;
     border-left: 1px solid rgb(30, 30, 30);
     border-top: 1px solid rgb(30, 30, 30);
 }
+
+#upgrade-item-infos {
+    height: 180px;
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 15px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    border-right: 1px solid rgb(100, 100, 100);
+    border-left: 1px solid rgb(30, 30, 30);
+    border-top: 1px solid rgb(30, 30, 30);
+}

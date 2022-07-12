@@ -43,7 +43,7 @@ let player = {
     terraCount: 0,
     terraToLVLUP: 100,
 
-    death: 50,
+    death: 100,
     deathLevel: 1,
     deathCount: 0,
     deathToLVLUP: 100,
