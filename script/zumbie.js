@@ -878,24 +878,12 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                         
                                     //VENDER
 
-                                    zumbieLootSteelHelmet.addEventListener('click', () => {
-                                        zumbieLootSteelHelmet.style.display = "none";
-                                        player.coins += steelHelmetItem.value;
-                                        menuDownCoinsContent.innerHTML = `${player.coins}`
-            
-                                    })
+                        zumbieLootSteelHelmet.addEventListener('click', () => {
+                            zumbieLootSteelHelmet.style.display = "none";
+                            player.coins += steelHelmetItem.value;
+                            menuDownCoinsContent.innerHTML = `${player.coins}`
 
-
-
-
-                        
-             
-
-                        // zumbieLootSteelHelmet.addEventListener('dblclick', () => {
-                        //     zumbieLootSteelHelmet
-
-                        // })
-             
+                        })
             
 
 
