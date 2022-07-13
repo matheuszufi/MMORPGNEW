@@ -878,6 +878,10 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                     zumbieLootSteelHelmet.addEventListener('click', () => {
                         document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
                         
+                    
+                       
+
+
                             //VENDER
                         if(guanabaraTalkingWith) {
                             zumbieLootSteelHelmet.addEventListener('click', () => {
@@ -885,32 +889,21 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                                 player.coins += steelHelmetItem.value;
                                 menuDownCoinsContent.innerHTML = `${player.coins}`                    
                             })
-                        } 
+                        } else {
+                            zumbieLootSteelHelmet.addEventListener('click', function() {
+                                if (steelHelmetParent.childNodes.length > 2) {
+                                  document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet)
+                                } else {
+                                  document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
+                                }  
+                            })
+
+
+                        }
                     })
 
-                //     itemIsEquiped = false
-                //     // EQUIPAR
-                // zumbieLootSteelHelmet.addEventListener('click', () => {
-                //     if (!itemIsEquiped && document.getElementById('helmet-slot').childNodes.length === 0) {
-                //         itemIsEquiped = true;
-                //         document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet);
-                //     } 
-                //     if (itemIsEquiped) {
-
-                //         //DEVOLVER PARA A BOLSA
-                //         zumbieLootSteelHelmet.addEventListener('click', () => {
-                //         document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
-                //         itemIsEquiped = false;
-                //     })
-                //     }    
-               
-                    
-
-
-                
-                //     }
-                // )    
-                 
+   
+                    const steelHelmetParent = zumbieLootSteelHelmet.parentElement;
                 
          
 
