@@ -886,37 +886,33 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                                 menuDownCoinsContent.innerHTML = `${player.coins}`                    
                             })
                         } 
-                        itemIsEquiped = false
-                            // EQUIPAR
-                        zumbieLootSteelHelmet.addEventListener('click', () => {
-                            if (document.getElementById('helmet-slot').childNodes.length === 0) {
-                                itemIsEquiped = true;
-                                document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet);
-                     
+                    })
 
+                //     itemIsEquiped = false
+                //     // EQUIPAR
+                // zumbieLootSteelHelmet.addEventListener('click', () => {
+                //     if (!itemIsEquiped && document.getElementById('helmet-slot').childNodes.length === 0) {
+                //         itemIsEquiped = true;
+                //         document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet);
+                //     } 
+                //     if (itemIsEquiped) {
 
-                                if (itemIsEquiped) {
-                                    //DEVOLVER PARA A BOLSA
-                                    zumbieLootSteelHelmet.addEventListener('click', () => {
-                                        document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
-                                       
-                                    })
-                                }
-                   
-                            }
-                        })    
-                         
-                        
-                 
+                //         //DEVOLVER PARA A BOLSA
+                //         zumbieLootSteelHelmet.addEventListener('click', () => {
+                //         document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
+                //         itemIsEquiped = false;
+                //     })
+                //     }    
+               
                     
 
-                     
-            
 
-
-    
-                   
-                    })
+                
+                //     }
+                // )    
+                 
+                
+         
 
 
                     zumbieLootSteelHelmet.addEventListener('mouseover', () => {
