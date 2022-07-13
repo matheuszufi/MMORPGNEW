@@ -895,12 +895,14 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                      
 
 
-                                if (itemIsEquiped) {
+                                if (document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet)) {
                                     //DEVOLVER PARA A BOLSA
                                     zumbieLootSteelHelmet.addEventListener('click', () => {
                                         document.getElementById('div-content-backpack-menu-left').appendChild(zumbieLootSteelHelmet)
                                        
                                     })
+                                } else {
+                                    document.getElementById('helmet-slot').appendChild(zumbieLootSteelHelmet);
                                 }
                    
                             }
