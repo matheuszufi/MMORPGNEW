@@ -977,7 +977,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
 
                     zumbieLoot3.addEventListener('click', () => {
                         player.life += 5;
-                        player.mana += 5;
+                        player.mana += 30;
 
                         menuUpLifeBar.style.width = `${(player.life / player.maxlife) * 100}%`
                         menuUpLifeValue.innerHTML = `${player.life}`
