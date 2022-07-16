@@ -1,68 +1,81 @@
-let player = {
-    name: "User",
-   
+let player = localStorage.getItem("player");
 
-    coins: 0,
-    level: 1,
-    experience: 0,
-    toLVLUP: 500,
-
-    life: 180,
-    maxLife: 180,
-    mana: 240,
-    maxMana: 240,
+if (player === null) {
+    let playerStorage = {
+        name: "User",
+       
+        coins: 0,
+        level: 1,
+        experience: 0,
+        toLVLUP: 500,
     
-
-    speed: 800,
-    speedLevel: 1,
-    speedCount: 0,
-    speedToLVLUP: 100,
-
-    attack: 10,
-    attackLevel: 1,
-    attackCount: 0,
-    attackToLVLUP: 100,
-
-    fire: 50,
-    fireLevel: 1,
-    fireCount: 0,
-    fireToLVLUP: 100,
-
-    ice: 50,
-    iceLevel: 1,
-    iceCount: 0,
-    iceToLVLUP: 100,
-
-    energy: 50,
-    energyLevel: 1,
-    energyCount: 0,
-    energyToLVLUP: 100,
-
-    terra: 50,
-    terraLevel: 1,
-    terraCount: 0,
-    terraToLVLUP: 100,
-
-    death: 100,
-    deathLevel: 1,
-    deathCount: 0,
-    deathToLVLUP: 100,
-
-    holy: 5,
-    holyLevel: 1,
-    holyCount: 0,
-    holyToLVLUP: 100,
-
-    attackDistance: 40,
-    distanceLevel: 1,
-    distanceCount: 0,
-    distanceToLVLUP: 100,
-
-    defense: 0,
-    defenseLevel: 1,
-    defenseCount: 0,
-    defenseToLVLUP: 100
+        life: 180,
+        maxLife: 180,
+        mana: 240,
+        maxMana: 240,
+        
+    
+        speed: 800,
+        speedLevel: 1,
+        speedCount: 0,
+        speedToLVLUP: 100,
+    
+        attack: 10,
+        attackLevel: 1,
+        attackCount: 0,
+        attackToLVLUP: 100,
+    
+        fire: 50,
+        fireLevel: 1,
+        fireCount: 0,
+        fireToLVLUP: 100,
+    
+        ice: 50,
+        iceLevel: 1,
+        iceCount: 0,
+        iceToLVLUP: 100,
+    
+        energy: 50,
+        energyLevel: 1,
+        energyCount: 0,
+        energyToLVLUP: 100,
+    
+        terra: 50,
+        terraLevel: 1,
+        terraCount: 0,
+        terraToLVLUP: 100,
+    
+        death: 100,
+        deathLevel: 1,
+        deathCount: 0,
+        deathToLVLUP: 100,
+    
+        holy: 5,
+        holyLevel: 1,
+        holyCount: 0,
+        holyToLVLUP: 100,
+    
+        attackDistance: 40,
+        distanceLevel: 1,
+        distanceCount: 0,
+        distanceToLVLUP: 100,
+    
+        defense: 0,
+        defenseLevel: 1,
+        defenseCount: 0,
+        defenseToLVLUP: 100,
+    
+        inventory: [''],
+    }
+    // const savePlayerString = JSON.stringify(playerStorage);
+    localStorage.setItem("player", playerStorage);
+    player = localStorage.getItem("player");
+    console.log("local storage created")
 }
+
+
+// const loadPlayerState = JSON.parse(player);
+
 
 const world = document.getElementById('world');
 const playerUi = document.createElement('div');

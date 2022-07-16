@@ -302,7 +302,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
          // SPEAR SELECT SPEAR SELECT SPEAR SELECT SPEAR SELECT 
          // SPEAR SELECT SPEAR SELECT SPEAR SELECT SPEAR SELECT 
         if (spearSelect && !fireSelect && !iceSelect && !energySelect && !terraSelect && !deathSelect ) {
-            zumbie.life -= (player.attackDistance);
+            zumbie.life -= 50;
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
             ++player.distanceCount;
@@ -721,7 +721,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
             menuUpManaValue.innerHTML = `${player.mana}`
             playerMana.style.width = `${(player.mana / player.maxMana) * 100}%`
 
-            zumbie.life -= (player.death);
+            zumbie.life -= 250;
             zumbieLifePercentual = `${(zumbie.life / zumbie.maxLife) * 100}`;
             zumbieHealth.style.width = `${zumbieLifePercentual}%`;
             ++player.deathCount;
@@ -886,7 +886,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                                 menuDownCoinsContent.innerHTML = `${player.coins}`                    
                             })
                         } 
-                        itemIsEquiped = false
+                        
                             // EQUIPAR
                         zumbieLootSteelHelmet.addEventListener('click', () => {
                             if (document.getElementById('helmet-slot').childNodes.length === 0) {
