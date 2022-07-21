@@ -886,6 +886,7 @@ let zumbieDistanceY = zumbiePosY - playerPosY;
                                 menuDownCoinsContent.innerHTML = `${player.coins}`                    
                             })
                         } 
+                        
                         itemIsEquiped = false
                             // EQUIPAR
                         zumbieLootSteelHelmet.addEventListener('click', () => {
